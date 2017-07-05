@@ -1,0 +1,21 @@
+{
+  "name": "wepay-business-front-end",
+  "description": "this is a project for mobile payment based on the NFC",
+  "main": "index.html",
+  "authors": [
+    "achao_zju <zhangshichao628@sina.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "NFC",
+    "wepay"
+  ],
+  "homepage": "https://github.com/AChaoZJU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
