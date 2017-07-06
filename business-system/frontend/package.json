@@ -15,5 +15,9 @@
     "wepay"
   ],
   "author": "achao_zju <zhangshichao628@sina.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "angular-sidebarjs": "^2.1.0",
+    "grunt": "^1.0.1"
+  }
 }
