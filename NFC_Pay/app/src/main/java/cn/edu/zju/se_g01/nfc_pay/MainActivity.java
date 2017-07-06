@@ -7,7 +7,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.Window;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +24,39 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate()", new Exception());
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);   //去掉默认的导航栏
         setContentView(R.layout.activity_main);
+
+        //设置顶部的 toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+//        toolbar.setNavigationIcon(R.mipmap.ic_drawer_home);//设置导航栏图标
+//        toolbar.setLogo(R.mipmap.ic_launcher);//设置app logo
+//        toolbar.setTitle("");//设置主标题
+//        toolbar.setSubtitle("Subtitle");//设置子标题
+
+        toolbar.inflateMenu(R.menu.base_toolbar_menu);//设置右上角的填充菜单
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int menuItemId = item.getItemId();
+//                if (menuItemId == R.id.action_search) {
+//                    Toast.makeText(ToolBarActivity.this , R.string.menu_search , Toast.LENGTH_SHORT).show();
+//
+//                } else if (menuItemId == R.id.action_notification) {
+//                    Toast.makeText(ToolBarActivity.this , R.string.menu_notifications , Toast.LENGTH_SHORT).show();
+
+                if (menuItemId == R.id.user_info_item) {
+                    Toast.makeText(MainActivity.this , "item_01" , Toast.LENGTH_SHORT).show();
+
+                } else if (menuItemId == R.id.logout_item) {
+                    Toast.makeText(MainActivity.this , "item_02" , Toast.LENGTH_SHORT).show();
+
+                }
+                return true;
+            }
+        });
+
         int[] icons = {
                 R.drawable.ic_nfc_scan,
                 R.drawable.ic_goods_list,

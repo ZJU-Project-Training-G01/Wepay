@@ -2,6 +2,8 @@
 <resources>
     <string name="hello">Hello World, Tab at Bottom!</string>
     <string name="app_name">WePay</string>
+    <string name="nfs_scan_help_info">请将手机靠近 NFC 标签</string>
+    <string name="text_above_nfs_scan">一键购物</string>
     <string-array name="Spinner_Content">
         <item>One</item>
         <item>Two</item>
