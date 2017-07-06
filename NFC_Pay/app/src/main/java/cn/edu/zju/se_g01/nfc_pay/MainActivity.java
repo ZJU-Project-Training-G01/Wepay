@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate()", new Exception());
         setContentView(R.layout.activity_main);
-        int[] icons = {R.drawable.tab_home,
-                R.drawable.tab_home,
-                R.drawable.tab_home,
-                R.drawable.tab_home,
+        int[] icons = {
+                R.drawable.ic_nfc_scan,
+                R.drawable.ic_goods_list,
+                R.drawable.ic_order_list,
         };
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         ViewPager viewPager = (ViewPager) findViewById(R.id.main_tab_content);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.insertNewFragment(new HomeFragment());
         adapter.insertNewFragment(new SearchFragment());
         adapter.insertNewFragment(new HomeFragment());
-        adapter.insertNewFragment(new SearchFragment());
+//        adapter.insertNewFragment(new SearchFragment());
         viewPager.setAdapter(adapter);
     }
 
