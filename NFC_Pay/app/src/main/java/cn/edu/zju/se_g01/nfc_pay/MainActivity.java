@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,11 @@ import cn.edu.zju.se_g01.nfc_pay.fragments.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final static String TAG = "Main_Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate()", new Exception());
         setContentView(R.layout.activity_main);
         int[] icons = {R.drawable.tab_home,
                 R.drawable.tab_home,
