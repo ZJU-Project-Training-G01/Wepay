@@ -3,29 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="frontend/bower_components/bootswatch/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="frontend/node_modules/sidebarjs/dist/sidebarjs.css">
     <link rel="stylesheet" href="frontend/components/sidebar/sidebar.css">
 </head>
 
 <body ng-app="myApp">
     <sidebar>正在加载网页……</sidebar>
+    <eeh-navigation-navbar menu-name="'myMenu'" brand-text="'My App'"></eeh-navigation-navbar>
+
     <script src="frontend/bower_components/angular/angular.js"></script>
-    <script src="frontend/node_modules/angular-sidebarjs/dist/angular-sidebarjs.js"></script>
 
     <script>
         var app = angular.module("myApp", []);
-
-        // app.component("app", {
-        //     templateUrl: 'frontend/components/siderbar/sidebar.html',
-        //     // controller: function($scope) {
-        //     //     $scope.username = "tom";
-        //     // }
-        // });
     </script>
+    <script src="frontend/node_modules/angular-sidebarjs/dist/angular-sidebarjs.js"></script>
     <script src="frontend/components/sidebar/sidebar.js"></script>
-    <script src="frontend/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="frontend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

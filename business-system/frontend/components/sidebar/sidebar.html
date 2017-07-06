@@ -1,28 +1,19 @@
 <header>
     <div class="icon hamburger-icon" sidebarjs-toggle></div>
-    <h1>Angular SidebarJS</h1>
-    <span class="glyphicon glyphicon-shopping-cart"></span>
+    <h1>Business End</h1>
 
     <!--<div class="icon hamburger-icon" sidebarjs-toggle="mySecondSidebarJS"></div>-->
 </header>
-
 <sidebarjs on-close="app.onSidebarClose()" on-open="app.onSidebarOpen()">
-    <h3>Angular SidebarJS</h3>
+    <h3>Business End</h3>
     <nav>
         <div>
-            <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs" target="_blank">
-                <div class="img goods"></div>商品管理</a>
-            <a sidebarjs-toggle href="https://www.npmjs.com/package/angular-sidebarjs" target="_blank">
-                <div class="img npm"></div>订单管理</a>
-            <a sidebarjs-toggle href="https://github.com/lorenzodianni" target="_blank">
-                <div class="img author"></div>Author</a>
+            <a sidebarjs-toggle href="goods" target="_blank">
+                <img src="frontend/static/icon/goods.svg">商品管理</a>
+            <a sidebarjs-toggle href="order" target="_blank">
+                <img src="frontend/static/icon/order.svg">订单管理</a>
         </div>
         <div>
-            <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs/blob/master/README.md" target="_blank">
-                <div class="img wiki"></div>Wiki</a>
-            <a sidebarjs-toggle href="https://github.com/SidebarJS/angular-sidebarjs/issues" target="_blank">
-                <div class="img bugs"></div>Bugs</a>
-        </div>
     </nav>
 </sidebarjs>
 
