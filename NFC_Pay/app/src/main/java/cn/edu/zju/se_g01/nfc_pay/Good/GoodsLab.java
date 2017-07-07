@@ -1,4 +1,4 @@
-package cn.edu.zju.se_g01.nfc_pay;
+package cn.edu.zju.se_g01.nfc_pay.Good;
 
 import android.content.Context;
 
