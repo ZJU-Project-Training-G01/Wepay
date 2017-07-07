@@ -27,7 +27,7 @@
         }
     }
     angular
-        .module('myApp', ['ngSidebarJS'])
+        .module('sidebar', ['ngSidebarJS'])
         .config(['$compileProvider', function($compileProvider) {
             $compileProvider.debugInfoEnabled(false);
         }])

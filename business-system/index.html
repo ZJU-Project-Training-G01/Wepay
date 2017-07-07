@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="frontend/node_modules/sidebarjs/dist/sidebarjs.css">
-    <link rel="stylesheet" href="frontend/components/sidebar/sidebar.css">
+    <link rel="stylesheet" href="frontend/bower_components/bootswatch/cerulean/bootstrap.min.css">
 </head>
 
 <body ng-app="myApp">
-    <sidebar>正在加载网页……</sidebar>
-    <eeh-navigation-navbar menu-name="'myMenu'" brand-text="'My App'"></eeh-navigation-navbar>
+    <div ui-view>正在加载网页……</div>
 
     <script src="frontend/bower_components/angular/angular.js"></script>
-
-    <script>
-        var app = angular.module("myApp", []);
-    </script>
+    <script src="frontend/static/lib/angular-ui-router.js"></script>
+    <script src="frontend/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <!--组件js-->
     <script src="frontend/node_modules/angular-sidebarjs/dist/angular-sidebarjs.js"></script>
-    <script src="frontend/components/sidebar/sidebar.js"></script>
+
+    <script src="frontend/index.js"></script>
+
+
 </body>
 
 </html>

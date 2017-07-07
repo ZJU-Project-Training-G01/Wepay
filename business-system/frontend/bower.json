@@ -20,6 +20,7 @@
   ],
   "devDependencies": {
     "angular": "^1.6.5",
-    "bootswatch": "^3.3.7"
+    "bootswatch": "^3.3.7",
+    "oclazyload": "^1.1.0"
   }
 }
