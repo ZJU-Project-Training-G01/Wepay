@@ -1,4 +1,4 @@
-package cn.edu.zju.se_g01.nfc_pay;
+package cn.edu.zju.se_g01.nfc_pay.Good;
 
 import java.util.UUID;
 
@@ -9,7 +9,7 @@ public class Goods {
     private UUID uuid;
     private String goodsId;
     private String goodsName;
-    private float unitPrice;
+    private double unitPrice;
     private String imgUrl;
     private String goodsInfo;
 
@@ -46,11 +46,11 @@ public class Goods {
         this.goodsName = goodsName;
     }
 
-    public float getUnitPrice() {
+    public double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(float unitPrice) {
+    public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
