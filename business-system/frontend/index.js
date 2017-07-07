@@ -1,32 +1,10 @@
 var app = angular
-    .module('myApp', ['oc.lazyLoad']);
-app.directive('mynavbar', function() {
-    return {
-        template: '<div>saa</div>'
-    }
-}).directive('mynavbar2', function() {
-    return {
-        template: '<div>hhha</div>'
-    }
-});
-app.config(function($ocLazyLoadProvider) {
-    $ocLazyLoadProvider.config({
-        debug: true,
-        modules: [{
-            name: 'sidebar',
-            files: [
-                'frontend/components/sidebar/sidebar.css',
-                'frontend/components/sidebar/sidebar.js'
-            ]
-        }]
-    });
-});
+    .module('myApp', ['oc.lazyLoad', 'ui.router']);
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when('', '/');
-    $stateProvider.this.state('sidebar', {
+    $stateProvider.state('sidebar', {
         url: '/',
         templateUrl: 'frontend/components/sidebar/sidebar.html',
-        controller: 'sidebar',
         resolve: {
             home: function($ocLazyLoad) {
                 return $ocLazyLoad.load(['sidebar']);
@@ -36,3 +14,17 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 
     })
 }])
+app.config(function($ocLazyLoadProvider) {
+    $ocLazyLoadProvider.config({
+        debug: true,
+        modules: [{
+            name: 'sidebar',
+            files: [
+                'frontend/node_modules/sidebarjs/dist/sidebarjs.css',
+                'frontend/components/sidebar/sidebar.css',
+                "frontend/node_modules/angular-sidebarjs/dist/angular-sidebarjs.js",
+                'frontend/components/sidebar/sidebar.js'
+            ]
+        }]
+    });
+});
