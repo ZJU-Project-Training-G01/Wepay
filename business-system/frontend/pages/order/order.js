@@ -3,6 +3,7 @@
         .component('navs', {
             templateUrl: 'frontend/components/navs/navs.html',
         }).component('orderItem', {
-            templateUrl: 'frontend/components/orderItem/orderItem.html'
-        })
+            templateUrl: 'frontend/components/orderItem/orderItem.html',
+            controller: 'orderItemCtrl'
+        });
 })();

@@ -1,21 +1,21 @@
 module.exports = function(grunt) {
-    var sidebarPath = 'components/sidebar';
+    var orderItemPath = 'components/orderItem';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
             output: {
                 files: [{
                     expand: true,
-                    cwd: sidebarPath,
+                    cwd: orderItemPath,
                     src: 'sidebar.scss',
-                    dest: sidebarPath,
+                    dest: orderItemPath,
                     ext: '.css'
                 }]
             }
         },
         watch: {
             scripts: {
-                files: [sidebarPath + '/sidebar.scss'],
+                files: [orderItemPath + '/sidebar.scss'],
                 tasks: ['sass']
             },
             livereload: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                     livereload: '<%=connect.options.livereload %>'
                 },
                 files: [
-                    sidebarPath + '/siderbar.css'
+                    orderItemPath + '/siderbar.css'
 
                 ]
             }
