@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.zju.se_g01.nfc_pay.fragments.HomeFragment;
+import cn.edu.zju.se_g01.nfc_pay.fragments.OrderListFragment;
 import cn.edu.zju.se_g01.nfc_pay.fragments.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.insertNewFragment(new HomeFragment());
         adapter.insertNewFragment(new SearchFragment());
-        adapter.insertNewFragment(new HomeFragment());
-//        adapter.insertNewFragment(new SearchFragment());
+        adapter.insertNewFragment(new OrderListFragment());
         viewPager.setAdapter(adapter);
     }
 
