@@ -14,9 +14,9 @@ password:exciting
 ```
 $res=array{
     'code'=>$code,
-    'msg'=>$msg,//仅限于当code==1，也就是错误已知时，此变量需要返回
+    'msg'=>$msg,//仅限于当$code>1，也就是错误已知时，此变量需要返回
     'data'=>$data
 }
 echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ```
-$code说明：0代表成功，1代表已知错误，2代表未知错误
+$code说明：0代表成功，1代表未知错误，$code>1代表已知错误，发生已知错误时，$code和$msg具体如何请在接口中约定
