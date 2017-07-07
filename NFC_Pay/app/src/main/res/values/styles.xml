@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-	<style name="app_legacy_theme" parent="android:Theme.NoTitleBar">
-		<item name="android:windowBackground">@android:color/white</item>
-	</style>
 
-	<style name="AppTheme" parent="Theme.AppCompat">
+    <style name="app_legacy_theme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
 
-		<item name="colorPrimary">@color/theme_color_primary</item>
-		<item name="colorPrimaryDark">@color/theme_color_primary_light</item>
-		<item name="colorAccent">@color/theme_color_accent</item>
+    <style name="AppTheme" parent="Theme.AppCompat">
 
-		<item name="android:actionBarStyle">@style/AppActionBarStyle</item>
+        <!--<item name="android:background">@android:color/white</item>-->
+        <item name="colorPrimary">@color/theme_color_primary</item>
+        <item name="colorPrimaryDark">@color/theme_color_primary_light</item>
+        <item name="colorAccent">#084e43</item>
 
-		<!-- Support library compatibility -->
-		<item name="actionBarStyle">@style/AppActionBarStyle</item>
+        <item name="android:actionBarStyle">@style/AppActionBarStyle</item>
 
+        <item name="android:textColor">@android:color/black</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/AppActionBarStyle</item>
     </style>
 
 
-	<style name="AppActionBarStyle"
-		parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-		<item name="android:background">@color/theme_color_primary</item>
+    <style name="AppActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/theme_color_primary</item>
 
-		<!-- Support library compatibility -->
-		<item name="background">@color/theme_color_primary</item>
-	</style>
+        <!-- Support library compatibility -->
+        <item name="background">@color/theme_color_primary</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -1,5 +1,6 @@
 package cn.edu.zju.se_g01.nfc_pay;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -48,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(ToolBarActivity.this , R.string.menu_notifications , Toast.LENGTH_SHORT).show();
 
                 if (menuItemId == R.id.user_info_item) {
-                    Toast.makeText(MainActivity.this , "item_01" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this , "个人信息" , Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, UserSettingActivity.class);
+                    startActivity(i);
 
                 } else if (menuItemId == R.id.logout_item) {
                     Toast.makeText(MainActivity.this , "item_02" , Toast.LENGTH_SHORT).show();
