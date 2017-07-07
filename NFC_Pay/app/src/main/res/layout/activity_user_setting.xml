@@ -48,7 +48,7 @@
             android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_chevron_right" />
+            android:background="@drawable/ic_chevron_right_white" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -71,6 +71,6 @@
             android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_chevron_right" />
+            android:background="@drawable/ic_chevron_right_white" />
     </RelativeLayout>
 </LinearLayout>
