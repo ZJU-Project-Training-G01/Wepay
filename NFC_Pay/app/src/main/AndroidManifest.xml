@@ -17,6 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UserSettingActivity"
+            android:label="@string/title_activity_user_setting"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cn.edu.zju.se_g01.nfc_pay.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
