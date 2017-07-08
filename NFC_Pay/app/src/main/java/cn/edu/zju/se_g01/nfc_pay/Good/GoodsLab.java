@@ -12,7 +12,7 @@ import java.util.UUID;
  */
 public class GoodsLab {
     private static GoodsLab goodsLab;
-    private List<Goods> goodsList;
+    private ArrayList<Goods> goodsList;
 
     public static GoodsLab get(Context context) {
         if (goodsLab == null) {
@@ -26,12 +26,12 @@ public class GoodsLab {
         //TODO 连接服务器，获取所有商品
         for (int i = 0; i < 5; i++) {
             Goods g = new Goods("01", "mobile phone "+String.valueOf(i),
-                    500, "http://www.baidu.com", "none");
+                    500, "http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png", "none");
             goodsList.add(g);
         }
     }
 
-    public List<Goods> getGoodsList() {
+    public ArrayList<Goods> getGoodsList() {
         return goodsList;
     }
 
