@@ -1,13 +1,30 @@
 $panelBodyHeight: 80px;
+$orderHeadHeight:40px;
 order-item {
-    .panel-body {
-        padding: 0;
-        height: $panelBodyHeight;
-        table {
-            width: 100%;
+    th {
+        text-align: center;
+    }
+    .order-head {
+        .panel-heading {
+            padding: 0;
+            height: $orderHeadHeight;
+            table {
+                width: 100%;
+                height: $orderHeadHeight;
+            }
+        }
+    }
+    .order-body {
+        .panel-body {
+            padding: 0;
             height: $panelBodyHeight;
-            img {
-                height: $panelBodyHeight
+            table {
+                width: 100%;
+                height: $panelBodyHeight;
+                img {
+                    height: $panelBodyHeight;
+                    width: 100%
+                }
             }
         }
     }

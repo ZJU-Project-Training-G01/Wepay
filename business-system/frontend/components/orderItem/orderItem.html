@@ -1,20 +1,41 @@
-<div class="panel panel-default" ng-repeat="order in orders">
+<div class="panel panel-default order-head">
     <div class="panel-heading">
-        <span>{{order.order_time}}</span> 订单号
-        <span>{{order.order_id}}</span>
-    </div>
-    <div class="panel-body">
         <table class="table-bordered">
             <tbody>
                 <tr>
-                    <th width='10%'><img src="frontend/static/imgs/goodsImgs/good001.jpg"></th>
-                    <th>{{order.good_name}}</th>
-                    <th>{{order.unit_price}}</th>
-                    <th>{{order.amount}}</th>
-                    <th>{{order.total}}</th>
-                    <th>{{order.deadline}}</th>
+                    <th width='35%'>宝贝</th>
+                    <th width='10%'>单价</th>
+                    <th width='10%'>数量</th>
+                    <th width='10%'>总价</th>
+                    <th width='10%'>订单状态</th>
+                    <th width='10%'>交易操作</th>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+<div class="order-body">
+    <div class="panel panel-default" ng-repeat="order in orders">
+        <div class="panel-heading">
+            <span>{{order.order_time}}</span> 订单号
+            <span>{{order.order_id}}</span>
+        </div>
+        <div class="panel-body">
+            <table class="table-bordered">
+                <tbody>
+                    <tr>
+                        <th width='10%'><img ng-src="{{order.img_url}}"></th>
+                        <th width='25%'>{{order.good_name}}</th>
+                        <th width='10%'>{{order.unit_price}}</th>
+                        <th width='10%'>{{order.amount}}</th>
+                        <th width='10%'>{{order.total}}</th>
+                        <th width='10%'>{{order.statusName}}</th>
+                        <th width='10%'>还剩{{order.deadline}}
+                            <button class="btn">发货</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
