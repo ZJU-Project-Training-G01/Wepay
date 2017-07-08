@@ -14,28 +14,28 @@
         </table>
     </div>
 </div>
-<div class="order-body">
-    <div class="panel panel-default" ng-repeat="order in orders">
-        <div class="panel-heading">
-            <span>{{order.order_time}}</span> 订单号
-            <span>{{order.order_id}}</span>
-        </div>
-        <div class="panel-body">
-            <table class="table-bordered">
-                <tbody>
-                    <tr>
-                        <th width='10%'><img ng-src="{{order.img_url}}"></th>
-                        <th width='25%'>{{order.good_name}}</th>
-                        <th width='10%'>{{order.unit_price}}</th>
-                        <th width='10%'>{{order.amount}}</th>
-                        <th width='10%'>{{order.total}}</th>
-                        <th width='10%'>{{order.statusName}}</th>
-                        <th width='10%'>还剩{{order.deadline}}
-                            <button class="btn">发货</button>
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="panel panel-default order-body" ng-repeat="order in orders">
+    <div class="panel-heading">
+        <span>{{order.orderTime}}</span> 订单号
+        <span>{{order.orderId}}</span>
+    </div>
+    <div class="panel-body">
+        <table class="table-bordered">
+            <tbody>
+                <tr>
+                    <th width='10%'><img ng-src="{{order.imgUrl}}"></th>
+                    <th width='25%'>{{order.goodName}}</th>
+                    <th width='10%'>{{order.unitPrice}}</th>
+                    <th width='10%'>{{order.amount}}</th>
+                    <th width='10%'>{{order.total}}</th>
+                    <th width='10%'>{{order.orderName}}</th>
+                    <th width='10%'>{{order.operation}}
+                        <button class="btn" ng-if="order.orderStatus===0">发货</button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+<paging page="pageNumber" page-size='pageSize' total='11' show-first-last="true" show-prev-next="true" pageAction='orderHttp(pageNumber)'>
+</paging>

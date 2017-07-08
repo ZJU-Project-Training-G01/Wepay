@@ -1,5 +1,5 @@
 (function() {
-    var order = angular.module('order', [])
+    let order = angular.module('order', [])
         .component('navs', {
             templateUrl: 'frontend/components/navs/navs.html',
         })
@@ -13,15 +13,42 @@
             }
         })
         .factory('getDeadline', function() {
-            return function(order_time) {
-                var deadline = Date.parse(new Date(order_time)) + 7 * 24 * 3600 * 1000 - Date.parse(new Date());
-                var dayLevel = 24 * 3600 * 1000;
-                var hourLevel = 3600 * 1000;
-                var day = Math.floor(deadline / dayLevel);
-                var hour = ((deadline - day * dayLevel) / hourLevel).toFixed(0);
+            return function(orderTime) {
+                let deadline = Date.parse(new Date(orderTime)) + 7 * 24 * 3600 * 1000 - Date.parse(new Date());
+                let dayLevel = 24 * 3600 * 1000;
+                let hourLevel = 3600 * 1000;
+                let day = Math.floor(deadline / dayLevel);
+                let hour = ((deadline - day * dayLevel) / hourLevel).toFixed(0);
                 return day.toString() + '天' + hour.toString() + '时';
             }
-        }).factory('orderStatusToName', function() {
-            return function(order_status)
+        })
+        .factory('orderServe', function(getDeadline) {
+            return {
+                orderStatusToName: function(status, orderTime) {
+                    let orderName, operation;
+                    switch (status) {
+                        case 0:
+                            orderName = '未发货';
+                            operation = getDeadline(orderTime);
+                            break;
+                        case 1:
+                            orderName = '买家未收货';
+                            operation = '等待买家收货';
+                            break;
+                        case 2:
+                            orderName = '买家收货';
+                            operation = '订单完成';
+                            break;
+                        default:
+                            orderName = '未知错误';
+                            operation = '未知错误';
+                            break;
+                    }
+                    return {
+                        orderName: orderName,
+                        operation: operation
+                    }
+                }
+            }
         })
 })();

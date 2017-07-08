@@ -1,5 +1,5 @@
-var app = angular
-    .module('myApp', ['oc.lazyLoad', 'ui.router']);
+let app = angular
+    .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging']);
 app.component('navbar', {
     templateUrl: 'frontend/components/navbar/navbar.html',
 });
