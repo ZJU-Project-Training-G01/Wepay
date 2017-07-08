@@ -9,7 +9,7 @@
         android:layout_height="128dp"
         android:scaleType="fitXY"
         app:srcCompat="@mipmap/goods_flower"
-        android:id="@+id/imageView" />
+        android:id="@+id/orderGoodsimageView" />
 
     <TextView
         android:id="@+id/goodNameTextView"
@@ -19,8 +19,8 @@
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="14dp"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/orderGoodsimageView"
+        android:layout_toRightOf="@+id/orderGoodsimageView"
         android:text="美的电饼铛 JHN30F 双面加热"
         android:textAllCaps="false"
         android:textSize="18sp"
@@ -32,7 +32,7 @@
         style="@android:style/Widget.DeviceDefault.Button.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignBottom="@+id/orderGoodsimageView"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="5dp"
         android:layout_marginRight="5dp"

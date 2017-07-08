@@ -1,7 +1,5 @@
 package cn.edu.zju.se_g01.nfc_pay.orders;
 
-import android.graphics.Bitmap;
-
 import java.util.Date;
 
 /**
@@ -13,13 +11,15 @@ public class Order {
     private int buyer_id;       //买家 id
     private int good_id;        //商品 id
     private String good_name;   //商品名称
-    private Bitmap good_image;  //商品图片
+//    private Bitmap good_image;  //商品图片
+    private String imageUrl;
     private int amount;         //商品数量
     private double unit_price;  //单价，指订单产生时商品的价格
     private Order_status order_status;
     private Date order_data;    //订单创建的时间
 
     public Order(int order_id) {
+        this.imageUrl = "http://cimage1.tianjimedia.com/uploadImages/thirdImages/2017/187/JLLT32DVUP6A.jpg";
         this.order_id = order_id;
         this.buyer_id = 100;
         this.good_id = 100;
@@ -40,16 +40,16 @@ public class Order {
         this.order_data = order_data;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     public int getOrder_id() {
         return order_id;
     }
 
     public String getGood_name() {
         return good_name;
-    }
-
-    public Bitmap getGood_image() {
-        return good_image;
     }
 
     public int getAmount() {

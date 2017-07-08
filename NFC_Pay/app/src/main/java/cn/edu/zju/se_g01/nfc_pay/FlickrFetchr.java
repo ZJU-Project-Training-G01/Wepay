@@ -11,7 +11,7 @@ import java.net.URL;
  */
 
 public class FlickrFetchr {
-    byte[] getUrlBytes(String urlSpec) throws IOException {
+    public byte[] getUrlBytes(String urlSpec) throws IOException {
         URL url = new URL(urlSpec);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
