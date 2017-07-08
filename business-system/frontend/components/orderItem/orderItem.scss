@@ -1,0 +1,14 @@
+$panelBodyHeight: 80px;
+order-item {
+    .panel-body {
+        padding: 0;
+        height: $panelBodyHeight;
+        table {
+            width: 100%;
+            height: $panelBodyHeight;
+            img {
+                height: $panelBodyHeight
+            }
+        }
+    }
+}

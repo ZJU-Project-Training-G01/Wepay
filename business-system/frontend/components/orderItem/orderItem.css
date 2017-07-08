@@ -1,0 +1,10 @@
+order-item .panel-body {
+  padding: 0;
+  height: 80px; }
+  order-item .panel-body table {
+    width: 100%;
+    height: 80px; }
+    order-item .panel-body table img {
+      height: 80px; }
+
+/*# sourceMappingURL=orderItem.css.map */
