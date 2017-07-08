@@ -25,7 +25,9 @@ app.config(function($ocLazyLoadProvider) {
             controller: 'order',
             files: [
                 'frontend/pages/order/order.js',
+                'frontend/pages/order/order.css',
                 'frontend/components/orderItem/orderItem.js',
+                'frontend/components/orderItem/orderItem.css'
             ]
         }]
     });

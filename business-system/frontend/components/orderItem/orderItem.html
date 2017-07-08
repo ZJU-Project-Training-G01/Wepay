@@ -1,9 +1,20 @@
 <div class="panel panel-default" ng-repeat="order in orders">
     <div class="panel-heading">
-        <span>{{order.time}}</span> 订单号
-        <span>{{order.id}}</span>
+        <span>{{order.order_time}}</span> 订单号
+        <span>{{order.order_id}}</span>
     </div>
     <div class="panel-body">
-        Panel content
+        <table class="table-bordered">
+            <tbody>
+                <tr>
+                    <th width='10%'><img src="frontend/static/imgs/goodsImgs/good001.jpg"></th>
+                    <th>{{order.good_name}}</th>
+                    <th>{{order.unit_price}}</th>
+                    <th>{{order.amount}}</th>
+                    <th>{{order.total}}</th>
+                    <th>{{order.deadline}}</th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
