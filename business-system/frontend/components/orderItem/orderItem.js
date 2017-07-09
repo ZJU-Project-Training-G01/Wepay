@@ -1,5 +1,5 @@
 (function() {
-    let orderItem = angular.module('orderItem', [])
+    angular.module('orderItem', [])
         .controller('orderItemCtrl', ['$scope', '$http', 'setPricePrecision', 'orderServe',
             function($scope, $http, setPricePrecision, orderServe) {
                 $scope.pageSize = 10;
