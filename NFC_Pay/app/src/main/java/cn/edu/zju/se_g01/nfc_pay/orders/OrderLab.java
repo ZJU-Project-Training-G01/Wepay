@@ -45,6 +45,7 @@ public class OrderLab {
         }
 
         String url = "http://localhost/getOrders.php";
+        //TODO: 需要修改为CookieRequest
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
