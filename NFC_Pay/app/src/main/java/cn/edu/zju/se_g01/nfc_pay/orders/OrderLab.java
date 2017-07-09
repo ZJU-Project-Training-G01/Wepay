@@ -1,8 +1,24 @@
 package cn.edu.zju.se_g01.nfc_pay.orders;
 
 import android.content.Context;
+import android.util.Log;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONObject;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
+import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by dddong on 2017/7/7.
@@ -27,6 +43,39 @@ public class OrderLab {
         for(int i = 0; i < 10; i++) {
             mOrders.add(new Order(i));
         }
+
+        String url = "http://localhost/getOrders.php";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            int nOrders = response.getJSONArray("data").length();
+                            for (int i = 0; i < nOrders; i++) {
+                                JSONObject each_order = response.getJSONArray("data").getJSONObject(i);
+                                DateFormat dfmt = new SimpleDateFormat("yyyy-MM-dd");    //TODO: 日期格式可能会变动
+                                Date order_date = dfmt.parse(each_order.getString("order_time"));
+                                Order order = new Order(each_order.getInt("order_id"), each_order.getString("good_name"), each_order.getString("img_url"),
+                                        each_order.getInt("amount"), each_order.getDouble("unit_price"), each_order.getInt("order_status"),
+                                        order_date);
+                                mOrders.add(order);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.getMessage());
+            }
+        });
+        MySingleton.getInstance(mAppContext.getApplicationContext()).addToRequestQueue(jsonObjReq);
+
+        ImageLoader image;
+        String SESSION_ID = "xxx"; //TODO: 这里需要获取 SESSION_ID
+//        JSONObject jsonResult = HttpConnector.getJSONByHttpGet("http://localhost/getOrders.php?session_id=" + SESSION_ID );
         /*
         TODO: 通过网络请求向mOrders中填充订单数据
          */
