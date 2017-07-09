@@ -39,6 +39,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.edu.zju.se_g01.nfc_pay.tools.HttpConnector;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -317,13 +319,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             Map<String, String> paramsMap = new HashMap<>();
             paramsMap.put("email", mEmail);
             paramsMap.put("password", mPassword);
-//            JSONObject json_response = HttpConnector.getJSONByHttpPost(mUrl, paramsMap);
-            JSONObject json_response = null;
-            try {
-                json_response = new JSONObject("{result:0}");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            JSONObject json_response = HttpConnector.getJSONByHttpPost(mUrl, paramsMap);
+
+
+            //TODO: 这里等待后端写好之后的测试
+//            JSONObject json_response = null;
+//            try {
+//                json_response = new JSONObject("{result:0}");
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
             try {
                 int result = json_response.getInt("result");
                 return result;

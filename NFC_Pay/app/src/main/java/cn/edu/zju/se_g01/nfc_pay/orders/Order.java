@@ -1,5 +1,7 @@
 package cn.edu.zju.se_g01.nfc_pay.orders;
 
+import android.util.Log;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  */
 
 public class Order {
+    private final static String TAG = "Order";
     private int order_id;       //订单 id
     private int buyer_id;       //买家 id
     private int good_id;        //商品 id
@@ -16,7 +19,7 @@ public class Order {
     private int amount;         //商品数量
     private double unit_price;  //单价，指订单产生时商品的价格
     private Order_status order_status;
-    private Date order_data;    //订单创建的时间
+    private Date order_date;    //订单创建的时间
 
     public Order(int order_id) {
         this.imageUrl = "http://cimage1.tianjimedia.com/uploadImages/thirdImages/2017/187/JLLT32DVUP6A.jpg";
@@ -27,17 +30,23 @@ public class Order {
         this.amount = 1;
         this.unit_price = Math.random();
         this.order_status = Order_status.undelivered;
-        this.order_data = new Date();
+        this.order_date = new Date();
     }
 
-    public Order(int order_id, int buyer_id, int good_id, int amount, double unit_price, Order_status order_status, Date order_data) {
+    public Order(int order_id, String good_name, String imageUrl, int amount, double unit_price, int order_status, Date order_date) {
         this.order_id = order_id;
-        this.buyer_id = buyer_id;
-        this.good_id = good_id;
+        this.good_name = good_name;
+        this.imageUrl = imageUrl;
         this.amount = amount;
         this.unit_price = unit_price;
-        this.order_status = order_status;
-        this.order_data = order_data;
+        switch (order_status) {
+            case 0: this.order_status = Order_status.undelivered; break;
+            case 1: this.order_status = Order_status.unreceive_confirmed; break;
+            case 2: this.order_status = Order_status.receive_confirmed; break;
+            default:
+                Log.e(TAG, "invalid order status"); break;
+        }
+        this.order_date = order_date;
     }
 
     public String getImageUrl() {
@@ -73,8 +82,8 @@ public class Order {
         }
     }
 
-    public Date getOrder_data() {
-        return order_data;
+    public Date getOrder_date() {
+        return order_date;
     }
 
     public boolean isTransactionComplete() {
@@ -94,7 +103,7 @@ public class Order {
     enum Order_status { //订单状态
         undelivered,    //未发货
         unreceive_confirmed,    //已经发货但是买家未确认收货
-        receive_confirmed,  //已经确认收货（这个时候钱已经打到卖家)
+        receive_confirmed,;  //已经确认收货（这个时候钱已经打到卖家)
     }
 
 }

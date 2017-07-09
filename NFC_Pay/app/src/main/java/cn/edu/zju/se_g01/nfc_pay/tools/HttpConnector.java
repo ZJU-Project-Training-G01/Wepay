@@ -30,7 +30,7 @@ import java.util.Map;
 public class HttpConnector {
 
     //得到HttpClient
-    public static HttpClient getHttpClient(){
+    private static HttpClient getHttpClient(){
         HttpParams mHttpParams=new BasicHttpParams();
         //设置网络链接超时
         //即:Set the timeout in milliseconds until a connection is established.
@@ -43,8 +43,7 @@ public class HttpConnector {
         //设置是否可以重定向
         HttpClientParams.setRedirecting(mHttpParams, true);
 
-        HttpClient httpClient=new DefaultHttpClient(mHttpParams);
-        return httpClient;
+        return new DefaultHttpClient(mHttpParams);
     }
 
 
@@ -85,7 +84,7 @@ public class HttpConnector {
     }
 
     //得到JSONObject(Get方式)
-    public JSONObject getJSONObjectByHttpGet(String uriString){
+    public static JSONObject getJSONByHttpGet(String uriString){
         JSONObject resultJsonObject=null;
         if ("".equals(uriString)||uriString==null) {
             return null;
@@ -103,7 +102,10 @@ public class HttpConnector {
             e.printStackTrace();
         }
         //得到httpResponse的状态响应码
-        int statusCode=httpResponse.getStatusLine().getStatusCode();
+        int statusCode= 0;
+        if (httpResponse != null) {
+            statusCode = httpResponse.getStatusLine().getStatusCode();
+        }
         if (statusCode== HttpStatus.SC_OK) {
             //得到httpResponse的实体数据
             resultJsonObject = getJSONObject(httpResponse);
@@ -111,7 +113,7 @@ public class HttpConnector {
         return resultJsonObject;
     }
 
-    public static JSONObject getJSONObject(HttpResponse httpResponse) {
+    private static JSONObject getJSONObject(HttpResponse httpResponse) {
         JSONObject resultJsonObject = null;
 
         HttpEntity httpEntity = httpResponse.getEntity();
@@ -123,7 +125,7 @@ public class HttpConnector {
                 StringBuilder entityStringBuilder = new StringBuilder();
                 String line = null;
                 while ((line = bufferedReader.readLine()) != null) {
-                    entityStringBuilder.append(line + "/n");
+                    entityStringBuilder.append(line).append("\n");
                 }
                 // 利用从HttpEntity中得到的String生成JsonObject
                 resultJsonObject = new JSONObject(entityStringBuilder.toString());
