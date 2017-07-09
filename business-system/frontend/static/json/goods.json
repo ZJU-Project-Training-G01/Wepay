@@ -13,6 +13,41 @@
             "unitPrice": 88,
             "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
             "goodAddress": "杭州萧山"
+        },
+        {
+            "goodId": 1989,
+            "goodName": "书籍《他:六四事件的最大获利者》",
+            "unitPrice": 88,
+            "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
+            "goodAddress": "杭州萧山"
+        },
+        {
+            "goodId": 1989,
+            "goodName": "书籍《他:六四事件的最大获利者》",
+            "unitPrice": 88,
+            "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
+            "goodAddress": "杭州萧山"
+        },
+        {
+            "goodId": 1989,
+            "goodName": "书籍《他:六四事件的最大获利者》",
+            "unitPrice": 88,
+            "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
+            "goodAddress": "杭州萧山"
+        },
+        {
+            "goodId": 1989,
+            "goodName": "书籍《他:六四事件的最大获利者》",
+            "unitPrice": 88,
+            "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
+            "goodAddress": "杭州萧山"
+        },
+        {
+            "goodId": 1989,
+            "goodName": "书籍《他:六四事件的最大获利者》",
+            "unitPrice": 88,
+            "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
+            "goodAddress": "杭州萧山"
         }
     ]
 }

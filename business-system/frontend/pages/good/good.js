@@ -8,5 +8,5 @@
         .component('goodSearch', {
             templateUrl: 'frontend/components/goodSearch/goodSearch.html',
             controller: 'goodSearchCtrl'
-        })
+        });
 })();
