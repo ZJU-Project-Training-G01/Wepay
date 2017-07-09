@@ -31,6 +31,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,15 +43,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
 import cn.edu.zju.se_g01.nfc_pay.tools.HttpConnector;
+import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static com.android.volley.VolleyLog.TAG;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
+    private final String mUrl = "http://localhost/userlogin.php";
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -193,8 +201,45 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            Map<String, String> paramsMap = new HashMap<>();
+            paramsMap.put("email", email);
+            paramsMap.put("password", password);
+
+            CookieRequest loginOrRegistReq = new CookieRequest(getApplicationContext(), Request.Method.POST,
+                    mUrl, paramsMap, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    //
+                    try {
+                        showProgress(false);
+                        int success = response.getInt("result");
+
+                        if (success == 0) { //登录成功
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(i);
+                        } else if (success == 1){   //登录失败，密码不正确
+                            mPasswordView.setError(getString(R.string.error_incorrect_password));
+                            mPasswordView.requestFocus();
+                        } else if (success == 2) {  //成功注册了一个新的账号并登录
+                            Toast.makeText(LoginActivity.this, "注册新账号成功", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(i);
+                        } else {
+                            Toast.makeText(LoginActivity.this, "服务器端返回的数据格式出了点问题", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (JSONException e) {
+                        Log.e(TAG, "json key not found err");
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.e(TAG, error.getMessage());
+                }
+            });
+            MySingleton.getInstance(getApplicationContext()).getRequestQueue().add(loginOrRegistReq);
+//            mAuthTask = new UserLoginTask(email, password);
+//            mAuthTask.execute((Void) null);
         }
     }
 
