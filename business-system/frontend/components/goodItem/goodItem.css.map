@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACK,2BAAkB;EACd,MAAM,EAAE,iBAAiB;AAE7B,gBAAO;EACH,OAAO,EAAE,IAAI;EACb,4BAAY;IACR,OAAO,EAAE,CAAC;IACV,gCAAI;MACA,KAAK,EAAE,IAAI;IAEf,wCAAY;MACR,KAAK,EAAE,OAAO;AAI1B,gBAAO;EACH,WAAW,EAAE,KAAK",
-"sources": ["goodItem.scss"],
-"names": [],
-"file": "goodItem.css"
-}
