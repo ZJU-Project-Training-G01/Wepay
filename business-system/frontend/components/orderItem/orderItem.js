@@ -16,8 +16,7 @@
                     }).then(function(data) {
                         $scope.orders = data.data.data;
                         $scope.total = $scope.orders.length;
-                        $scope.total = 22;
-                        $scope.hideIfEmpty = $scope.total < 10
+                        $scope.total = 22; //this line needs to be deleted when app is built
                         $scope.orders.forEach(function(val) {
                             val.total = val.amount * val.unitPrice;
                             val.unitPrice = setPricePrecision(val.unitPrice);

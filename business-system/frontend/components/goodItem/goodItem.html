@@ -1,15 +1,17 @@
-<div ng-repeat="good in goods" class="col-md-3">
-    <div class="panel panel-default" ng-class="{'good-item-chosen':hovering}" ng-mouseover="hovering=true" ng-mouseleave="hovering=false">
-        <div class="panel-body">
-            <img ng-src="{{good.imgUrl}}">
-            <div>
-                <span class="good-price">{{good.unitPrice}}</span>
-            </div>
-            <div>
-                <span>{{good.goodName}}</span>
+<div class="row">
+    <div ng-repeat="good in goods" class="col-md-3">
+        <div class="panel panel-default" ng-class="{'good-item-chosen':hovering}" ng-mouseover="hovering=true" ng-mouseleave="hovering=false">
+            <div class="panel-body">
+                <img ng-src="{{good.imgUrl}}">
+                <div>
+                    <span class="good-price">{{good.unitPrice}}</span>
+                </div>
+                <div>
+                    <span>{{good.goodName}}</span>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<paging ng-show='total>=16' page="pageNumber" page-size='pageSize' total='total' show-first-last="true" show-prev-next="true" paging-action='goodHttp(page)'>
-</paging>
+
+<paging ng-show="total>16" page="pageNumber" page-size="pageSize" total='total' show-first-last="true" show-prev-next="true" paging-action='goodHttp(page)'></paging>

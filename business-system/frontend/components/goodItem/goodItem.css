@@ -8,5 +8,7 @@ good-item .panel {
       width: 100%; }
     good-item .panel .panel-body .good-price {
       color: #ff0036; }
+good-item paging {
+  margin-left: 100px; }
 
 /*# sourceMappingURL=goodItem.css.map */
