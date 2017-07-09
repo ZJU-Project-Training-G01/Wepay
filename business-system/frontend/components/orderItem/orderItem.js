@@ -4,13 +4,20 @@
             function($scope, $http, setPricePrecision, orderServe) {
                 $scope.pageSize = 10;
                 $scope.pageNumber = 1;
-                let orderHttp = function(pageNumber) {
+                $scope.$on('receiveStatus', function(e, status) {
+                    $scope.status = status;
+                    $scope.orderHttp($scope.pageNumber);
+                });
+                $scope.orderHttp = function(pageNumber) {
                     $http({
                         method: 'post',
                         url: 'frontend/static/json/orders.json',
-                        data: { pageNumber: $scope.pageNumber, pageSize: $scope.pageSize }
+                        data: { pageNumber: pageNumber, pageSize: $scope.pageSize, status: $scope.status }
                     }).then(function(data) {
                         $scope.orders = data.data.data;
+                        $scope.total = $scope.orders.length;
+                        $scope.total = 22;
+                        $scope.hideIfEmpty = $scope.total < 10
                         $scope.orders.forEach(function(val) {
                             val.total = val.amount * val.unitPrice;
                             val.unitPrice = setPricePrecision(val.unitPrice);
@@ -21,7 +28,7 @@
                         });
                     }).then(function(data) {});
                 };
-                orderHttp($scope.pageNumber);
+                $scope.orderHttp($scope.pageNumber);
             }
         ]);
 })();

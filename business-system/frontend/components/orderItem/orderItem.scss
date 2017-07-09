@@ -28,4 +28,9 @@ order-item {
             }
         }
     }
+    paging{
+        .pagination>li>a { //覆盖掉bootstrap的默认样式
+            color:#337ab7;
+        }
+    }
 }

@@ -37,5 +37,5 @@
         </table>
     </div>
 </div>
-<paging page="pageNumber" page-size='pageSize' total='11' show-first-last="true" show-prev-next="true" pageAction='orderHttp(pageNumber)'>
+<paging ng-show='total>=10' page="pageNumber" page-size='pageSize' total='total' show-first-last="true" show-prev-next="true" paging-action='orderHttp(page)'  >
 </paging>

@@ -1,7 +1,13 @@
 (function() {
-    let order = angular.module('order', [])
+    let order = angular.module('order', ['ui.router'])
+        .controller('orderCtrl', ['$scope', function($scope) {
+            $scope.$on('transferStatus', function(e, status) {
+                $scope.$broadcast('receiveStatus', status);
+            })
+        }])
         .component('navs', {
             templateUrl: 'frontend/components/navs/navs.html',
+            controller: 'navsCtrl'
         })
         .component('orderItem', {
             templateUrl: 'frontend/components/orderItem/orderItem.html',
@@ -19,7 +25,7 @@
                 let hourLevel = 3600 * 1000;
                 let day = Math.floor(deadline / dayLevel);
                 let hour = ((deadline - day * dayLevel) / hourLevel).toFixed(0);
-                return day.toString() + '天' + hour.toString() + '时';
+                return '剩余' + day.toString() + '天' + hour.toString() + '时';
             }
         })
         .factory('orderServe', function(getDeadline) {

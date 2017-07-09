@@ -15,5 +15,7 @@ order-item .order-body .panel-body {
     order-item .order-body .panel-body table img {
       height: 80px;
       width: 100%; }
+order-item paging .pagination > li > a {
+  color: #337ab7; }
 
 /*# sourceMappingURL=orderItem.css.map */
