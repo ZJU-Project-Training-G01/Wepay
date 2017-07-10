@@ -14,7 +14,7 @@
                         $scope.goodDetail.unitPrice = setPricePrecision($scope.goodDetail.unitPrice);
                     }).then(function(data) {});
                 }
-                $scope.goodDetailHttp();
+                $scope.goodDetailHttp(3);
             }
         ])
 })();
