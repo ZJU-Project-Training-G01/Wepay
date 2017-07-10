@@ -16,7 +16,7 @@ public function getorders()
     $pageNumber = 1;
     $pageSize = 2;
     //$pageSize = $request->post('pageSize');
-    //$pageNumber = $request->post('pageNumber');
+    //$pageNumber = $request->post('pageNum');
     $result = Db::table('order')->chunk($pageSize * $pageNumber, function($orders){
         foreach ($orders as $order)
         {
