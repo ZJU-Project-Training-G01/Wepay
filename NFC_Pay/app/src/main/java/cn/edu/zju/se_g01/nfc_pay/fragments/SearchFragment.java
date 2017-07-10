@@ -1,5 +1,6 @@
 package cn.edu.zju.se_g01.nfc_pay.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -21,7 +22,9 @@ import cn.edu.zju.se_g01.nfc_pay.Good.Goods;
 import cn.edu.zju.se_g01.nfc_pay.Good.GoodsLab;
 import cn.edu.zju.se_g01.nfc_pay.Good.ImgDownloader;
 import cn.edu.zju.se_g01.nfc_pay.GoodActivity;
+import cn.edu.zju.se_g01.nfc_pay.MainActivity;
 import cn.edu.zju.se_g01.nfc_pay.R;
+import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
 
 /**
  * Created by dddong on 2017/7/5.
@@ -29,13 +32,13 @@ import cn.edu.zju.se_g01.nfc_pay.R;
 
 public class SearchFragment extends ListFragment {
     private final String TAG = "GoodsListFragment";
-    private ArrayList<Goods> goodsList;
+    public ArrayList<Goods> goodsList;
     ImgDownloader<ImageView> imgDownloaderThread;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        goodsList = GoodsLab.get(getActivity()).getGoodsList();
+        goodsList = GoodsLab.getInstance().getGoodsList();
 
         GoodAdapter adapter = new GoodAdapter(goodsList);
         setListAdapter(adapter);
@@ -101,7 +104,7 @@ public class SearchFragment extends ListFragment {
 
         //Start GoodActivity
         Intent i = new Intent(getActivity(), GoodActivity.class);
-        i.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getUuid());
+        i.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getGoodsId());
         startActivity(i);
     }
 

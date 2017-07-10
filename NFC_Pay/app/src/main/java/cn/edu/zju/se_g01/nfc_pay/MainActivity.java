@@ -1,6 +1,7 @@
 package cn.edu.zju.se_g01.nfc_pay;
 
 import android.content.Intent;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
@@ -16,13 +18,21 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.edu.zju.se_g01.nfc_pay.Good.Goods;
+import cn.edu.zju.se_g01.nfc_pay.Good.GoodsLab;
 import cn.edu.zju.se_g01.nfc_pay.fragments.HomeFragment;
 import cn.edu.zju.se_g01.nfc_pay.fragments.OrderListFragment;
 import cn.edu.zju.se_g01.nfc_pay.fragments.SearchFragment;
+import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
 
 public class MainActivity extends AppCompatActivity {
 
+    public NfcOperator nfcOperator = NfcOperator.getInstance();
+
+    public SearchFragment searchFragment;
+
     private final static String TAG = "Main_Activity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(ToolBarActivity.this , R.string.menu_notifications , Toast.LENGTH_SHORT).show();
 
                 if (menuItemId == R.id.user_info_item) {
-                    Toast.makeText(MainActivity.this , "个人信息" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(MainActivity.this, UserSettingActivity.class);
                     startActivity(i);
 
                 } else if (menuItemId == R.id.logout_item) {
-                    Toast.makeText(MainActivity.this , "item_02" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "item_02", Toast.LENGTH_SHORT).show();
 
                 }
                 return true;
@@ -78,18 +88,62 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.getTabAt(i).setIcon(icons[i]);
         }
         tabLayout.getTabAt(0).select();
+
+        //启动NfcOperator
+        nfcOperator.initNFCData(this);
+
+        //两种情况：1. app没在运行时，onCreate方法手动调用onNewIntent
+        onNewIntent(getIntent());
+    }
+
+    //2. app在运行时，自动调用onNewIntent
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Toast.makeText(getApplicationContext(), "on new intent", Toast.LENGTH_SHORT).show();
+
+
+        if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+            String msg = nfcOperator.processIntent(intent);
+            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+            Goods g = GoodsLab.getInstance().getGood(msg);
+            if (g != null) {
+//                searchFragment.startGoodActivity(this, msg);
+                Intent i = new Intent(this, GoodActivity.class);
+                i.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getGoodsId());
+                startActivity(i);
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "商品" + msg + "不存在!", Toast.LENGTH_SHORT).show();
+            }
+//            Log.d()
+
+
+//            List<Goods> list = searchFragment.goodsList;
+//            if (msg != null)
+//                for (int i = 0; i < list.size(); i++) {
+//                    Goods g = list.get(i);
+//                    if (g.getGoodsId().equals(msg)){
+//                        //Start GoodActivity
+//                        Intent intent1 = new Intent(this, GoodActivity.class);
+//                        intent1.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getUuid());
+//                        startActivity(intent1);
+//                    }
+//                }
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.insertNewFragment(new HomeFragment());
-        adapter.insertNewFragment(new SearchFragment());
+        adapter.insertNewFragment(searchFragment = new SearchFragment());
         adapter.insertNewFragment(new OrderListFragment());
         viewPager.setAdapter(adapter);
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
+
         public ViewPagerAdapter(FragmentManager manager) {
             super(manager);
         }
@@ -109,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
+
+    //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        MenuInflater inflater = this.getMenuInflater();
 //        inflater.inflate(R.menu.main_activity, menu);

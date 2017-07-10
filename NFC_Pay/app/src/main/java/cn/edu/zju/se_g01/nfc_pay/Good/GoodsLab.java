@@ -14,18 +14,18 @@ public class GoodsLab {
     private static GoodsLab goodsLab;
     private ArrayList<Goods> goodsList;
 
-    public static GoodsLab get(Context context) {
+    public static GoodsLab getInstance() {
         if (goodsLab == null) {
-            goodsLab = new GoodsLab(context);
+            goodsLab = new GoodsLab();
         }
         return goodsLab;
     }
 
-    private GoodsLab(Context context) {
+    private GoodsLab() {
         goodsList = new ArrayList<>();
         //TODO 连接服务器，获取所有商品
         for (int i = 0; i < 5; i++) {
-            Goods g = new Goods("01", "mobile phone "+String.valueOf(i),
+            Goods g = new Goods("000" + (i + 1), "mobile phone " + (i + 1),
                     500, "http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png", "none");
             goodsList.add(g);
         }
@@ -35,12 +35,24 @@ public class GoodsLab {
         return goodsList;
     }
 
-    public Goods getGoods(UUID uuid) {
+    public Goods getGoods(String goodId) {
         for (Goods g : goodsList) {
-            if (g.getUuid().equals(uuid)) {
+            if (g.getGoodsId().equals(goodId)) {
                 return g;
             }
         }
         return null;
+    }
+
+    /**
+     * getGood方法应单独请求服务器，而不应该查询goodsList列表，
+     * 因为NFC读取到商品id时，goodsList还没有下载好
+     * @param goodId
+     * @return
+     */
+    public Goods getGood(String goodId) {
+
+        //TODO 连接服务器，获取对应商品
+        return getGoods(goodId);
     }
 }
