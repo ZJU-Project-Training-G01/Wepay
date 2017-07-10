@@ -76,9 +76,12 @@ public class GoodActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_good);
 
-        UUID goodUuid = (UUID) getIntent().getSerializableExtra(EXTRA_GOOD_ID);
+        String goodId = (String) getIntent().getSerializableExtra(EXTRA_GOOD_ID);
 
-        g = GoodsLab.get(this).getGoods(goodUuid);
+//        g = GoodsLab.getInstance().getGood(goodId);
+        g = new Goods("0000", "商品名称",
+                0, "http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png", "none");
+
         Log.d("GoodActivity", "create good activity");
 
         img = (ImageView) findViewById(R.id.detail_good_img);
@@ -92,6 +95,9 @@ public class GoodActivity extends Activity {
         img.setImageResource(R.drawable.ic_default_img);
 //        imgDownloaderThread.queueImg(img, g.getImgUrl());
 
+        //TODO 请求商品用CookieRequest
+        g = GoodsLab.getInstance().getGood(goodId);
+        //TODO 下面的代码全部写在onResponse方法里
         new Thread() {
             @Override
             public void run() {

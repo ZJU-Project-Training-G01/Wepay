@@ -1,5 +1,6 @@
 package cn.edu.zju.se_g01.nfc_pay.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class SearchFragment extends ListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        goodsList = GoodsLab.get(getActivity()).getGoodsList();
+        goodsList = GoodsLab.getInstance().getGoodsList();
 
         GoodAdapter adapter = new GoodAdapter(goodsList);
         setListAdapter(adapter);
@@ -103,7 +104,7 @@ public class SearchFragment extends ListFragment {
 
         //Start GoodActivity
         Intent i = new Intent(getActivity(), GoodActivity.class);
-        i.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getUuid());
+        i.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getGoodsId());
         startActivity(i);
     }
 

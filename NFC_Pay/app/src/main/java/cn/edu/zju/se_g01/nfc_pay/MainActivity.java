@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.zju.se_g01.nfc_pay.Good.Goods;
+import cn.edu.zju.se_g01.nfc_pay.Good.GoodsLab;
 import cn.edu.zju.se_g01.nfc_pay.fragments.HomeFragment;
 import cn.edu.zju.se_g01.nfc_pay.fragments.OrderListFragment;
 import cn.edu.zju.se_g01.nfc_pay.fragments.SearchFragment;
@@ -99,9 +101,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Toast.makeText(getApplicationContext(), "on new intent", Toast.LENGTH_SHORT).show();
+
+
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
             String msg = nfcOperator.processIntent(intent);
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+            Goods g = GoodsLab.getInstance().getGood(msg);
+            if (g != null) {
+//                searchFragment.startGoodActivity(this, msg);
+                Intent i = new Intent(this, GoodActivity.class);
+                i.putExtra(GoodActivity.EXTRA_GOOD_ID, g.getGoodsId());
+                startActivity(i);
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "商品" + msg + "不存在!", Toast.LENGTH_SHORT).show();
+            }
+//            Log.d()
+
+
 //            List<Goods> list = searchFragment.goodsList;
 //            if (msg != null)
 //                for (int i = 0; i < list.size(); i++) {
