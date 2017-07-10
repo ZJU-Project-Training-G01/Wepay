@@ -1,22 +1,22 @@
 {
     "code": 0,
     "data": [{
-            "order_id": "222222",
-            "good_name": "书籍《他改变了世界》",
+            "orderId": "222222",
+            "goodName": "书籍《他改变了世界》",
             "amount": 2,
-            "unit_price": 1927,
-            "order_status": 0,
-            "order_time": "2017-7-08 19:30",
-            "img_url": "frontend/static/imgs/goodsImgs/good001.jpg"
+            "unitPrice": 1927,
+            "orderStatus": 1,
+            "orderTime": "2017-7-08 19:30",
+            "imgUrl": "frontend/static/imgs/goodsImgs/good001.jpg"
         },
         {
-            "order_id": "222222",
-            "good_name": "书籍《他改变了世界》",
+            "orderId": "222222",
+            "goodName": "书籍《他改变了世界》",
             "amount": 3,
-            "unit_price": 1927,
-            "order_status": 0,
-            "order_time": "2017-07-06 11:30",
-            "img_url": "frontend/static/imgs/goodsImgs/good002.jpg"
+            "unitPrice": 1927,
+            "orderStatus": 0,
+            "orderTime": "2017-07-06 11:30",
+            "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg"
 
         }
     ]

@@ -1,20 +1,33 @@
 (function() {
-    var orderItem = angular.module('orderItem', [])
-        .controller('orderItemCtrl', ['$scope', '$http', 'setPricePrecision', 'getDeadline', function($scope, $http, setPricePrecision, getDeadline) {
-            $scope.pageSize = 10;
-            $http({
-                method: 'post',
-                url: 'frontend/static/json/orders.json',
-                data: { pageSize: $scope.pageSize }
-            }).then(function(data) {
-                $scope.orders = data.data.data;
-                $scope.orders.forEach(function(val) {
-                    val.total = val.amount * val.unit_price;
-                    val.unit_price = setPricePrecision(val.unit_price);
-                    val.total = setPricePrecision(val.total);
-                    val.deadline = getDeadline(val.order_time);
+    angular.module('orderItem', [])
+        .controller('orderItemCtrl', ['$scope', '$http', 'setPricePrecision', 'orderServe',
+            function($scope, $http, setPricePrecision, orderServe) {
+                $scope.pageSize = 10;
+                $scope.pageNumber = 1;
+                $scope.$on('receiveStatus', function(e, status) {
+                    $scope.status = status;
+                    $scope.orderHttp($scope.pageNumber);
                 });
-            }).then(function(data) {});
-
-        }]);
+                $scope.orderHttp = function(pageNumber) {
+                    $http({
+                        method: 'post',
+                        url: 'frontend/static/json/orders.json',
+                        data: { pageNumber: pageNumber, pageSize: $scope.pageSize, status: $scope.status }
+                    }).then(function(data) {
+                        $scope.orders = data.data.data;
+                        $scope.total = $scope.orders.length;
+                        $scope.total = 22; //this line needs to be deleted when app is built
+                        $scope.orders.forEach(function(val) {
+                            val.total = val.amount * val.unitPrice;
+                            val.unitPrice = setPricePrecision(val.unitPrice);
+                            val.total = setPricePrecision(val.total);
+                            let { orderName, operation } = orderServe.orderStatusToName(val.orderStatus, val.orderTime);
+                            val.operation = operation;
+                            val.orderName = orderName;
+                        });
+                    }).then(function(data) {});
+                };
+                $scope.orderHttp($scope.pageNumber);
+            }
+        ]);
 })();
