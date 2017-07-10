@@ -1,7 +1,7 @@
 good-detail {
     .row {
         margin-left: 20px;
-        img {
+        .good-img {
             width: 100%;
         }
         .well {
@@ -11,6 +11,9 @@ good-detail {
                 font-size: 30px;
                 font-weight: bolder;
             }
+        }
+        .delele {
+            width: 10px;
         }
     }
 }
