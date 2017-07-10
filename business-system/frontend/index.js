@@ -9,6 +9,9 @@ app.component('navbar', {
     .component('good', {
         templateUrl: 'frontend/pages/good/good.html'
     })
+    .component('goodDetai', {
+        templateUrl: 'frontend/pages/goodDetail/goodDetai.html'
+    })
     .factory('setPricePrecision', function() {
         return function(originalPrice) {
             return '￥' + (originalPrice.toFixed(2)).toString();
@@ -41,8 +44,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
             template: '<goodDetai></goodDetail>',
             controller: 'goodDetail',
             resolve: {
-                goodDetail: function() {
-
+                goodDetail: function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['goodDetail']);
                 }
             }
         })
@@ -68,6 +71,12 @@ app.config(function($ocLazyLoadProvider) {
                     'frontend/components/goodItem/goodItem.js',
                     'frontend/components/goodSearch/goodSearch.css',
                     'frontend/components/goodSearch/goodSearch.js'
+                ]
+            },
+            {
+                name: 'goodDetail',
+                files: [
+                    'frontend/pages/goodDetail/goodDetail.js'
                 ]
             }
         ]
