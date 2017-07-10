@@ -16,10 +16,10 @@ class GetOrders extends Controller
     public function GetOrders()
     {
         $request = Request::instance();
-        $pageNumber = 1;
-        $pageSize = 2;
-        //$pageSize = $request->post('pageSize');
-        //$pageNumber = $request->post('pageNumber');
+        //$pageNumber = 1;
+        //$pageSize = 2;
+        $pageSize = $request->post('pageSize');
+        $pageNumber = $request->post('pageNumber');
         $recordP = ($pageNumber-1)*$pageSize;
         try {
             $data = Db::query('select * from orders limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize]);
