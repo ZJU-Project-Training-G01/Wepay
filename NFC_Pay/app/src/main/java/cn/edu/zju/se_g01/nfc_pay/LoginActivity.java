@@ -48,13 +48,13 @@ import cn.edu.zju.se_g01.nfc_pay.tools.HttpConnector;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 import static android.Manifest.permission.READ_CONTACTS;
-import static com.android.volley.VolleyLog.TAG;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
+    private final static String TAG = "LoginActivity";
     private final String mUrl = "http://localhost/userlogin.php";
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -205,6 +205,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             paramsMap.put("email", email);
             paramsMap.put("password", password);
 
+            //发起登录或注册请求
             CookieRequest loginOrRegistReq = new CookieRequest(getApplicationContext(), Request.Method.POST,
                     mUrl, paramsMap, new Response.Listener<JSONObject>() {
                 @Override
@@ -235,6 +236,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Log.e(TAG, error.getMessage());
+                    showProgress(false);
+                    Toast.makeText(LoginActivity.this, "网络出现问题", Toast.LENGTH_LONG).show();
                 }
             });
             MySingleton.getInstance(getApplicationContext()).getRequestQueue().add(loginOrRegistReq);

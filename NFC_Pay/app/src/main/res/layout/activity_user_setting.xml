@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:paddingTop="10dp">
 
         <ImageView
             android:layout_width="60dp"
@@ -44,11 +44,11 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
             android:background="@drawable/ic_chevron_right_white" />
     </RelativeLayout>
 
@@ -67,11 +67,26 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
             android:background="@drawable/ic_chevron_right_white" />
     </RelativeLayout>
+
+    <LinearLayout
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="退出登录" />
+    </LinearLayout>
 </LinearLayout>
