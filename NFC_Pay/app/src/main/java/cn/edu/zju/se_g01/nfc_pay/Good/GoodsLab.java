@@ -25,7 +25,7 @@ public class GoodsLab {
         goodsList = new ArrayList<>();
         //TODO 连接服务器，获取所有商品
         for (int i = 0; i < 5; i++) {
-            Goods g = new Goods("01", "mobile phone "+String.valueOf(i),
+            Goods g = new Goods("000" + (i + 1), "mobile phone " + (i + 1),
                     500, "http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png", "none");
             goodsList.add(g);
         }

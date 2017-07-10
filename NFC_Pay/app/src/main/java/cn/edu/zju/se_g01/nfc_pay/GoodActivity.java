@@ -2,8 +2,11 @@ package cn.edu.zju.se_g01.nfc_pay;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.nfc.FormatException;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,6 +31,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
@@ -41,6 +45,7 @@ import cn.edu.zju.se_g01.nfc_pay.Good.Goods;
 import cn.edu.zju.se_g01.nfc_pay.Good.GoodsLab;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
+import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
 
 /**
  * Created by Rexxar on 2017/7/8.
@@ -84,11 +89,10 @@ public class GoodActivity extends Activity {
         Button buyButton = (Button) findViewById(R.id.buy_button);
 
 
-
         img.setImageResource(R.drawable.ic_default_img);
 //        imgDownloaderThread.queueImg(img, g.getImgUrl());
 
-        new Thread(){
+        new Thread() {
             @Override
             public void run() {
                 try {
@@ -133,6 +137,26 @@ public class GoodActivity extends Activity {
 
             }
         });
+
+        nfcButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+                NfcOperator nfcOperator = NfcOperator.getInstance();
+                try {
+//                    String content = nfcOperator.read();
+//                    Toast.makeText(getApplicationContext(), "nfc:" + content, Toast.LENGTH_SHORT).show();
+
+                    nfcOperator.write(g.getGoodsId());
+                    Toast.makeText(getApplicationContext(), g.getGoodsId() + "写入成功", Toast.LENGTH_SHORT).show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+//                }
+            }
+        });
+
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

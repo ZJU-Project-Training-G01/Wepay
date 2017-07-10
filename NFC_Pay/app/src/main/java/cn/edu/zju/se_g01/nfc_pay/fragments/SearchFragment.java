@@ -21,7 +21,9 @@ import cn.edu.zju.se_g01.nfc_pay.Good.Goods;
 import cn.edu.zju.se_g01.nfc_pay.Good.GoodsLab;
 import cn.edu.zju.se_g01.nfc_pay.Good.ImgDownloader;
 import cn.edu.zju.se_g01.nfc_pay.GoodActivity;
+import cn.edu.zju.se_g01.nfc_pay.MainActivity;
 import cn.edu.zju.se_g01.nfc_pay.R;
+import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
 
 /**
  * Created by dddong on 2017/7/5.
@@ -29,7 +31,7 @@ import cn.edu.zju.se_g01.nfc_pay.R;
 
 public class SearchFragment extends ListFragment {
     private final String TAG = "GoodsListFragment";
-    private ArrayList<Goods> goodsList;
+    public ArrayList<Goods> goodsList;
     ImgDownloader<ImageView> imgDownloaderThread;
 
     @Override
