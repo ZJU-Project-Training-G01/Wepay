@@ -1,11 +1,11 @@
 (function() {
     angular.module('goodDetail', [])
-        .controller('goodDetail', ['$scope', '$http', '$routeParams', 'setPricePrecision',
-            function($scope, $http, $routeParams, setPricePrecision) {
+        .controller('goodDetail', ['$scope', '$http', '$stateParams', 'setPricePrecision',
+            function($scope, $http, $stateParams, setPricePrecision) {
                 console.log
                 $scope.goodDetailHttp = function(goodId) {
                     $http({
-                        url: 'frontend/static/json/goodDetai.json',
+                        url: 'frontend/static/json/goodDetail.json',
                         method: 'post',
                         data: { goodId: goodId }
                     }).then(function(data) {

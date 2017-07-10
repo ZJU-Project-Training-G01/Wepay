@@ -4,6 +4,7 @@
             function($scope, $http, setPricePrecision, orderServe) {
                 $scope.pageSize = 10;
                 $scope.pageNumber = 1;
+                $scope.status = -1;
                 $scope.$on('receiveStatus', function(e, status) {
                     $scope.status = status;
                     $scope.orderHttp($scope.pageNumber);

@@ -76,6 +76,7 @@ app.config(function($ocLazyLoadProvider) {
             {
                 name: 'goodDetail',
                 files: [
+                    'frontend/pages/goodDetail/goodDetail.css',
                     'frontend/pages/goodDetail/goodDetail.js',
                 ]
             }
