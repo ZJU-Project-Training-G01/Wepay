@@ -1,11 +1,20 @@
 (function() {
     angular.module('goodDetail', [])
-        .controller('goodDetail', ['$scope', function($scope) {
-            console.log('zz');
-        }])
-        .component('goodItemDetail', {
-            templateUrl: 'frontend/components/goodItemDetail/goodItemDetail.html',
-            controller: 'goodItemDetailController'
-        });
-
+        .controller('goodDetail', ['$scope', '$http', '$routeParams', 'setPricePrecision',
+            function($scope, $http, $routeParams, setPricePrecision) {
+                console.log
+                $scope.goodDetailHttp = function(goodId) {
+                    $http({
+                        url: 'frontend/static/json/goodDetai.json',
+                        method: 'post',
+                        data: { goodId: goodId }
+                    }).then(function(data) {
+                        $scope.goodDetail = data.data.data;
+                        console.log($scope.goodDetail);
+                        $scope.goodDetail.unitPrice = setPricePrecision($scope.goodDetail.unitPrice);
+                    }).then(function(data) {});
+                }
+                $scope.goodDetailHttp();
+            }
+        ])
 })();

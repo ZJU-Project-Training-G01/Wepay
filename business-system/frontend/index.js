@@ -42,7 +42,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         })
         .state('goodDetail', {
             url: '/good/{goodId}',
-            template: '<goodDetail></goodDetail>',
+            template: '<good-detail></good-detail>',
             resolve: {
                 goodDetail: function($ocLazyLoad) {
                     return $ocLazyLoad.load(['goodDetail']);
@@ -77,7 +77,6 @@ app.config(function($ocLazyLoadProvider) {
                 name: 'goodDetail',
                 files: [
                     'frontend/pages/goodDetail/goodDetail.js',
-                    'frontend/components/goodItemDetail/goodItemDetail.js'
                 ]
             }
         ]
