@@ -1,14 +1,17 @@
 (function() {
     angular.module('goodItem', [])
-        .controller('goodItemCtrl', ['$scope', '$http', 'setPricePrecision',
-            function($scope, $http, setPricePrecision) {
+        .controller('goodItemCtrl', ['$scope', '$http', '$location', 'setPricePrecision',
+            function($scope, $http, $location, setPricePrecision) {
                 $scope.pageSize = 16;
                 $scope.pageNumber = 1;
-                $scope.goodHttp = function() {
+                $scope.toDetail = function(good) {
+                    $location.path('good/' + good.goodId);
+                };
+                $scope.goodHttp = function(pageNumber) {
                     $http({
                         url: 'frontend/static/json/goods.json',
                         method: 'post',
-                        data: { pageSize: $scope.pageSize, pageNumber: $scope.pageNumber }
+                        data: { pageSize: $scope.pageSize, pageNumber: pageNumber }
                     }).then(function(data) {
                         $scope.goods = data.data.data;
                         $scope.total = $scope.goods.length;
@@ -17,8 +20,8 @@
                             val.unitPrice = setPricePrecision(val.unitPrice);
                         });
                     }).then(function(data) {});
-                }
-                $scope.goodHttp();
+                };
+                $scope.goodHttp($scope.pageNumber);
             }
         ])
 })();

@@ -36,6 +36,16 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 }
             }
         })
+        .state('goodDetail', {
+            url: '/good/{goodId}',
+            template: '<goodDetai></goodDetail>',
+            controller: 'goodDetail',
+            resolve: {
+                goodDetail: function() {
+
+                }
+            }
+        })
 }])
 app.config(function($ocLazyLoadProvider) {
     $ocLazyLoadProvider.config({
