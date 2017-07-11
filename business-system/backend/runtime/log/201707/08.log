@@ -1,0 +1,1223 @@
+---------------------------------------------------------------
+[ 2017-07-08T12:12:13+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.025540s][吞吐率：39.15req/s] [内存消耗：1,857.23kb] [文件加载：27]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; pgv_si=s8565772288',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-08T12:12:52+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.028617s][吞吐率：34.94req/s] [内存消耗：1,884.34kb] [文件加载：28]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; pgv_si=s8565772288',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected 'public' (T_PUBLIC)[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:13]
+---------------------------------------------------------------
+[ 2017-07-08T12:13:32+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.025619s][吞吐率：39.03req/s] [内存消耗：1,954.29kb] [文件加载：30]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; pgv_si=s8565772288',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-08T12:14:07+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.072515s][吞吐率：13.79req/s] [内存消耗：3,622.84kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; pgv_si=s8565772288',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011200s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `order` [ RunTime:0.001231s ]
+[ sql ] [ SQL ] SELECT * FROM `order` ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 2 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.022710s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 4 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000573s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:28:39+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.054227s][吞吐率：18.44req/s] [内存消耗：3,622.51kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009957s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `order` [ RunTime:0.001630s ]
+[ sql ] [ SQL ] SELECT * FROM `order` ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 2 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 4 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000496s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:28:56+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.046968s][吞吐率：21.29req/s] [内存消耗：3,622.71kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010129s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `order` [ RunTime:0.001157s ]
+[ sql ] [ SQL ] SELECT * FROM `order` ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 2 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 4 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000392s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:30:06+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.047652s][吞吐率：20.99req/s] [内存消耗：3,622.71kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001115s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `order` [ RunTime:0.001117s ]
+[ sql ] [ SQL ] SELECT * FROM `order` ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 2 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SELECT * FROM `order` WHERE  `order_id` > 4 ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000477s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:31:19+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.058977s][吞吐率：16.96req/s] [内存消耗：3,715.87kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010441s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `order` [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT * FROM `order` ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000737s ]
+[ error ] [8]未定义变量: order[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:23]
+---------------------------------------------------------------
+[ 2017-07-08T14:31:50+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.060016s][吞吐率：16.66req/s] [内存消耗：3,716.13kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010768s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `order` [ RunTime:0.001783s ]
+[ sql ] [ SQL ] SELECT * FROM `order` ORDER BY `order_id`  asc LIMIT 2 [ RunTime:0.000576s ]
+[ error ] [8]未定义数组索引: orderId[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:24]
+---------------------------------------------------------------
+[ 2017-07-08T14:42:17+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.031976s][吞吐率：31.27req/s] [内存消耗：1,895.72kb] [文件加载：28]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected ';'[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:24]
+---------------------------------------------------------------
+[ 2017-07-08T14:42:29+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.054961s][吞吐率：18.19req/s] [内存消耗：3,623.55kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010512s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001331s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000629s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:43:23+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.056908s][吞吐率：17.57req/s] [内存消耗：3,715.29kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010590s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.002003s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000554s ]
+[ error ] [8]未定义变量: ooders[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:26]
+---------------------------------------------------------------
+[ 2017-07-08T14:43:33+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.045751s][吞吐率：21.86req/s] [内存消耗：3,715.27kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001298s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001623s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000459s ]
+[ error ] [8]未定义变量: oders[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:26]
+---------------------------------------------------------------
+[ 2017-07-08T14:43:42+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.060240s][吞吐率：16.60req/s] [内存消耗：3,721.51kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010767s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.002084s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000651s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000647s ]
+[ error ] [8]未定义变量: result[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:28]
+---------------------------------------------------------------
+[ 2017-07-08T14:44:26+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.053910s][吞吐率：18.55req/s] [内存消耗：3,622.48kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009832s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001836s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000543s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:47:13+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.029548s][吞吐率：33.84req/s] [内存消耗：1,895.29kb] [文件加载：28]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected '$request' (T_VARIABLE), expecting '('[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:23]
+---------------------------------------------------------------
+[ 2017-07-08T14:47:34+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.057823s][吞吐率：17.29req/s] [内存消耗：3,722.20kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010730s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001791s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000560s ]
+[ error ] [8]未定义变量: result[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:29]
+---------------------------------------------------------------
+[ 2017-07-08T14:47:59+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.052006s][吞吐率：19.23req/s] [内存消耗：3,623.26kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010573s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001436s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000654s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:49:01+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.028446s][吞吐率：35.15req/s] [内存消耗：1,895.79kb] [文件加载：28]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ error ] [4]语法错误: unexpected '}'[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:26]
+---------------------------------------------------------------
+[ 2017-07-08T14:49:17+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.058236s][吞吐率：17.17req/s] [内存消耗：3,728.41kb] [文件加载：42]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010529s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001686s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000644s ]
+[ error ] [1]Cannot use object of type think\Request as array[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:25]
+---------------------------------------------------------------
+[ 2017-07-08T14:49:34+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.052629s][吞吐率：19.00req/s] [内存消耗：3,623.70kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010209s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001635s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000443s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:54:38+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.049907s][吞吐率：20.04req/s] [内存消耗：3,623.84kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010383s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.002248s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000380s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:54:40+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.050762s][吞吐率：19.70req/s] [内存消耗：3,623.50kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010795s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000687s ]
+---------------------------------------------------------------
+[ 2017-07-08T14:55:07+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.055310s][吞吐率：18.08req/s] [内存消耗：3,623.50kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010031s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `myOrder` [ RunTime:0.001989s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 2 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT * FROM `myOrder` WHERE  `orderId` > 4 ORDER BY `orderId`  asc LIMIT 2 [ RunTime:0.000620s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:06:37+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.034378s][吞吐率：29.09req/s] [内存消耗：2,384.62kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]Use of undefined constant pageSize - assumed 'pageSize'[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:22]
+---------------------------------------------------------------
+[ 2017-07-08T15:07:36+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.033574s][吞吐率：29.78req/s] [内存消耗：2,661.12kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001222s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.001152s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:14:21+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.046121s][吞吐率：21.68req/s] [内存消耗：2,661.05kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011276s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000742s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:14:31+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.042796s][吞吐率：23.37req/s] [内存消耗：2,768.13kb] [文件加载：39]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001091s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000819s ]
+[ error ] [1]Call to undefined method app\back\controller\GetOrders::ajaxReturn()[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:24]
+---------------------------------------------------------------
+[ 2017-07-08T15:14:55+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.049810s][吞吐率：20.08req/s] [内存消耗：2,768.13kb] [文件加载：39]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010742s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000410s ]
+[ error ] [1]Call to undefined method app\back\controller\GetOrders::ajaxReturn()[D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php:24]
+---------------------------------------------------------------
+[ 2017-07-08T15:20:46+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.039740s][吞吐率：25.16req/s] [内存消耗：2,734.43kb] [文件加载：37]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001221s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000608s ]
+[ error ] [0]variable type error： array[D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2017-07-08T15:20:49+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.046962s][吞吐率：21.29req/s] [内存消耗：2,734.43kb] [文件加载：37]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010620s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000845s ]
+[ error ] [0]variable type error： array[D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2017-07-08T15:20:51+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.048822s][吞吐率：20.48req/s] [内存消耗：2,734.43kb] [文件加载：37]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010549s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000521s ]
+[ error ] [0]variable type error： array[D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2017-07-08T15:21:16+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.038778s][吞吐率：25.79req/s] [内存消耗：2,733.77kb] [文件加载：37]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001114s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000571s ]
+[ error ] [0]variable type error： array[D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2017-07-08T15:22:03+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.035513s][吞吐率：28.16req/s] [内存消耗：2,661.12kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001314s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000925s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:22:05+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.045086s][吞吐率：22.18req/s] [内存消耗：2,661.46kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011481s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.001205s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:24:57+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.046141s][吞吐率：21.67req/s] [内存消耗：2,661.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010671s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000800s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:25:22+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.035325s][吞吐率：28.31req/s] [内存消耗：2,661.40kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001170s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.001191s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:25:26+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.032191s][吞吐率：31.06req/s] [内存消耗：2,661.64kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001244s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000485s ]
+---------------------------------------------------------------
+[ 2017-07-08T15:25:30+08:00 ] ::1 ::1 GET /business-system/backend/tp5/public/back/get_orders/getorders
+[ info ] localhost/business-system/backend/tp5/public/back/get_orders/getorders [运行时间：0.031872s][吞吐率：31.38req/s] [内存消耗：2,661.64kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\business-system\backend\tp5\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'back',
+    1 => 'get_orders',
+    2 => 'getorders',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\back\controller\GetOrders->getorders[ D:\wampServer\wamp64\www\business-system\backend\tp5\application\back\controller\GetOrders.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000880s ] mysql:dbname=wepay;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] select * from myOrder limit '0','2' [ RunTime:0.000416s ]
