@@ -18,25 +18,25 @@ class EditUserInfo extends Controller
     {
         $request = Request::instance();
 
-        //$buyerName = $request->post('userName');
-        //$realName = $request->post('realName');
-        //$phoneNumber = $request->post('phone');
-        //$address = $request->post('address');
-        $buyerName = '小敏';
+        $buyerName = $request->post('userName');
+        $realName = $request->post('realName');
+        $phoneNumber = $request->post('phone');
+        $address = $request->post('address');
+        /*$buyerName = '小敏';
         $realName = 'xiaoming';
         $phoneNumber = 10016;
-        $address = 'baita';
+        $address = 'baita';*/
 
 
-        /*if($request->session('login')=='false')
+        if($request->session('login')=='false')
         {
             //返回上个页面；
             $code = 1;
             $msg = '用户未登录';
             $data = NULL;
-        }*/
-        //$buyerId = $request->session('buyer_id');
-        $buyerId = 1;
+        }
+        $buyerId = $request->session('buyer_id');
+        //$buyerId = 1;
         try{
             $data = Db::query('update buyer set buyerName = :buyerName, realName = :realName, phoneNumber = :phoneNumber, address = :address where buyerId = :buyerId',
                 ['buyerName'=>$buyerName, 'realName'=>$realName, 'phoneNumber'=>$phoneNumber, 'address'=>$address, 'buyerId'=>$buyerId]);

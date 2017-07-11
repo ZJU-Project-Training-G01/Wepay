@@ -17,10 +17,10 @@ class UserloginReg extends Controller
     public function UserLoginReg()
     {
         $request = Request::instance();
-        //$email = $request->post('email');
-        //$password = $request->post('password');
-        $email = 'kkk';
-        $password = '123';
+        $email = $request->post('email');
+        $password = $request->post('password');
+        /*$email = 'dsaa';
+        $password = '123';*/
         $data = array();
         $data1 = Db::query('select buyerId from buyer where email = :email and buyerPassword = :password',['email'=>$email, 'password'=>$password]);
         //print_r($data1);
@@ -49,6 +49,7 @@ class UserloginReg extends Controller
                 Session::set('buyer_id', $data3[0]['buyerId']);
             }
         }
+        $data['result'] = $result;
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
     }
 }

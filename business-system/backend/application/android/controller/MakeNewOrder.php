@@ -16,14 +16,14 @@ class MakeNewOrder extends  Controller
     public function MakeNewOrder()
     {
         $request = Request::instance();
-        /*$goodId = $request->post('good_id');
+        $goodId = $request->post('good_id');
         $amount = $request->post('amount');
         $unitPrice = $request->post('unit_price');
-        $buyerId = $request->session('buyer_id');*/
-        $goodId = 1;
+        $buyerId = $request->session('buyer_id');
+        /*$goodId = 1;
         $amount = 3;
         $unitPrice = 3.5;
-        $buyerId = 3;
+        $buyerId = 3;*/
         $orderTime = date('Y-m-d');
 
         $res = array();

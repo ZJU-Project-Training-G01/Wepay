@@ -15,8 +15,8 @@ class GetUserInfo extends Controller
     public function GetUserInfo()
     {
         $request = Request::instance();
-        //$buyerId = $request->session('buyer_id');
-        $buyerId = 1 ;
+        $buyerId = $request->session('buyer_id');
+        //$buyerId = 1 ;
         try {
             $data = Db::query('select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = :buyerId',['buyerId' => $buyerId]);
             //print_r($data);
