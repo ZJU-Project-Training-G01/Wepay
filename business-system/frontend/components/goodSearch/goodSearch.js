@@ -5,7 +5,7 @@
              function($scope, $http) {
                  $scope.search = function() {
                      let keyword = $scope.keyword;
-                     $scope.$emit('transferKeyword');
+                     $scope.$emit('transferKeyword', keyword);
                  }
              }
          ])

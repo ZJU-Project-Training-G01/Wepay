@@ -7,10 +7,10 @@
                 $scope.toDetail = function(good) {
                     $location.path('good/' + good.goodId);
                 };
-                $scope.$on('receiveStatus', function(e, keyword) {
-                    $s
+                $scope.$on('receiveKeyword', function(e, keyword) {
+                    $scope.goodHttp($scope.pageNumber, keyword);
                 })
-                $scope.goodHttp = function(pageNumber) {
+                $scope.goodHttp = function(pageNumber, keyword) {
                     $http({
                         url: 'frontend/static/json/goods.json',
                         method: 'post',
