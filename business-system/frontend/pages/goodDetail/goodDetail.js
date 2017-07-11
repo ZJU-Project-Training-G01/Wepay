@@ -4,7 +4,9 @@
             function($scope, $http, $stateParams, setPricePrecision, $location) {
                 $scope.ifFeedback = false;
                 $scope.goodId = $stateParams.goodId;
-                $scope.update = function() {}
+                $scope.update = function() {
+                    $location.path('goodUpload/update')
+                }
                 $scope.toGoods = function() {
                     $location.path('good')
                 }

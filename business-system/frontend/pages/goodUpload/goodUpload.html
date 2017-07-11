@@ -1,7 +1,7 @@
 <div class="well bs-component">
     <form class="form-horizontal">
         <fieldset>
-            <legend>上架新商品</legend>
+            <legend>{{title}}</legend>
             <div class="form-group">
                 <label class="col-lg-2 control-label">商品名称</label>
                 <div class="col-lg-10">
@@ -29,13 +29,13 @@
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button type="reset" class="btn btn-default">重置</button>
-                    <button class="btn btn-primary" ng-click="upload()">上架</button>
+                    <button class="btn btn-primary" ng-click="upload()">{{sure}}</button>
                 </div>
             </div>
             <div class="feedback" ng-show="ifFeedback">
                 <div class='col-lg-10 col-lg-offset-2'>
-                    <div><img src="frontend/static/icons/success.svg">上架成功!</div>
-                    <div>您可以<span ng-click='toDetail()'>查看商品详情？</span><span ng-click="continue()">继续上架商品?</span></div>
+                    <div><img src="frontend/static/icons/success.svg">{{operation}}成功!</div>
+                    <div>您可以<span ng-click='toDetail()'>查看商品详情？</span><span ng-click="continue()">继续{{operation}}商品?</span></div>
                 </div>
             </div>
         </fieldset>

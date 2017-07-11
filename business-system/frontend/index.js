@@ -62,6 +62,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 }
             }
         })
+        .state('goodUpdate', {
+            url: '/goodUpload/{ifUpdate}',
+            template: '<good-upload></good-upload>',
+            resolve: {
+                goodUpload: function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['goodUpload'])
+                }
+            }
+        })
 }])
 app.config(function($ocLazyLoadProvider) {
     $ocLazyLoadProvider.config({
