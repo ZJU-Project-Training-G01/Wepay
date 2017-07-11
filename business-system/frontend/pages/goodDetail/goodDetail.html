@@ -7,14 +7,17 @@
         <div class="well well-lg">
             价格:<span>{{goodDetail.unitPrice}}</span>
         </div>
-        <div>
+        <div class="well well-lg">
             库存：{{goodDetail.amount}}
         </div>
         <div class="well well-lg">
             商品信息:<br><br> {{goodDetail.goodInfo}}
         </div>
-        <div>
-            <img class='delete' ng-src="frontend/static/icon/delete.svg">
+        <div class="well well-lg">
+            操作:
+            <!--<img class='delete' ng-src="frontend/static/icon/delete.svg">-->
+            <div><button class="btn btn-primary">下架该商品</button></div>
+            <div><button class="btn btn-primary">编辑该商品</button></div>
         </div>
     </div>
 </div>

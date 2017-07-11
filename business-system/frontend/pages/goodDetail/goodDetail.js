@@ -10,7 +10,6 @@
                         data: { goodId: goodId }
                     }).then(function(data) {
                         $scope.goodDetail = data.data.data;
-                        console.log($scope.goodDetail);
                         $scope.goodDetail.unitPrice = setPricePrecision($scope.goodDetail.unitPrice);
                     }).then(function(data) {});
                 }
