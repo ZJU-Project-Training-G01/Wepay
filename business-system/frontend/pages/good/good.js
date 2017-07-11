@@ -1,7 +1,11 @@
 (function() {
-    angular.module('good', ['ui.router'])
+    angular.module('good', [])
         .controller('good', ['$scope',
-            function($scope) {}
+            function($scope) {
+                $scope.$on('transferKeyword', function(e, keyword) {
+                    $scope.$broadcast('receiveKeyword', status);
+                })
+            }
         ])
         .component('goodItem', {
             templateUrl: 'frontend/components/goodItem/goodItem.html',

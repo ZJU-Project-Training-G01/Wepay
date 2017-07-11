@@ -4,8 +4,8 @@
          .controller('goodSearchCtrl', ['$scope', '$http',
              function($scope, $http) {
                  $scope.search = function() {
-                     let keyword =
-                         $scope.$emit('transferKeyword')
+                     let keyword = $scope.keyword;
+                     $scope.$emit('transferKeyword');
                  }
              }
          ])
