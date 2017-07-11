@@ -3,7 +3,7 @@
         .controller('good', ['$scope',
             function($scope) {
                 $scope.$on('transferKeyword', function(e, keyword) {
-                    $scope.$broadcast('receiveKeyword', status);
+                    $scope.$broadcast('receiveKeyword', keyword);
                 })
             }
         ])
