@@ -1,10 +1,12 @@
 (function() {
     angular.module('order', [])
-        .controller('order', ['$scope', function($scope) {
-            $scope.$on('transferStatus', function(e, status) {
-                $scope.$broadcast('receiveStatus', status);
-            });
-        }])
+        .controller('order', ['$scope',
+            function($scope) {
+                $scope.$on('transferStatus', function(e, status) {
+                    $scope.$broadcast('receiveStatus', status);
+                });
+            }
+        ])
         .component('navs', {
             templateUrl: 'frontend/components/navs/navs.html',
             controller: 'navsCtrl'

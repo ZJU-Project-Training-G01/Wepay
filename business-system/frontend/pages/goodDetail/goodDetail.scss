@@ -1,0 +1,19 @@
+good-detail {
+    .row {
+        margin-left: 20px;
+        .good-img {
+            width: 100%;
+        }
+        .well {
+            margin-top: 20px;
+            span {
+                color: #FF0036;
+                font-size: 30px;
+                font-weight: bolder;
+            }
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}

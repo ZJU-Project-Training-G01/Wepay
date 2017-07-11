@@ -4,6 +4,7 @@
             function($scope, $http, setPricePrecision, orderServe) {
                 $scope.pageSize = 10;
                 $scope.pageNumber = 1;
+                $scope.status = -1;
                 $scope.$on('receiveStatus', function(e, status) {
                     $scope.status = status;
                     $scope.orderHttp($scope.pageNumber);
@@ -11,7 +12,7 @@
                 $scope.orderHttp = function(pageNumber) {
                     $http({
                         method: 'post',
-                        url: 'frontend/static/json/orders.json',
+                        url: 'backend/public/SellersGetOrders',
                         data: { pageNumber: pageNumber, pageSize: $scope.pageSize, status: $scope.status }
                     }).then(function(data) {
                         $scope.orders = data.data.data;
@@ -25,7 +26,9 @@
                             val.operation = operation;
                             val.orderName = orderName;
                         });
-                    }).then(function(data) {});
+                    }).then(function(data) {
+                        console.log(data);
+                    });
                 };
                 $scope.orderHttp($scope.pageNumber);
             }

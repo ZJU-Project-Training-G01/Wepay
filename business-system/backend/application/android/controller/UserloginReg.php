@@ -23,7 +23,7 @@ class UserloginReg extends Controller
         $password = '123';
         $data = array();
         $data1 = Db::query('select buyerId from buyer where email = :email and buyerPassword = :password',['email'=>$email, 'password'=>$password]);
-        print_r($data1);
+        //print_r($data1);
         if(count($data1)!=0)
         {
             $result = 0;

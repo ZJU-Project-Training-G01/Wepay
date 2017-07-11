@@ -1,6 +1,12 @@
 (function() {
     angular.module('good', [])
-        .controller('good', ['$scope', function($scope) {}])
+        .controller('good', ['$scope',
+            function($scope) {
+                $scope.$on('transferKeyword', function(e, keyword) {
+                    $scope.$broadcast('receiveKeyword', keyword);
+                })
+            }
+        ])
         .component('goodItem', {
             templateUrl: 'frontend/components/goodItem/goodItem.html',
             controller: 'goodItemCtrl'
@@ -9,4 +15,6 @@
             templateUrl: 'frontend/components/goodSearch/goodSearch.html',
             controller: 'goodSearchCtrl'
         });
+
+
 })();

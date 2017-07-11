@@ -1,0 +1,14 @@
+good-detail .row {
+  margin-left: 20px; }
+  good-detail .row .good-img {
+    width: 100%; }
+  good-detail .row .well {
+    margin-top: 20px; }
+    good-detail .row .well span {
+      color: #FF0036;
+      font-size: 30px;
+      font-weight: bolder; }
+  good-detail .row .btn {
+    margin-top: 20px; }
+
+/*# sourceMappingURL=goodDetail.css.map */
