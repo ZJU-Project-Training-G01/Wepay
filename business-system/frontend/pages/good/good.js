@@ -1,6 +1,8 @@
 (function() {
-    angular.module('good', [])
-        .controller('good', ['$scope', function($scope) {}])
+    angular.module('good', ['ui.router'])
+        .controller('good', ['$scope',
+            function($scope) {}
+        ])
         .component('goodItem', {
             templateUrl: 'frontend/components/goodItem/goodItem.html',
             controller: 'goodItemCtrl'
@@ -9,4 +11,6 @@
             templateUrl: 'frontend/components/goodSearch/goodSearch.html',
             controller: 'goodSearchCtrl'
         });
+
+
 })();

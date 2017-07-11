@@ -4,13 +4,16 @@ app.component('navbar', {
         templateUrl: 'frontend/components/navbar/navbar.html',
     })
     .component('order', {
-        templateUrl: 'frontend/pages/order/order.html'
+        templateUrl: 'frontend/pages/order/order.html',
+        controller: 'order'
     })
     .component('good', {
-        templateUrl: 'frontend/pages/good/good.html'
+        templateUrl: 'frontend/pages/good/good.html',
+        controller: 'good'
     })
-    .component('goodDetai', {
-        templateUrl: 'frontend/pages/goodDetail/goodDetai.html'
+    .component('goodDetail', {
+        templateUrl: 'frontend/pages/goodDetail/goodDetail.html',
+        controller: 'goodDetail'
     })
     .factory('setPricePrecision', function() {
         return function(originalPrice) {
@@ -22,7 +25,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $stateProvider.state('order', {
             url: '/order',
             template: '<order></order>',
-            controller: 'order',
             resolve: {
                 order: function($ocLazyLoad) {
                     return $ocLazyLoad.load(['order']);
@@ -32,7 +34,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         .state('good', {
             url: '/good',
             template: '<good></good>',
-            controller: 'good',
             resolve: {
                 good: function($ocLazyLoad) {
                     return $ocLazyLoad.load(['good'])
@@ -41,8 +42,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         })
         .state('goodDetail', {
             url: '/good/{goodId}',
-            template: '<goodDetai></goodDetail>',
-            controller: 'goodDetail',
+            template: '<good-detail></good-detail>',
             resolve: {
                 goodDetail: function($ocLazyLoad) {
                     return $ocLazyLoad.load(['goodDetail']);
@@ -76,7 +76,8 @@ app.config(function($ocLazyLoadProvider) {
             {
                 name: 'goodDetail',
                 files: [
-                    'frontend/pages/goodDetail/goodDetail.js'
+                    'frontend/pages/goodDetail/goodDetail.css',
+                    'frontend/pages/goodDetail/goodDetail.js',
                 ]
             }
         ]
