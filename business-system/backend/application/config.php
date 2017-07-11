@@ -238,4 +238,5 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+    'SHOW_PAGE_TRACE' =>true,
 ];
