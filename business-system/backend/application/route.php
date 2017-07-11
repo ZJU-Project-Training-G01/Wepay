@@ -18,5 +18,11 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
     'SellersGetOrders' => 'back/GetOrders/GetOrders',
-
+    'GetOrders' => 'android/GetOrders/GetOrders',
+    'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',
+    'EditUserInfo' => 'android/EditUserInfo/EditUserInfo',
+    'UserloginReg' => 'android/UserloginReg/UserloginReg',
+    'GetGoodList' => 'android/GetGoodList/GetGoodList',
+    'MakeNewOrder' => 'android/MakeNewOrder/MakeNewOrder',
+    'GetGood' => 'android/GetGood/GetGood',
 ];

@@ -14,7 +14,7 @@ use think\Session;
 
 class UserloginReg extends Controller
 {
-    public function UserLoginReg()
+    public function UserloginReg()
     {
         $request = Request::instance();
         $email = $request->post('email');
