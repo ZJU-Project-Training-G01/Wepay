@@ -7,11 +7,14 @@
                 $scope.toDetail = function(good) {
                     $location.path('good/' + good.goodId);
                 };
+                $scope.$on('receiveStatus', function(e, keyword) {
+                    $s
+                })
                 $scope.goodHttp = function(pageNumber) {
                     $http({
                         url: 'frontend/static/json/goods.json',
                         method: 'post',
-                        data: { pageSize: $scope.pageSize, pageNumber: pageNumber }
+                        data: { pageSize: $scope.pageSize, pageNumber: pageNumber, keyword: keyword }
                     }).then(function(data) {
                         $scope.goods = data.data.data;
                         $scope.total = $scope.goods.length;
