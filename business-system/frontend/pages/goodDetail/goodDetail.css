@@ -4,11 +4,21 @@ good-detail .row {
     width: 100%; }
   good-detail .row .well {
     margin-top: 20px; }
-    good-detail .row .well span {
-      color: #FF0036;
-      font-size: 30px;
-      font-weight: bolder; }
-  good-detail .row .btn {
+  good-detail .row .item span {
+    color: #FF0036;
+    font-size: 30px;
+    font-weight: bolder; }
+  good-detail .row .item {
+    margin-bottom: 20px; }
+  good-detail .row .update {
+    margin-left: 15px; }
+  good-detail .row .feedback {
     margin-top: 20px; }
+    good-detail .row .feedback img {
+      height: 30px;
+      margin-right: 10px; }
+    good-detail .row .feedback span {
+      color: #2d8cba;
+      margin: 0 5px; }
 
 /*# sourceMappingURL=goodDetail.css.map */

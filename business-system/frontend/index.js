@@ -15,6 +15,10 @@ app.component('navbar', {
         templateUrl: 'frontend/pages/goodDetail/goodDetail.html',
         controller: 'goodDetail'
     })
+    .component('goodUpload', {
+        templateUrl: 'frontend/pages/goodUpload/goodUpload.html',
+        controller: 'goodUpload'
+    })
     .factory('setPricePrecision', function() {
         return function(originalPrice) {
             return '￥' + (originalPrice.toFixed(2)).toString();
@@ -49,6 +53,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
                 }
             }
         })
+        .state('goodUpload', {
+            url: '/goodUpload',
+            template: '<good-upload></good-upload>',
+            resolve: {
+                goodUpload: function($ocLazyLoad) {
+                    return $ocLazyLoad.load(['goodUpload'])
+                }
+            }
+        })
 }])
 app.config(function($ocLazyLoadProvider) {
     $ocLazyLoadProvider.config({
@@ -78,6 +91,13 @@ app.config(function($ocLazyLoadProvider) {
                 files: [
                     'frontend/pages/goodDetail/goodDetail.css',
                     'frontend/pages/goodDetail/goodDetail.js',
+                ]
+            },
+            {
+                name: 'goodUpload',
+                files: [
+                    'frontend/pages/goodUpload/goodUpload.css',
+                    'frontend/pages/goodUpload/goodUpload.js'
                 ]
             }
         ]

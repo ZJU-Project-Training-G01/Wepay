@@ -12,7 +12,7 @@
                 $scope.orderHttp = function(pageNumber) {
                     $http({
                         method: 'post',
-                        url: 'backend/public/SellersGetOrders',
+                        url: 'frontend/static/jsons/orders.json',
                         data: { pageNumber: pageNumber, pageSize: $scope.pageSize, status: $scope.status }
                     }).then(function(data) {
                         $scope.orders = data.data.data;
@@ -26,9 +26,7 @@
                             val.operation = operation;
                             val.orderName = orderName;
                         });
-                    }).then(function(data) {
-                        console.log(data);
-                    });
+                    }).then(function(data) {});
                 };
                 $scope.orderHttp($scope.pageNumber);
             }
