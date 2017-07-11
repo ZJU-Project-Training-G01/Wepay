@@ -37,9 +37,15 @@ class GetOrders extends Controller
         }
         else
         {
-            $data = Db::query('select * from orders where orderStatus = :status limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize, 'status'=>$status]);
-            $code = 0;
-            $msg = NULL;
+            try {
+                $data = Db::query('select * from orders where orderStatus = :status limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize, 'status' => $status]);
+                $code = 0;
+                $msg = NULL;
+            } catch(Exception $e) {
+                $code = 2;
+                $msg = $e->getMessage();
+                $data = NULL;
+            }
         }
         $res = [
             'code' => $code,

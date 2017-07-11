@@ -29,7 +29,7 @@ class MakeNewOrder extends  Controller
         $res = array();
         $result = Db::query('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)',['buyerId'=>$buyerId,
             'goodId'=>$goodId, 'amount'=>$amount, 'unitPrice'=>$unitPrice, 'orderTime'=>$orderTime]);
-        if($result = true)
+        if($result == true)
         {
             $res['status'] = 'true';
         }
