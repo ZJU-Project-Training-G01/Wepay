@@ -4,7 +4,7 @@
             function($scope) {
                 $scope.$on('transferKeyword', function(e, keyword) {
                     $scope.$broadcast('receiveKeyword', keyword);
-                })
+                });
             }
         ])
         .component('goodItem', {

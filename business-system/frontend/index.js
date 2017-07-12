@@ -4,7 +4,7 @@
         .run(['$rootScope', function($rootScope) {
             $rootScope.$on('transferErrorMsg', function(e, errorMsg) {
                 $rootScope.$broadcast('receiveErrorMsg', errorMsg);
-            })
+            });
         }])
         .controller('error', ['$scope', function($scope) {
             $scope.ifError = false;
@@ -109,6 +109,7 @@
                     name: 'user',
                     files: [
                         'frontend/pages/user/user.js',
+                        'frontend/pages/user/user.css'
                     ]
                 },
                 {

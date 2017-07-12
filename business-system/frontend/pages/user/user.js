@@ -7,9 +7,7 @@
                 data: {}
             }).then(function(data) {
                 data = data.data.data;
-                $scope.sellerName = data.sellerName;
-                $scope.balance = setPricePrecision($scope.balance);
-
+                [$scope.sellerName, $scope.realName, $scope.phoneNumber, $scope.balance, $scope.bankCard, $scope.sellerImgUrl] = [data.sellerName, data.realName, data.phoneNumber, setPricePrecision(data.balance), data.bankCard, data.sellerImgUrl];
             })
         }]);
 })();
