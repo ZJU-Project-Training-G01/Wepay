@@ -1,3 +1,6 @@
+good-item .row {
+  margin-left: 30px;
+  margin-right: 30px; }
 good-item .good-item-chosen {
   border: #ff0036 solid 2px; }
 good-item .panel {

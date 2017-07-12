@@ -1,0 +1,26 @@
+@mixin centerDiv() {
+    width: 50%;
+    margin: 0 auto;
+}
+
+good-upload {
+    .well {
+        @include centerDiv();
+        .btn-primary {
+            margin-left: 15px;
+        }
+    }
+    .feedback {
+        img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        span {
+            color: #2d8cba;
+            margin: 0 5px;
+        }
+        span:hover {
+            cursor: pointer;
+        }
+    }
+}

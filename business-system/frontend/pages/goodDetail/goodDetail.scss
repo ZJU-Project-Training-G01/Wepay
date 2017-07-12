@@ -6,14 +6,33 @@ good-detail {
         }
         .well {
             margin-top: 20px;
+        }
+        .item {
             span {
                 color: #FF0036;
                 font-size: 30px;
                 font-weight: bolder;
             }
         }
-        .btn {
+        .item {
+            margin-bottom: 20px;
+        }
+        .update {
+            margin-left: 15px;
+        }
+        .feedback {
             margin-top: 20px;
+            img {
+                height: 30px;
+                margin-right: 10px;
+            }
+            span {
+                color: #2d8cba;
+                margin: 0 5px;
+            }
+            span:hover {
+                cursor: pointer;
+            }
         }
     }
 }

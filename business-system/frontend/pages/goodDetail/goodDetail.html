@@ -5,19 +5,21 @@
     <div class="col-xs-6  col-sm-6 col-md-6  col-lg-6">
         <div>{{goodDetail.goodName}}</div>
         <div class="well well-lg">
-            价格:<span>{{goodDetail.unitPrice}}</span>
-        </div>
-        <div class="well well-lg">
-            库存：{{goodDetail.amount}}
-        </div>
-        <div class="well well-lg">
             商品信息:<br><br> {{goodDetail.goodInfo}}
         </div>
-        <div class="well well-lg">
-            操作:
-            <!--<img class='delete' ng-src="frontend/static/icon/delete.svg">-->
-            <div><button class="btn btn-primary">下架该商品</button></div>
-            <div><button class="btn btn-primary">编辑该商品</button></div>
+        <div class="item">
+            价格:<span>{{goodDetail.unitPrice}}</span>
+        </div>
+        <div class="item">
+            库存：{{goodDetail.amount}}
+        </div>
+        <div>
+            <button class="btn btn-primary" ng-click="delete()">下架该商品</button>
+            <button class="btn btn-primary update" ng-click="update()">编辑该商品</button>
+        </div>
+        <div class="feedback" ng-show="ifFeedback">
+            <div><img src="frontend/static/icons/success.svg">下架成功!</div>
+            <div>您可以<span ng-click='toGoods()'>查看其它商品？</span></div>
         </div>
     </div>
 </div>

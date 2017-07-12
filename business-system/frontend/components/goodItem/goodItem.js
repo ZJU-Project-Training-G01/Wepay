@@ -12,7 +12,7 @@
                 })
                 $scope.goodHttp = function(pageNumber, keyword) {
                     $http({
-                        url: 'frontend/static/json/goods.json',
+                        url: 'frontend/static/jsons/goods.json',
                         method: 'post',
                         data: { pageSize: $scope.pageSize, pageNumber: pageNumber, keyword: keyword }
                     }).then(function(data) {
