@@ -58,5 +58,15 @@
         android:layout_alignTop="@+id/totalNumAndPriceTextView"
         android:text="未发货" />
 
+    <TextView
+        android:id="@+id/orderDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单日期"
+        android:layout_alignBaseline="@+id/confirmRecvGoodsbutton"
+        android:layout_alignBottom="@+id/confirmRecvGoodsbutton"
+        android:layout_alignLeft="@+id/totalNumAndPriceTextView"
+        android:layout_alignStart="@+id/totalNumAndPriceTextView" />
+
 
 </RelativeLayout>

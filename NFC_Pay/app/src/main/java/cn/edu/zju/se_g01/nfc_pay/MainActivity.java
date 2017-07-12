@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
@@ -89,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
         }
         tabLayout.getTabAt(0).select();
 
-        //启动NfcOperator
-        nfcOperator.initNFCData(this);
 
         //两种情况：1. app没在运行时，onCreate方法手动调用onNewIntent
         onNewIntent(getIntent());
@@ -104,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+            //启动NfcOperator
+            nfcOperator.initNFCData(this);
             String msg = nfcOperator.processIntent(intent);
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             Goods g = GoodsLab.getInstance().getGood(msg);

@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="我的收获地址"
+            android:text="修改个人信息"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
