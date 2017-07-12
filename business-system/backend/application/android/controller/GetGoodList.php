@@ -15,6 +15,7 @@ class GetGoodList extends  Controller
 {
     public function GetGoodList()
     {
+
         $request = Request::instance();
         $good = Db::query('select goodId as good_id, goodName as good_name, unitPrice as unit_price, imgUrl as img_url, goodInfo as good_info from good');
         //print_r($good);

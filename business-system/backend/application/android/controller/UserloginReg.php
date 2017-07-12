@@ -16,7 +16,7 @@ class UserloginReg extends Controller
 {
     public function UserloginReg()
     {
-        $request = Request::instance();
+        /*$request = Request::instance();
         $email = $request->post('email');
         $password = $request->post('password');
         /*$email = 'dsaa';
