@@ -3,14 +3,18 @@ good-item .row {
   margin-right: 30px; }
 good-item .good-item-chosen {
   border: #ff0036 solid 2px; }
-good-item .panel {
-  padding: 15px; }
-  good-item .panel .panel-body {
-    padding: 0; }
-    good-item .panel .panel-body img {
-      width: 100%; }
-    good-item .panel .panel-body .good-price {
-      color: #ff0036; }
+good-item .panel .panel-body {
+  padding: 0; }
+  good-item .panel .panel-body img {
+    width: 100%; }
+  good-item .panel .panel-body .good-price {
+    color: #ff0036; }
+  good-item .panel .panel-body .sell-amount {
+    border-top: 1px solid #eee; }
+    good-item .panel .panel-body .sell-amount span {
+      color: #b57c5b;
+      font-size: 20px;
+      font-weight: 700; }
 good-item paging {
   margin-left: 100px; }
 

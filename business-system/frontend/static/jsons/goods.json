@@ -5,6 +5,7 @@
             "goodName": "书籍《他在新闻60分上的访谈录》",
             "unitPrice": 88,
             "amout": 11,
+            "sellAmount": 11,
             "imgUrl": "frontend/static/imgs/goodsImgs/good001.jpg",
             "goodAddress": "杭州萧山"
         },
@@ -13,6 +14,7 @@
             "goodName": "书籍《他:六四事件的最大获利者》",
             "unitPrice": 88,
             "amout": 11,
+            "sellAmount": 222,
             "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
             "goodAddress": "杭州萧山"
         },
@@ -21,6 +23,7 @@
             "goodName": "书籍《他:六四事件的最大获利者》",
             "unitPrice": 88,
             "amout": 11,
+            "sellAmount": 223,
             "imgUrl": "frontend/static/imgs/goodsImgs/good002.jpg",
             "goodAddress": "杭州萧山"
         },
