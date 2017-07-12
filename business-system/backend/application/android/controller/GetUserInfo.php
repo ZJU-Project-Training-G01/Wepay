@@ -9,6 +9,7 @@ namespace app\android\controller;
 use think\Controller;
 use think\Db;
 use think\Request;
+use Exception;
 
 class GetUserInfo extends Controller
 {
@@ -20,11 +21,20 @@ class GetUserInfo extends Controller
         try {
             $data = Db::query('select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = :buyerId',['buyerId' => $buyerId]);
             //print_r($data);
-            echo json_encode($data, JSON_UNESCAPED_UNICODE);
+            $code = 0;
+            $msg = '';
         }
-        catch (\Exception $e){
-            echo $e->getMessage();
+        catch (Exception $e){
+            $code = 1;
+            $data = NULL;
+            $msg = $e->getMessage();
         }
+        $res = [
+            'code' => $code,
+            'msg' => $msg,
+            'data' => $data,
+        ];
+        echo json_encode($res, JSON_UNESCAPED_UNICODE);
     }
 }
 
