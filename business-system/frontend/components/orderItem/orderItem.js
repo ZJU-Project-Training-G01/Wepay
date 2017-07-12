@@ -23,6 +23,8 @@
                         } else if (code > 1) {
                             let errorMsg = data.data.msg;
                             $scope.$emit('transferErrorMsg', errorMsg);
+                        } else {
+                            $scope.$emit('transferErrorMsg', '未知原因');
                         }
                     })
                 }

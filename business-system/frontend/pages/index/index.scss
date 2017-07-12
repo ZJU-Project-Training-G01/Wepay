@@ -3,3 +3,15 @@ error {
     left: 300px;
     z-index: 999;
 }
+
+nav {
+    img {
+        float: right;
+        width: 35px;
+        position: relative;
+        top: 15px;
+    }
+    img:hover {
+        cursor: pointer;
+    }
+}

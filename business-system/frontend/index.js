@@ -13,6 +13,10 @@
                 $scope.ifError = true;
             })
         }])
+        .component('user', {
+            templateUrl: 'frontend/pages/user/user.html',
+            controller: 'user'
+        })
         .component('navbar', {
             templateUrl: 'frontend/components/navbar/navbar.html',
         })
@@ -43,6 +47,15 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('', '/');
         $stateProvider
+            .state('user', {
+                url: '/user',
+                template: '<user></user>',
+                resolve: {
+                    user: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(['user']);
+                    }
+                }
+            })
             .state('order', {
                 url: '/order',
                 template: '<order></order>',
@@ -93,6 +106,12 @@
         $ocLazyLoadProvider.config({
             debug: true,
             modules: [{
+                    name: 'user',
+                    files: [
+                        'frontend/pages/user/user.js',
+                    ]
+                },
+                {
                     name: 'order',
                     files: [
                         'frontend/pages/order/order.js',
