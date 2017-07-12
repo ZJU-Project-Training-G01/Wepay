@@ -1,7 +1,7 @@
 (function() {
     angular.module('orderItem', [])
-        .controller('orderItemCtrl', ['$scope', '$http', 'setPricePrecision', 'orderServe',
-            function($scope, $http, setPricePrecision, orderServe) {
+        .controller('orderItemCtrl', ['$scope', '$http', 'setPricePrecision', 'orderServe', '$rootScope',
+            function($scope, $http, setPricePrecision, orderServe, $rootScope) {
                 $scope.pageSize = 10;
                 $scope.pageNumber = 1;
                 $scope.status = -1;
@@ -20,6 +20,9 @@
                             item.orderStatus = 1;
                             item.orderName = '买家未收货';
                             item.operation = '等待买家收货';
+                        } else if (code > 1) {
+                            let errorMsg = data.data.msg;
+                            $scope.$emit('transferErrorMsg', errorMsg);
                         }
                     })
                 }
