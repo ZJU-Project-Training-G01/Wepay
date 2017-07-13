@@ -1,0 +1,376 @@
+---------------------------------------------------------------
+[ 2017-07-12T09:36:26+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/EditUserInfo/EditUserInfo
+[ info ] localhost/wepay/business-system/backend/public/android/EditUserInfo/EditUserInfo [运行时间：0.079346s][吞吐率：12.60req/s] [内存消耗：1,883.18kb] [文件加载：27]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-12T09:36:34+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/GetGood/
+[ info ] localhost/wepay/business-system/backend/public/android/GetGood/ [运行时间：0.094793s][吞吐率：10.55req/s] [内存消耗：2,398.34kb] [文件加载：34]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetGood',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-12T09:36:42+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetGood/
+[ info ] localhost/wepay/business-system/backend/public/GetGood/ [运行时间：0.269397s][吞吐率：3.71req/s] [内存消耗：2,688.96kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetGood',
+    2 => 'GetGood',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetGood->GetGood[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetGood.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.111237s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select goodId as good_id, goodName as good_name, unitPrice as unit_price, imgUrl as img_url, goodInfo as good_info from good where goodId = '' [ RunTime:0.078653s ]
+---------------------------------------------------------------
+[ 2017-07-12T09:36:55+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetGood/
+[ info ] localhost/wepay/business-system/backend/public/GetGood/ [运行时间：0.191042s][吞吐率：5.23req/s] [内存消耗：2,689.34kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetGood',
+    2 => 'GetGood',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetGood->GetGood[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetGood.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097126s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select goodId as good_id, goodName as good_name, unitPrice as unit_price, imgUrl as img_url, goodInfo as good_info from good where goodId = '1' [ RunTime:0.066414s ]
+---------------------------------------------------------------
+[ 2017-07-12T09:39:43+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetOrders
+[ info ] localhost/wepay/business-system/backend/public/GetOrders [运行时间：0.236358s][吞吐率：4.23req/s] [内存消耗：2,692.52kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetOrders',
+    2 => 'GetOrders',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetOrders->GetOrders[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetOrders.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.089452s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select orderId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where buyerId ='' and orders.goodId = good.goodId [ RunTime:0.060509s ]
+---------------------------------------------------------------
+[ 2017-07-12T09:48:17+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetOrders
+[ info ] localhost/wepay/business-system/backend/public/GetOrders [运行时间：0.197290s][吞吐率：5.07req/s] [内存消耗：2,695.05kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetOrders',
+    2 => 'GetOrders',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetOrders->GetOrders[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetOrders.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.099492s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select orderId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where buyerId ='1' and orders.goodId = good.goodId [ RunTime:0.066185s ]
+---------------------------------------------------------------
+[ 2017-07-12T09:55:22+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/EditUserInfo
+[ info ] localhost/wepay/business-system/backend/public/EditUserInfo [运行时间：0.218000s][吞吐率：4.59req/s] [内存消耗：2,717.23kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'EditUserInfo',
+    2 => 'EditUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\EditUserInfo->EditUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\EditUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.089942s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+---------------------------------------------------------------
+[ 2017-07-12T09:56:27+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/EditUserInfo
+[ info ] localhost/wepay/business-system/backend/public/EditUserInfo [运行时间：0.191654s][吞吐率：5.22req/s] [内存消耗：2,694.85kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'EditUserInfo',
+    2 => 'EditUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\EditUserInfo->EditUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\EditUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.096358s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] update buyer set buyerName = '', realName = '', phoneNumber = '', address = '' where buyerId = '' [ RunTime:0.067982s ]
+---------------------------------------------------------------
+[ 2017-07-12T09:57:11+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/EditUserInfo
+[ info ] localhost/wepay/business-system/backend/public/EditUserInfo [运行时间：0.023964s][吞吐率：41.73req/s] [内存消耗：2,324.80kb] [文件加载：31]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'EditUserInfo',
+    2 => 'EditUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\EditUserInfo->EditUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\EditUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-12T09:57:38+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/EditUserInfo
+[ info ] localhost/wepay/business-system/backend/public/EditUserInfo [运行时间：0.023334s][吞吐率：42.86req/s] [内存消耗：2,324.80kb] [文件加载：31]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'EditUserInfo',
+    2 => 'EditUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\EditUserInfo->EditUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\EditUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-12T12:53:52+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetGoodList
+[ info ] localhost/wepay/business-system/backend/public/GetGoodList [运行时间：0.200470s][吞吐率：4.99req/s] [内存消耗：2,687.06kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetGoodList',
+    2 => 'GetGoodList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetGoodList->GetGoodList[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetGoodList.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098972s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select goodId as good_id, goodName as good_name, unitPrice as unit_price, imgUrl as img_url, goodInfo as good_info from good [ RunTime:0.067236s ]
+---------------------------------------------------------------
+[ 2017-07-12T15:28:41+08:00 ] 127.0.0.1 127.0.0.1 GET /wepay/business-system/backend/public/GetGoodList
+[ info ] localhost/wepay/business-system/backend/public/GetGoodList [运行时间：0.186579s][吞吐率：5.36req/s] [内存消耗：2,687.37kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetGoodList',
+    2 => 'GetGoodList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; PHPSESSID=9288df39539dkk9nl03pmovqk7; _gid=GA1.1.802069181.1499838781',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetGoodList->GetGoodList[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetGoodList.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093705s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select goodId as good_id, goodName as good_name, unitPrice as unit_price, imgUrl as img_url, goodInfo as good_info from good [ RunTime:0.059467s ]
