@@ -18,5 +18,11 @@ class UserLogin extends  Controller
     {
         Session::set('buyer_id', 1);
         Session::set('login','true');
+        $res = [
+            'code' => 0,
+            'msg' => '',
+            'data' => NULL,
+        ];
+        echo json_encode($res, JSON_UNESCAPED_UNICODE);
     }
 }
