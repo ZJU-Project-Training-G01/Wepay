@@ -1,0 +1,41 @@
+<div class="register">
+    <login-navbar></login-navbar>
+    <img src="frontend/static/imgs/background/bg002.jpg">
+    <div class=" well bs-component">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>用户注册</legend>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">用户名</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="用户名" ng-model="sellerName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">法人</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" placeholder="法人" ng-model="realName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">密码</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="密码" ng-model="sellerPassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">再次输入密码</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="密码" ng-model="reSellerPassword">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">重置</button>
+                        <button type="submit" class="btn btn-primary" ng-click="register()">注册</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

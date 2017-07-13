@@ -1,0 +1,16 @@
+.login img {
+  width: 100%; }
+.login .well {
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateX(-50%) translateY(-50%); }
+.login .people {
+  display: inline; }
+.login .register {
+  float: right; }
+.login .register:hover {
+  cursor: pointer; }
+
+/*# sourceMappingURL=login.css.map */

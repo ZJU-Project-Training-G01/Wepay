@@ -1,0 +1,14 @@
+error {
+  position: fixed;
+  left: 400px;
+  z-index: 999; }
+
+nav img {
+  float: right;
+  width: 35px;
+  position: relative;
+  top: 15px; }
+nav img:hover {
+  cursor: pointer; }
+
+/*# sourceMappingURL=index.css.map */
