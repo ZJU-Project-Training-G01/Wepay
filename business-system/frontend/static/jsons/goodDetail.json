@@ -1,6 +1,7 @@
 {
     "code": 0,
     "data": {
+        "goodId": 1998,
         "goodName": "他:20世纪末中国最有权力的人，人生的经验传授者，上海市委书记担任者，总书记继承者",
         "imgUrl": "frontend/static/imgs/goodsImgs/good003.jpg",
         "unitPrice": 76.3,
