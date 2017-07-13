@@ -9,6 +9,7 @@ namespace app\android\controller;
 use think\Controller;
 use think\Db;
 use think\Request;
+use think\Session;
 use Exception;
 
 class GetOrders extends  Controller
@@ -17,6 +18,11 @@ class GetOrders extends  Controller
     {
         $request = Request::instance();
         $buyer_id = $request->session('buyer_id');
+
+        //test
+        /*$buyer_id = 9;
+        Session::set('login' , 'true');*/
+
         if($request->session('login')!='true')
         {
             $code = 1;
@@ -26,7 +32,7 @@ class GetOrders extends  Controller
         else
         {
             try {
-                $data = Db::query('select orderId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where buyerId =:buyer_id and orders.goodId = good.goodId', ['buyer_id' => $buyer_id]);
+                $data = Db::query('select orderId as order_id, goodName as good_name, imgUrl as img_url, orders.amount, orders.unitPrice as unit_price, orderStatus as order_status, orderTime as order_time from orders, good where buyerId =:buyer_id and orders.goodId = good.goodId', ['buyer_id' => $buyer_id]);
                 $code = 0;
                 $msg = '查询成功';
             } catch (Exception $e) {

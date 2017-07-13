@@ -11,14 +11,17 @@ use think\Controller;
 use think\Db;
 use think\Request;
 use think\Session;
+use think\Cookie;
 
 class LogOut extends Controller
 {
     public function LogOut()
     {
         $request = Request::instance();
-        Session::set('buyer_id','');
-        Session::set('login','false');
+        Session::set('buyer_id',null);
+        Session::set('login',null);
+        Cookie::delete('buyer_id');
+        Cookie::delete('login');
         $code = 0;
         $data = NULL;
         $msg = '';
