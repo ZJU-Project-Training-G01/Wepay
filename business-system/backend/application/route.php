@@ -25,4 +25,8 @@ return [
     'GetGoodList' => 'android/GetGoodList/GetGoodList',
     'MakeNewOrder' => 'android/MakeNewOrder/MakeNewOrder',
     'GetGood' => 'android/GetGood/GetGood',
+    'UserLogin' => 'android/UserLogin/UserLogin',
+    'LogOut' => 'android/LogOut/LogOut',
+    'ConfirmRecvGoods' => 'android/ConfirmRecvGoods/ConfirmRecvGoods',
+    'UserRegist' => 'android/UserRegist/UserRegist',
 ];
