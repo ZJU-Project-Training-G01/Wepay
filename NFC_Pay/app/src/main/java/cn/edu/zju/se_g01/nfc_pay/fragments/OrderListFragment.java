@@ -28,10 +28,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import cn.edu.zju.se_g01.nfc_pay.R;
+import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.orders.Order;
 import cn.edu.zju.se_g01.nfc_pay.orders.OrderLab;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
 import cn.edu.zju.se_g01.nfc_pay.tools.ImageDownloader;
+import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 /**
  * Created by dddong on 2017/7/7.
@@ -39,15 +41,15 @@ import cn.edu.zju.se_g01.nfc_pay.tools.ImageDownloader;
 
 public class OrderListFragment extends ListFragment {
     private static final String TAG = "OrderListFragment";
-    private ArrayList<Order> mOrders;
+    private ArrayList<Order> mOrders = null;
     ImageDownloader<ImageView> mImageDownloadThread;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mOrders = OrderLab.get(getActivity()).getOrders();
-
         OrderAdapter adapter = new OrderAdapter(mOrders);
+
         setListAdapter(adapter);
 
         mImageDownloadThread = new ImageDownloader<>(new Handler());
@@ -64,7 +66,7 @@ public class OrderListFragment extends ListFragment {
         Log.i(TAG, "background thread start");
     }
 
-    private class OrderAdapter extends ArrayAdapter<Order> {
+    public class OrderAdapter extends ArrayAdapter<Order> {
         private static final String TAG = "OrderAdapter";
         public OrderAdapter(ArrayList<Order> orders) {
             super(getActivity(), 0, orders);
@@ -74,16 +76,23 @@ public class OrderListFragment extends ListFragment {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
+            this.addAll(mOrders);
             if(convertView == null) {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.order_list_item, null);
             }
             final Order o = getItem(position);
+            if(o == null) {
+                return convertView;
+            }
+
+            //获取UI组件
             TextView goodNameTextView = (TextView)convertView.findViewById(R.id.goodNameTextView);
             TextView totNumAndPriceTextView = (TextView)convertView.findViewById(R.id.totalNumAndPriceTextView);
             TextView orderStatusTextView = (TextView)convertView.findViewById(R.id.orderStatusTextView);
             final Button confirmRecvGoodsBtn = (Button)convertView.findViewById(R.id.confirmRecvGoodsbutton);
             TextView orderDateTextView = (TextView)convertView.findViewById(R.id.orderDateTextView);
 
+            //更新 UI 组件的内容为订单信息
             goodNameTextView.setText(o.getGood_name());
             double totalPrice = o.getUnit_price() * o.getAmount();
             totNumAndPriceTextView.setText("数量: x" + o.getAmount() + " 合计:" + "￥" + String.format("%.2f", totalPrice));
@@ -99,7 +108,7 @@ public class OrderListFragment extends ListFragment {
 
             orderDateTextView.setText("日期:" + formatter.format(o.getOrder_date()));
 
-            final String mUrl = "http://localhost/ConfirmRecvGoods";
+            final String mUrl = Config.getFullUrl("ConfirmRecvGoods");
 
             //用户点击确认收货按钮之后，按钮变灰，文字改变成"订单完成"
             confirmRecvGoodsBtn.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +120,7 @@ public class OrderListFragment extends ListFragment {
                             mUrl, paramsMap, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
+                            Log.d(TAG, "confirmRecvGoodsResponse:" + response.toString());
                             try {
                                 int code = response.getInt("code");
                                 if(code == 0) {
@@ -129,6 +139,7 @@ public class OrderListFragment extends ListFragment {
                             Log.e(TAG, error.getMessage());
                         }
                     });
+                    MySingleton.getInstance(getActivity()).getRequestQueue().add(confirmRecvGoodsReq);
                 }
             });
 

@@ -61,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(MainActivity.this, UserSettingActivity.class);
                     startActivity(i);
-
-                } else if (menuItemId == R.id.logout_item) {
-                    Toast.makeText(MainActivity.this, "item_02", Toast.LENGTH_SHORT).show();
-
                 }
+
+//                } else if (menuItemId == R.id.logout_item) {
+//                    Toast.makeText(MainActivity.this, "item_02", Toast.LENGTH_SHORT).show();
+//
+//                }
                 return true;
             }
         });

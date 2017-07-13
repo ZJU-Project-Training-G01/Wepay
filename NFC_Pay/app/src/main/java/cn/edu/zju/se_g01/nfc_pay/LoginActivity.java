@@ -9,6 +9,7 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -34,6 +35,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,6 +50,7 @@ import cn.edu.zju.se_g01.nfc_pay.tools.HttpConnector;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static cn.edu.zju.se_g01.nfc_pay.config.Config.getFullUrl;
 
 /**
  * A login screen that offers login via email/password.
@@ -55,7 +58,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     private final static String TAG = "LoginActivity";
-    private final String mUrl = "http://localhost/userlogin.php";
+    private final String mLoginUrl = getFullUrl("UserLogin");
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -79,6 +82,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mLoginFormView;
     private Button mEmailSignInButton;
     private Button mSignUpButton;
+
+    private View focusView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,10 +121,61 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         });
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+
+        //尝试使用 cookie 自动登录
+        SharedPreferences sp = getSharedPreferences(getString(R.string.cookie_preference_file), MODE_PRIVATE);
+        String localCookieStr = sp.getString("cookie", "");
+        if(! localCookieStr.isEmpty()) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        }
+//        VolleyLog.DEBUG = true;
     }
 
     private void attemptSignUp() {
-        
+        // Show a progress spinner, and kick off a background task to
+        // perform the user sign up attempt.
+        showProgress(true);
+
+        Map<String, String> postParams = getPostParams();
+        String signUpUrl = getFullUrl("UserRegist");
+        CookieRequest signUpReq = new CookieRequest(LoginActivity.this, Request.Method.POST, signUpUrl,
+                postParams, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                int code = 0;
+                try {
+                    code = response.getInt("code");
+                    if(code == 0) {
+                        //注册成功
+                        Toast.makeText(LoginActivity.this, "注册成功", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    } else if(code == 1) {
+                        Toast.makeText(LoginActivity.this, "注册失败:" + response.getString("msg"), Toast.LENGTH_LONG).show();
+                        showProgress(false);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.getMessage());
+                showProgress(false);
+                Toast.makeText(LoginActivity.this, "网络出现问题", Toast.LENGTH_LONG).show();
+            }
+        });
+        MySingleton.getInstance(getApplicationContext()).getRequestQueue().add(signUpReq);
+    }
+
+    private Map<String, String> getPostParams() {
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+        Map<String, String> paramsMap = new HashMap<>();
+        paramsMap.put("email", email);
+        paramsMap.put("password", password);
+        return paramsMap;
     }
 
     private void populateAutoComplete() {
@@ -166,17 +222,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     }
 
 
-    /**
-     * Attempts to sign in or register the account specified by the login form.
-     * If there are form errors (invalid email, missing fields, etc.), the
-     * errors are presented and no actual login attempt is made.
-     */
-    private void attemptLogin() {
-//        if (mAuthTask != null) {
-//            return;
-//        }
+    boolean checkForm() {
 
-        // Reset errors.
+        //Reset errors
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
@@ -185,7 +233,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
-        View focusView = null;
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
@@ -204,7 +251,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             focusView = mEmailView;
             cancel = true;
         }
+        return cancel;
+    }
+    /**
+     * Attempts to sign in or register the account specified by the login form.
+     * If there are form errors (invalid email, missing fields, etc.), the
+     * errors are presented and no actual login attempt is made.
+     */
+    private void attemptLogin() {
 
+        boolean cancel = checkForm();
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -213,30 +269,24 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            Map<String, String> paramsMap = new HashMap<>();
-            paramsMap.put("email", email);
-            paramsMap.put("password", password);
+            Map<String, String> paramsMap = getPostParams();
 
             //发起登录或注册请求
             CookieRequest loginOrRegistReq = new CookieRequest(getApplicationContext(), Request.Method.POST,
-                    mUrl, paramsMap, new Response.Listener<JSONObject>() {
+                    mLoginUrl, paramsMap, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                    //
+                    Log.d(TAG, "response json:" + response.toString());
                     try {
                         showProgress(false);
-                        int success = response.getInt("result");
+                        int success = response.getInt("code");
 
                         if (success == 0) { //登录成功
                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(i);
-                        } else if (success == 1){   //登录失败，密码不正确
-                            mPasswordView.setError(getString(R.string.error_incorrect_password));
+                        } else if (success == 1){   //登录失败，用户名或者密码不正确
+                            mPasswordView.setError(getString(R.string.error_incorrect_username_or_password));
                             mPasswordView.requestFocus();
-                        } else if (success == 2) {  //成功注册了一个新的账号并登录
-                            Toast.makeText(LoginActivity.this, "注册新账号成功", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(i);
                         } else {
                             Toast.makeText(LoginActivity.this, "服务器端返回的数据格式出了点问题", Toast.LENGTH_LONG).show();
                         }
@@ -247,7 +297,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.e(TAG, error.getMessage());
+                    VolleyLog.e("LoginError: ", error.networkResponse.data);
                     showProgress(false);
                     Toast.makeText(LoginActivity.this, "网络出现问题", Toast.LENGTH_LONG).show();
                 }
@@ -421,7 +471,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 Intent i = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
             } else if (success == 1){   //登录失败，密码不正确
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.error_incorrect_username_or_password));
                 mPasswordView.requestFocus();
             } else if (success == 2) {  //成功注册了一个新的账号并登录
                 Toast.makeText(LoginActivity.this, "注册新账号成功", Toast.LENGTH_LONG).show();

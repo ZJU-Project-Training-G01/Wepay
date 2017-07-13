@@ -52,7 +52,7 @@ public class CookieRequest extends Request<JSONObject> {
             String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
 //获取头部信息
             mHeader = response.headers.toString();
-            Log.i("LOG","get headers in parseNetworkResponse "+response.headers.toString());
+//            Log.d(TAG,"get headers in parseNetworkResponse "+response.headers.toString());
 //获取cookie头部信息
             Map<String, String> responseHeaders = response.headers;
             String rawCookies = responseHeaders.get("Set-Cookie");
@@ -60,7 +60,8 @@ public class CookieRequest extends Request<JSONObject> {
                 //;分隔获取sessionid
                 String[] splitCookie = rawCookies.split(";");
                 for (int i = 0; i < splitCookie.length; i++) {
-                    if(splitCookie[i].split("=")[0].contains("session")) {
+                    if(splitCookie[i].split("=")[0].contains("PHPSESSID")) {
+                        Log.d(TAG, "get phpsessid from server:" + splitCookie[i]);
                         //使用SharedPreferences本地存储
                         SharedPreferences sp = mAppContext.getSharedPreferences(mAppContext.getString(R.string.cookie_preference_file),Context.MODE_PRIVATE);
                         SharedPreferences.Editor prefsWriter = sp.edit();
@@ -73,7 +74,7 @@ public class CookieRequest extends Request<JSONObject> {
 //将cookie字符串添加到jsonObject中，该jsonObject会被deliverResponse递交，调用请求时则能在onResponse中得到
             JSONObject jsonObject = new JSONObject(jsonString);
 //    jsonObject.put("Cookie",rawCookies);    //自行添加
-            Log.i(TAG,"jsonObject "+ response.toString());
+//            Log.i(TAG,"jsonObject "+ response.toString());
             return Response.success(jsonObject,  HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new ParseError(e));
