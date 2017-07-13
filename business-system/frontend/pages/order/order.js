@@ -18,6 +18,9 @@
         .factory('getDeadline', function() {
             return function(orderTime) {
                 let deadline = Date.parse(new Date(orderTime)) + 7 * 24 * 3600 * 1000 - Date.parse(new Date());
+                if (deadline < 0) {
+                    return false;
+                }
                 let dayLevel = 24 * 3600 * 1000;
                 let hourLevel = 3600 * 1000;
                 let day = Math.floor(deadline / dayLevel);
@@ -31,8 +34,13 @@
                     let orderName, operation;
                     switch (status) {
                         case 0:
-                            orderName = '未发货';
                             operation = getDeadline(orderTime);
+                            if (operation === false) {
+                                orderName = '您未及时发货';
+                                operation = '订单取消';
+                            } else {
+                                orderName = '未发货';
+                            }
                             break;
                         case 1:
                             orderName = '买家未收货';

@@ -20,7 +20,7 @@
                 $http({
                     url: 'backend/public/SellerLogin',
                     method: 'post',
-                    data: { phoneNumber: $scope.phoneNumber, login: $scope.login }
+                    data: { phoneNumber: $scope.phoneNumber, sellerPassword: $scope.sellerPassword }
                 }).then(function(data) {
                     let code = data.data.code;
                     if (code === 0) {

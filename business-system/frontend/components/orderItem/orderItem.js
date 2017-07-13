@@ -44,6 +44,9 @@
                             let { orderName, operation } = orderServe.orderStatusToName(val.orderStatus, val.orderTime);
                             val.operation = operation;
                             val.orderName = orderName;
+                            if (val.operation === '订单取消') {
+                                val.orderStatus = 4;
+                            }
                         });
                     }).then(function(data) {});
                 };
