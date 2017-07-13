@@ -18,7 +18,7 @@
                     return;
                 }
                 $http({
-                    url: 'public/SellerLogin',
+                    url: 'backend/public/SellerLogin',
                     method: 'post',
                     data: { phoneNumber: $scope.phoneNumber, login: $scope.login }
                 }).then(function(data) {
