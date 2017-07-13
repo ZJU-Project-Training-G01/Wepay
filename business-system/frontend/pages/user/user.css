@@ -3,5 +3,11 @@ user img {
 user .panel {
   margin-left: 30px;
   margin-right: 30px; }
+  user .panel .panel-body {
+    font-size: 18px; }
+user .bind {
+  color: #36c; }
+user .bind:hover {
+  cursor: pointer; }
 
 /*# sourceMappingURL=user.css.map */

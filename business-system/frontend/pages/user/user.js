@@ -1,13 +1,21 @@
 (function() {
     angular.module('user', [])
-        .controller('user', ['$scope', '$http', 'setPricePrecision', function($scope, $http, setPricePrecision) {
+        .controller('user', ['$scope', '$http', 'setPricePrecision', '$location', function($scope, $http, setPricePrecision, location) {
             $http({
                 url: 'frontend/static/jsons/user.json',
                 method: 'post',
                 data: {}
             }).then(function(data) {
-                data = data.data.data;
-                [$scope.sellerName, $scope.realName, $scope.phoneNumber, $scope.balance, $scope.bankCard, $scope.sellerImgUrl] = [data.sellerName, data.realName, data.phoneNumber, setPricePrecision(data.balance), data.bankCard, data.sellerImgUrl];
+                let code = data.data.code;
+                if (code === 0) {
+                    data = data.data.data;
+                    $scope.seller = data;
+                    $scope.seller.balance = setPricePrecision($scope.seller.balance);
+                    $scope.toBind = !$scope.seller.bankCard;
+                    $scope.seller.bankCard = '未绑定';
+                } else {
+                    $scope.$emit('transferErrorMsg', '获取用户基础信息失败，原因:' + data.data.msg);
+                }
             })
         }]);
 })();

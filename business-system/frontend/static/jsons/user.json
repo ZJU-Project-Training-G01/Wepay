@@ -5,7 +5,7 @@
         "phoneNumber": "15077777777",
         "balance": 1000,
         "realName": "江大哥",
-        "bankCard": "6555 3322 3211 2222",
         "sellerImgUrl": "frontend/static/imgs/sellerImgs/seller003.jpg"
-    }
+    },
+    "msg": "你要被请喝茶了"
 }
