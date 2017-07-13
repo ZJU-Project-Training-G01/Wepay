@@ -15,11 +15,12 @@ class GetGoodList extends  Controller
 {
     public function GetGoodList()
     {
-
         $request = Request::instance();
+        $res = array();
         $good = Db::query('select goodId as good_id, goodName as good_name, unitPrice as unit_price, imgUrl as img_url, goodInfo as good_info from good');
         //print_r($good);
-        echo json_encode($good, JSON_UNESCAPED_UNICODE);
+        $res['data'] = $good;
+        echo json_encode($res, JSON_UNESCAPED_UNICODE);
     }
 }
 ?>

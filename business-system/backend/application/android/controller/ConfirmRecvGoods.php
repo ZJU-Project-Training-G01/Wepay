@@ -21,8 +21,8 @@ class ConfirmRecvGoods extends Controller
         $orderId = $request->post('orderID');
 
         //test
-        /*Session::set('login','true');
-        $orderId = 1;*/
+        Session::set('login','true');
+        $orderId = 1;
 
         if($request->session('login')!='true')
         {
@@ -37,6 +37,8 @@ class ConfirmRecvGoods extends Controller
             $buyerId = $data1[0]['buyerId'];
             $amount = $data1[0]['amount'];
             $goodId = $data1[0]['goodId'];
+            $data3 = Db::query('select sellerId from good where goodId = :goodId',['goodId' => $goodId]);
+            $sellerId = $data3[0]['sellerId'];
             $data2 = Db::query('select balance from buyer where balance >= :price and buyerId = :buyerId',['price'=>$price, 'buyerId' => $buyerId]);
             if(count($data2)!= 0) //判断用余额是否足够
             {
@@ -44,7 +46,7 @@ class ConfirmRecvGoods extends Controller
                 try {
                     Db::execute('update orders set orderStatus = 2 where orderId = :orderId', ['orderId' => $orderId]);
                     Db::execute('update buyer set balance = balance - :price where buyerId = :buyerId', ['price' => $price, 'buyerId' => $buyerId]);
-                    Db::execute('update seller set balance = balance + :price', ['price' => $price]);
+                    Db::execute('update seller set balance = balance + :price where sellerId = :sellerId', ['price' => $price, 'sellerId' => $sellerId]);
                     Db::execute('update good set soldAmount = soldAmount + :amount where goodId = :goodId',['amount' => $amount, 'goodId' => $goodId]);
                     $code = 0;
                     $data = NULL;
