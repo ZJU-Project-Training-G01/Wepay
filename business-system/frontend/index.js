@@ -2,9 +2,11 @@
     let app = angular
         .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging'])
         .run(['$rootScope', function($rootScope) {
-            $rootScope.$on('transferErrorMsg', function(e, errorMsg, ifSuccess) {
-                $rootScope.$broadcast('receiveErrorMsg', errorMsg, ifSuccess);
-                $rootScope.$broadcast('receShowNavbar');
+            $rootScope.$on('transferErrorMsg', function(e, errorMsg, status) {
+                $rootScope.$broadcast('receiveErrorMsg', errorMsg, status);
+                if (status === true) {
+                    $rootScope.$broadcast('receShowNavbar');
+                }
             });
             $rootScope.$on('hideNavbar', function(e) {
                 $rootScope.$broadcast('receHideNavbar');

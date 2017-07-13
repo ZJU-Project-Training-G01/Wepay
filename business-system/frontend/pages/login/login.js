@@ -9,6 +9,14 @@
                 $location.path('/register')
             }
             $scope.login = function() {
+                if (!$scope.phoneNumber) {
+                    $scope.$emit('transferErrorMsg', '手机号不能为空'); //隐藏navbar
+                    return;
+                };
+                if (!$scope.sellerPassword) {
+                    $scope.$emit('transferErrorMsg', '密码不能为空');
+                    return;
+                }
                 $http({
                     url: 'frontend/static/jsons/login.json',
                     method: 'post',
@@ -19,7 +27,7 @@
                         $scope.$emit('transferErrorMsg', '登录成功', true);
                         $location.path('/good');
                     } else {
-                        $scope.$emit('transferErrorMsg', data.data.msg);
+                        $scope.$emit('transferErrorMsg', '登录失败，原因：' + data.data.msg);
                     }
                 })
             }
