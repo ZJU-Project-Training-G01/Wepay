@@ -1,0 +1,822 @@
+---------------------------------------------------------------
+[ 2017-07-13T09:52:52+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/EditUserInfo/EditUserInfo
+[ info ] localhost/wepay/business-system/backend/public/android/EditUserInfo/EditUserInfo [运行时间：0.109124s][吞吐率：9.16req/s] [内存消耗：1,883.17kb] [文件加载：27]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T09:53:14+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserLogin/UserLogin
+[ info ] localhost/wepay/business-system/backend/public/android/UserLogin/UserLogin [运行时间：0.281214s][吞吐率：3.56req/s] [内存消耗：2,691.40kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserLogin',
+    2 => 'UserLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserLogin->UserLogin[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserLogin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.103788s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerId from buyer where email = '' and buyerPassword = '' [ RunTime:0.075058s ]
+---------------------------------------------------------------
+[ 2017-07-13T09:54:37+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserLogin/UserLogin
+[ info ] localhost/wepay/business-system/backend/public/android/UserLogin/UserLogin [运行时间：0.203408s][吞吐率：4.92req/s] [内存消耗：2,691.00kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserLogin',
+    2 => 'UserLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserLogin->UserLogin[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserLogin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.107021s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerId from buyer where email = '' and buyerPassword = '' [ RunTime:0.070756s ]
+---------------------------------------------------------------
+[ 2017-07-13T09:55:49+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserLogin/UserLogin
+[ info ] localhost/wepay/business-system/backend/public/android/UserLogin/UserLogin [运行时间：0.203305s][吞吐率：4.92req/s] [内存消耗：2,691.38kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserLogin',
+    2 => 'UserLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserLogin->UserLogin[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserLogin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.105944s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerId from buyer where email = 'dsaa' and buyerPassword = '1234' [ RunTime:0.069469s ]
+---------------------------------------------------------------
+[ 2017-07-13T09:56:00+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserLogin/UserLogin
+[ info ] localhost/wepay/business-system/backend/public/android/UserLogin/UserLogin [运行时间：0.190400s][吞吐率：5.25req/s] [内存消耗：2,694.20kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserLogin',
+    2 => 'UserLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserLogin->UserLogin[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserLogin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098522s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerId from buyer where email = 'dsaa' and buyerPassword = '123' [ RunTime:0.064955s ]
+---------------------------------------------------------------
+[ 2017-07-13T09:56:11+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserLogin/UserLogin
+[ info ] localhost/wepay/business-system/backend/public/android/UserLogin/UserLogin [运行时间：0.187613s][吞吐率：5.33req/s] [内存消耗：2,691.55kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserLogin',
+    2 => 'UserLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserLogin->UserLogin[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserLogin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097102s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerId from buyer where email = '' and buyerPassword = '123' [ RunTime:0.064837s ]
+---------------------------------------------------------------
+[ 2017-07-13T10:02:02+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserLogin/UserLogin
+[ info ] localhost/wepay/business-system/backend/public/android/UserLogin/UserLogin [运行时间：0.205273s][吞吐率：4.87req/s] [内存消耗：2,691.20kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserLogin',
+    2 => 'UserLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserLogin->UserLogin[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserLogin.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.106254s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerId from buyer where email = '' and buyerPassword = '' [ RunTime:0.070658s ]
+---------------------------------------------------------------
+[ 2017-07-13T10:12:30+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/GetUserInfo
+[ info ] localhost/wepay/business-system/backend/public/android/GetUserInfo [运行时间：0.068601s][吞吐率：14.58req/s] [内存消耗：2,399.95kb] [文件加载：34]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetUserInfo',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T10:12:37+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetUserInfo
+[ info ] localhost/wepay/business-system/backend/public/GetUserInfo [运行时间：0.242170s][吞吐率：4.13req/s] [内存消耗：2,692.90kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetUserInfo',
+    2 => 'GetUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetUserInfo->GetUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.107315s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = '2' [ RunTime:0.071396s ]
+---------------------------------------------------------------
+[ 2017-07-13T10:12:43+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/LogOut
+[ info ] localhost/wepay/business-system/backend/public/LogOut [运行时间：0.021272s][吞吐率：47.01req/s] [内存消耗：1,884.32kb] [文件加载：27]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'LogOut',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T10:12:57+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/LogOut/LogOut
+[ info ] localhost/wepay/business-system/backend/public/android/LogOut/LogOut [运行时间：0.021474s][吞吐率：46.57req/s] [内存消耗：2,318.57kb] [文件加载：31]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'LogOut',
+    2 => 'LogOut',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\LogOut->LogOut[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\LogOut.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T10:13:05+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetUserInfo
+[ info ] localhost/wepay/business-system/backend/public/GetUserInfo [运行时间：0.202626s][吞吐率：4.94req/s] [内存消耗：2,692.55kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetUserInfo',
+    2 => 'GetUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetUserInfo->GetUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.106492s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = '' [ RunTime:0.070907s ]
+---------------------------------------------------------------
+[ 2017-07-13T10:16:55+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetUserInfo
+[ info ] localhost/wepay/business-system/backend/public/GetUserInfo [运行时间：0.024754s][吞吐率：40.40req/s] [内存消耗：2,321.85kb] [文件加载：31]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetUserInfo',
+    2 => 'GetUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetUserInfo->GetUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T10:17:51+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/GetUserInfo
+[ info ] localhost/wepay/business-system/backend/public/GetUserInfo [运行时间：0.022048s][吞吐率：45.36req/s] [内存消耗：2,321.85kb] [文件加载：31]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'GetUserInfo',
+    2 => 'GetUserInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\GetUserInfo->GetUserInfo[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\GetUserInfo.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T11:17:19+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/
+[ info ] localhost/wepay/business-system/backend/public/android/ [运行时间：0.022666s][吞吐率：44.12req/s] [内存消耗：1,885.53kb] [文件加载：27]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T11:17:27+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.638430s][吞吐率：1.57req/s] [内存消耗：2,702.40kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.101129s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId from orders where orderId = '1' [ RunTime:0.067119s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' [ RunTime:0.066412s ]
+[ sql ] [ SQL ] update orders set orderStatus = 2 where orderId = '1' [ RunTime:0.064702s ]
+[ sql ] [ SQL ] update buyer set balance = balance - '1' where buyerId = '1' [ RunTime:0.074296s ]
+[ sql ] [ SQL ] update seller set balance = balance + '1' [ RunTime:0.064559s ]
+[ sql ] [ SQL ] update good set soldAmount = soldAmount + '1' [ RunTime:0.064895s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:19:38+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.581282s][吞吐率：1.72req/s] [内存消耗：2,704.00kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.091821s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId, goodId from orders where orderId = '1' [ RunTime:0.066536s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' [ RunTime:0.059219s ]
+[ sql ] [ SQL ] update orders set orderStatus = 2 where orderId = '1' [ RunTime:0.061405s ]
+[ sql ] [ SQL ] update buyer set balance = balance - '1' where buyerId = '1' [ RunTime:0.063620s ]
+[ sql ] [ SQL ] update seller set balance = balance + '1' [ RunTime:0.072736s ]
+[ sql ] [ SQL ] update good set soldAmount = soldAmount + '1' where goodId = '1' [ RunTime:0.067265s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:20:57+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.578931s][吞吐率：1.73req/s] [内存消耗：2,729.19kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.088784s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId, goodId from orders where orderId = '1' [ RunTime:0.060818s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' [ RunTime:0.059217s ]
+[ sql ] [ SQL ] update orders set orderStatus = 2 where orderId = '1' [ RunTime:0.058583s ]
+[ sql ] [ SQL ] update buyer set balance = balance - '1' where buyerId = '1' [ RunTime:0.057875s ]
+[ sql ] [ SQL ] update seller set balance = balance + '1' [ RunTime:0.059779s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:21:26+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.493173s][吞吐率：2.03req/s] [内存消耗：2,729.19kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.085305s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId, goodId from orders where orderId = '1' [ RunTime:0.059591s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' [ RunTime:0.057285s ]
+[ sql ] [ SQL ] update orders set orderStatus = 2 where orderId = '1' [ RunTime:0.057633s ]
+[ sql ] [ SQL ] update buyer set balance = balance - '1' where buyerId = '1' [ RunTime:0.056852s ]
+[ sql ] [ SQL ] update seller set balance = balance + '1' [ RunTime:0.057082s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:22:00+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.661767s][吞吐率：1.51req/s] [内存消耗：2,703.59kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.111694s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId, goodId from orders where orderId = '1' [ RunTime:0.073158s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' [ RunTime:0.081307s ]
+[ sql ] [ SQL ] update orders set orderStatus = 2 where orderId = '1' [ RunTime:0.074073s ]
+[ sql ] [ SQL ] update buyer set balance = balance - '1' where buyerId = '1' [ RunTime:0.073682s ]
+[ sql ] [ SQL ] update seller set balance = balance + '1' [ RunTime:0.072072s ]
+[ sql ] [ SQL ] update good set soldAmount = soldAmount + '1' where goodId = '1' [ RunTime:0.072764s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:23:51+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.252391s][吞吐率：3.96req/s] [内存消耗：2,703.98kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097493s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId, goodId from orders where orderId = '1' [ RunTime:0.064903s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' and buyerId = '1' [ RunTime:0.063928s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:24:14+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods
+[ info ] localhost/wepay/business-system/backend/public/android/ConfirmRecvGoods/ConfirmRecvGoods [运行时间：0.245008s][吞吐率：4.08req/s] [内存消耗：2,703.98kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'ConfirmRecvGoods',
+    2 => 'ConfirmRecvGoods',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\ConfirmRecvGoods->ConfirmRecvGoods[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\ConfirmRecvGoods.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.091479s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] select unitPrice, amount, buyerId, goodId from orders where orderId = '1' [ RunTime:0.062240s ]
+[ sql ] [ SQL ] select balance from buyer where balance >= '1' and buyerId = '1' [ RunTime:0.064033s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:38:24+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserRegist/UserRegist
+[ info ] localhost/wepay/business-system/backend/public/android/UserRegist/UserRegist [运行时间：0.024591s][吞吐率：40.67req/s] [内存消耗：2,319.38kb] [文件加载：31]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserRegist',
+    2 => 'UserRegist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserRegist->UserRegist[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserRegist.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-07-13T11:39:24+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserRegist/UserRegist
+[ info ] localhost/wepay/business-system/backend/public/android/UserRegist/UserRegist [运行时间：0.194422s][吞吐率：5.14req/s] [内存消耗：2,688.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserRegist',
+    2 => 'UserRegist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserRegist->UserRegist[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserRegist.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.099329s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
+[ sql ] [ SQL ] insert into buyer (email, buyerPassword) values ('hahah', '1243') [ RunTime:0.068593s ]
+---------------------------------------------------------------
+[ 2017-07-13T11:39:48+08:00 ] ::1 ::1 GET /wepay/business-system/backend/public/android/UserRegist/UserRegist
+[ info ] localhost/wepay/business-system/backend/public/android/UserRegist/UserRegist [运行时间：0.214614s][吞吐率：4.66req/s] [内存消耗：2,721.05kb] [文件加载：38]
+[ info ] [ LANG ] D:\wampServer\wamp64\www\WePay\business-system\backend\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'android',
+    1 => 'UserRegist',
+    2 => 'UserRegist',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.1.1082735944.1490769720; pgv_pvi=8903682048; _gid=GA1.1.802069181.1499838781; PHPSESSID=321dg5oet74cjsgbd62sqsk8l6',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\android\controller\UserRegist->UserRegist[ D:\wampServer\wamp64\www\WePay\business-system\backend\application\android\controller\UserRegist.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.099170s ] mysql:dbname=wepay;host=120.77.34.254;charset=utf8
