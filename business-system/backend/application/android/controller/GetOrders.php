@@ -17,16 +17,23 @@ class GetOrders extends  Controller
     {
         $request = Request::instance();
         $buyer_id = $request->session('buyer_id');
-        //$buyer_id =1;
-        try {
-            $data = Db::query('select orderId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where buyerId =:buyer_id and orders.goodId = good.goodId', ['buyer_id' => $buyer_id]);
-            $code = 0;
-            $msg = '查询成功';
-        }
-        catch (Exception $e){
+        if($request->session('login')!='true')
+        {
             $code = 1;
+            $msg = '您还未登录。';
             $data = NULL;
-            $msg = $e->getMessage();
+        }
+        else
+        {
+            try {
+                $data = Db::query('select orderId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where buyerId =:buyer_id and orders.goodId = good.goodId', ['buyer_id' => $buyer_id]);
+                $code = 0;
+                $msg = '查询成功';
+            } catch (Exception $e) {
+                $code = 1;
+                $data = NULL;
+                $msg = $e->getMessage();
+            }
         }
         $res = [
             'code' => $code,
