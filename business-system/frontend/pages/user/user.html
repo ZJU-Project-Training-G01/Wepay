@@ -2,22 +2,26 @@
     <div class="panel-heading">你的基础信息</div>
     <div class="panel-body row">
         <div class="col-md-2 col-sx-2 col-sm-2 col-lg-2">
-            <img ng-src="{{sellerImgUrl}}">
+            <img ng-src="{{seller.sellerImgUrl}}">
         </div>
         <div class="col-md-2 col-sx-2 col-sm-2 col-lg-2">
             <div>会员名：</div>
             <div>真实姓名：</div>
             <div>绑定手机：</div>
-            <div>绑定银行卡：</div>
             <div>账户余额：</div>
+            <div>银行卡：</div>
+
+        </div>
+        <div class="col-md-3 col-sx-3 col-sm-3 col-lg-3">
+            <div>{{seller.sellerName}}</div>
+            <div>{{seller.realName}}</div>
+            <div>{{seller.phoneNumber}}</div>
+            <div>{{seller.balance}}</div>
+            <div>{{seller.bankCard}}</div>
         </div>
         <div class="col-md-2 col-sx-2 col-sm-2 col-lg-2">
-            <div>{{sellerName}}</div>
-            <div>{{realName}}</div>
-            <div>{{phoneNumber}}</div>
-            <div>{{bankCard}}</div>
-            <div>{{balance}}</div>
+            <br><br><br><br>
+            <div ng-show='toBind' class='bind' ng-click="bind">绑定银行卡</div>
         </div>
-
     </div>
 </div>
