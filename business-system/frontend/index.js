@@ -2,23 +2,50 @@
     let app = angular
         .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging'])
         .run(['$rootScope', function($rootScope) {
-            $rootScope.$on('transferErrorMsg', function(e, errorMsg) {
-                $rootScope.$broadcast('receiveErrorMsg', errorMsg);
+            $rootScope.$on('transferErrorMsg', function(e, errorMsg, ifSuccess) {
+                $rootScope.$broadcast('receiveErrorMsg', errorMsg, ifSuccess);
+                $rootScope.$broadcast('receShowNavbar');
+            });
+            $rootScope.$on('hideNavbar', function(e) {
+                $rootScope.$broadcast('receHideNavbar');
             });
         }])
         .controller('error', ['$scope', function($scope) {
             $scope.ifError = false;
-            $scope.$on('receiveErrorMsg', function(e, errorMsg) {
+            $scope.ifSuccess = false;
+            $scope.$on('receiveErrorMsg', function(e, errorMsg, ifSuccess) {
                 $scope.errorMsg = errorMsg;
-                $scope.ifError = true;
+                if (!ifSuccess) {
+                    $scope.ifError = true;
+                } else {
+                    $scope.ifSuccess = true;
+                }
             })
         }])
+        .controller('navbar', ['$scope', function($scope) {
+            $scope.ifNavbar = true;
+            $scope.$on('receHideNavbar', function(e) {
+                $scope.ifNavbar = false;
+            });
+            $scope.$on('receShowNavbar', function(e) {
+                $scope.ifNavbar = true;
+            });
+        }])
+        .component('register', {
+            templateUrl: 'frontend/pages/register/register.html',
+            controller: 'register'
+        })
+        .component('login', {
+            templateUrl: 'frontend/pages/login/login.html',
+            controller: 'login'
+        })
         .component('user', {
             templateUrl: 'frontend/pages/user/user.html',
             controller: 'user'
         })
         .component('navbar', {
             templateUrl: 'frontend/components/navbar/navbar.html',
+            controller: 'navbar',
         })
         .component('error', {
             templateUrl: 'frontend/components/error/error.html',
@@ -47,6 +74,24 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('', '/');
         $stateProvider
+            .state('register', {
+                url: '/register',
+                template: '<register></register>',
+                resolve: {
+                    register: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(['register']);
+                    }
+                }
+            })
+            .state('login', {
+                url: '/',
+                template: '<login></login>',
+                resolve: {
+                    login: function($ocLazyLoad) {
+                        return $ocLazyLoad.load(['login'])
+                    }
+                }
+            })
             .state('user', {
                 url: '/user',
                 template: '<user></user>',
@@ -106,6 +151,22 @@
         $ocLazyLoadProvider.config({
             debug: true,
             modules: [{
+                    name: 'register',
+                    files: [
+                        'frontend/pages/register/register.js',
+                        'frontend/pages/register/register.css',
+                        'frontend/components/loginNavbar/loginNavbar.css'
+                    ]
+                },
+                {
+                    name: 'login',
+                    files: [
+                        'frontend/pages/login/login.js',
+                        'frontend/pages/login/login.css',
+                        'frontend/components/loginNavbar/loginNavbar.css'
+                    ]
+                },
+                {
                     name: 'user',
                     files: [
                         'frontend/pages/user/user.js',
