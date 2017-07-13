@@ -30,7 +30,7 @@
                     <th width='10%'>{{order.total}}</th>
                     <th width='10%'>{{order.orderName}}</th>
                     <th width='10%'>{{order.operation}}
-                        <button class="btn btn-primary" ng-if="order.orderStatus===0" ng-click="sendGood(order)">发货</button>
+                        <button class="btn btn-primary" ng-show="order.orderStatus===0" ng-click="sendGood(order)">发货</button>
                     </th>
                 </tr>
             </tbody>
