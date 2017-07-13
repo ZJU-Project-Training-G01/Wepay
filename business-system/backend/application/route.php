@@ -18,6 +18,7 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
     'SellersGetOrders' => 'back/GetOrders/GetOrders',
+    'SellerLogin' => 'back/SellerLogin/SellerLogin',
     'GetOrders' => 'android/GetOrders/GetOrders',
     'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',
     'EditUserInfo' => 'android/EditUserInfo/EditUserInfo',
