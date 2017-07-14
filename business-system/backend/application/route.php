@@ -21,6 +21,7 @@ return [
     'SellerLogin' => 'back/SellerLogin/SellerLogin',
     'GetGoods' => 'back/GetGoods/GetGoods',
     'GetSellerInfo' => 'back/GetSellerInfo/GetSellerInfo',
+    'SellerRegister' => 'back/SellerRegister/SellerRegister',
     'GetOrders' => 'android/GetOrders/GetOrders',
     'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',
     'EditUserInfo' => 'android/EditUserInfo/EditUserInfo',
