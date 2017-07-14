@@ -22,15 +22,16 @@ import com.android.volley.VolleyError;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import cn.edu.zju.se_g01.nfc_pay.R;
 import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.orders.Order;
-import cn.edu.zju.se_g01.nfc_pay.orders.OrderLab;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
 import cn.edu.zju.se_g01.nfc_pay.tools.ImageDownloader;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
@@ -42,28 +43,61 @@ import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 public class OrderListFragment extends ListFragment {
     private static final String TAG = "OrderListFragment";
     private ArrayList<Order> mOrders = null;
+    private OrderAdapter orderAdapter;
     ImageDownloader<ImageView> mImageDownloadThread;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mOrders = OrderLab.get(getActivity()).getOrders();
-        OrderAdapter adapter = new OrderAdapter(mOrders);
+//        mOrders = OrderLab.get(getActivity()).getOrders();
+        mOrders = new ArrayList<>();
 
-        setListAdapter(adapter);
-
-        mImageDownloadThread = new ImageDownloader<>(new Handler());
-        mImageDownloadThread.setListener(new ImageDownloader.Listener<ImageView>() {
+        String url = Config.getFullUrl("GetOrders");
+        CookieRequest orderLabReq = new CookieRequest(getActivity(), Request.Method.GET, url,
+                null, new Response.Listener<JSONObject>() {
             @Override
-            public void onImageDownloaded(ImageView imageView, Bitmap thumbnail) {
-                if (isVisible()) {
-                    imageView.setImageBitmap(thumbnail);
+            public void onResponse(JSONObject response) {
+                try {
+                    Log.d(TAG, "Get Orders Response:" +  response.toString());
+                    int code = response.getInt("code");
+
+                    if(code == 1) {
+                        Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+                    } else if(code == 0) {
+                        int nOrders = response.getJSONArray("data").length();
+                        for (int i = 0; i < nOrders; i++) {
+                            JSONObject each_order = response.getJSONArray("data").getJSONObject(i);
+                            DateFormat dfmt = new SimpleDateFormat("yyyy-MM-dd");
+                            Date order_date = dfmt.parse(each_order.getString("order_time"));
+                            Order order = new Order(each_order.getInt("order_id"), each_order.getString("good_name"), each_order.getString("img_url"),
+                                    each_order.getInt("amount"), each_order.getDouble("unit_price"), each_order.getInt("order_status"),
+                                    order_date);
+                            mOrders.add(order);
+                        }
+                    }
+                    orderAdapter = new OrderAdapter(mOrders);
+
+                    setListAdapter(orderAdapter);
+
+                    mImageDownloadThread = new ImageDownloader<>(new Handler());
+                    mImageDownloadThread.setListener(new ImageDownloader.Listener<ImageView>() {
+                        @Override
+                        public void onImageDownloaded(ImageView imageView, Bitmap thumbnail) {
+                            if (isVisible()) {
+                                imageView.setImageBitmap(thumbnail);
+                            }
+                        }
+                    });
+                    mImageDownloadThread.start();
+                    mImageDownloadThread.getLooper();
+                    Log.i(TAG, "background thread start");
+                } catch (Exception e) {
+                    e.printStackTrace();
+
                 }
             }
-        });
-        mImageDownloadThread.start();
-        mImageDownloadThread.getLooper();
-        Log.i(TAG, "background thread start");
+        }, null);
+        MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(orderLabReq);
     }
 
     public class OrderAdapter extends ArrayAdapter<Order> {
@@ -76,7 +110,6 @@ public class OrderListFragment extends ListFragment {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-            this.addAll(mOrders);
             if(convertView == null) {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.order_list_item, null);
             }
@@ -108,7 +141,7 @@ public class OrderListFragment extends ListFragment {
 
             orderDateTextView.setText("日期:" + formatter.format(o.getOrder_date()));
 
-            final String mUrl = Config.getFullUrl("ConfirmRecvGoods");
+            final String mConfirmRecvUrl = Config.getFullUrl("ConfirmRecvGoods");
 
             //用户点击确认收货按钮之后，按钮变灰，文字改变成"订单完成"
             confirmRecvGoodsBtn.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +150,7 @@ public class OrderListFragment extends ListFragment {
                     Map<String, String> paramsMap = new HashMap<>(1);
                     paramsMap.put("orderID", Integer.toString(o.getOrder_id()));
                     CookieRequest confirmRecvGoodsReq = new CookieRequest(getActivity(), Request.Method.POST,
-                            mUrl, paramsMap, new Response.Listener<JSONObject>() {
+                            mConfirmRecvUrl, paramsMap, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
                             Log.d(TAG, "confirmRecvGoodsResponse:" + response.toString());
@@ -127,7 +160,7 @@ public class OrderListFragment extends ListFragment {
                                     confirmRecvGoodsBtn.setEnabled(false);
                                     confirmRecvGoodsBtn.setText("订单完成");
                                 } else if(code == 1) {
-                                    Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG);
+                                    Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();

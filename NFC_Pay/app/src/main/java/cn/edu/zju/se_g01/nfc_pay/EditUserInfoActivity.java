@@ -18,13 +18,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 public class EditUserInfoActivity extends AppCompatActivity {
 
-    private final static String getUserInfoUrl = "http://localhost/getUserInfo.php";
-    private final static String editUserInfoUrl = "http://localhost/editUserInfo.php";
     private static final String TAG = "EditUserInfoActivity";
 
     @Override
@@ -39,11 +38,12 @@ public class EditUserInfoActivity extends AppCompatActivity {
         Button userInfoCommitBtn = (Button)findViewById(R.id.userInfoCommitBtn);
 
         //发起一个网络请求，获取用户信息
-        final CookieRequest userInfoReq = new CookieRequest(getApplicationContext(), Request.Method.GET, getUserInfoUrl,
+        final CookieRequest userInfoReq = new CookieRequest(getApplicationContext(), Request.Method.GET, Config.getFullUrl("GetUserInfo"),
                 null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    Log.d(TAG, "get user info response:" + response.toString());
                     JSONObject data = response.getJSONObject("data");
                     userNameEditText.setText(data.getString("userName"));
                     realNameEditText.setText(data.getString("realName"));
@@ -70,11 +70,12 @@ public class EditUserInfoActivity extends AppCompatActivity {
                 postParams.put("realName", realNameEditText.getText().toString());
                 postParams.put("phone", phoneEditText.getText().toString());
                 postParams.put("address", addressEditText.getText().toString());
-                CookieRequest editUserInfoReq = new CookieRequest(getApplicationContext(), Request.Method.POST, editUserInfoUrl,
+                CookieRequest editUserInfoReq = new CookieRequest(getApplicationContext(), Request.Method.POST, Config.getFullUrl("EditUserInfo"),
                         postParams, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            Log.d(TAG, "edit user info response:" + response.toString());
                             int code = response.getInt("code");
                             if(code == 0) {
                                 Toast.makeText(EditUserInfoActivity.this, "修改成功", Toast.LENGTH_LONG).show();
@@ -85,12 +86,8 @@ public class EditUserInfoActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, error.getMessage());
-                    }
-                });
+                }, null);
+                MySingleton.getInstance(getApplicationContext()).getRequestQueue().add(editUserInfoReq);
             }
         });
     }

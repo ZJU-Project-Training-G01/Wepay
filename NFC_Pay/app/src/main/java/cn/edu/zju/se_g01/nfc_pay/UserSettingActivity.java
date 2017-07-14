@@ -103,14 +103,20 @@ public class UserSettingActivity extends Activity {
                 startActivity(new Intent(UserSettingActivity.this, ChargeBalanceActivity.class));
             }
         });
+        getUserInfo();
 
 
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    private void getUserInfo() {
         //获取用户的个人信息
         CookieRequest cookieRequest = new CookieRequest(getApplicationContext(), Request.Method.GET,
                 Config.getFullUrl("GetUserInfo"), null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    Log.d(TAG, "get user info response:" + response.toString());
                     //修改界面上的用户昵称和余额
                     userNameTextView.setText(response.getJSONObject("data").getString("userName"));
                     balanceTextView.setText(response.getJSONObject("data").getString("balance"));
@@ -121,7 +127,11 @@ public class UserSettingActivity extends Activity {
             }
         }, null);
         MySingleton.getInstance(getApplicationContext()).getRequestQueue().add(cookieRequest);
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
 }
