@@ -19,9 +19,10 @@
             <div>{{seller.balance}}</div>
             <div>{{seller.bankCard}}</div>
         </div>
-        <div class="col-md-2 col-sx-2 col-sm-2 col-lg-2">
-            <br><br><br><br>
-            <div ng-show='toBind' class='bind' ng-click="bind">绑定银行卡</div>
+        <div class="col-md-2 col-sx-2 col-sm-2 col-lg-2 operation">
+            <br><br><br>
+            <div><span>充值</span>&nbsp;&nbsp;<span ng-click="toBank()">转出</span></div>
+            <div ng-show='toBind' ng-click="bind()">绑定银行卡</div>
         </div>
     </div>
 </div>

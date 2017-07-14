@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="frontend/bower_components/bootswatch/journal/bootstrap.min.css">
     <link rel="stylesheet" href="frontend/pages/index/index.css">
+
 </head>
 
 <body ng-app="myApp">
     <error></error>
     <navbar></navbar>
     <div ui-view>正在加载网页……</div>
+    <script src="frontend/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- bootstrap  before angular js -->
+    <script src="frontend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="frontend/bower_components/angular/angular.js"></script>
     <script src="frontend/static/lib/angular-ui-router.js"></script>
     <script src="frontend/static/lib/angular-paging.js"></script>
+    <!-- need to include jQuery and bootstrap -->
+    <script src="frontend/bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
     <script src="frontend/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
-    <script src="frontend/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="frontend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="frontend/index.js"></script>
 </body>
 

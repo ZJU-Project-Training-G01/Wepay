@@ -1,6 +1,6 @@
 (function() {
     let app = angular
-        .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging'])
+        .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging', 'angularModalService'])
         .run(['$rootScope', function($rootScope) {
             $rootScope.$on('transferErrorMsg', function(e, errorMsg, status) {
                 $rootScope.$broadcast('receiveErrorMsg', errorMsg, status);
@@ -11,6 +11,9 @@
             $rootScope.$on('hideNavbar', function(e) {
                 $rootScope.$broadcast('receHideNavbar');
             });
+            $rootScope.$on('close', function(e) {
+                $rootScope.$broadcast('receClose');
+            })
         }])
         .controller('error', ['$scope', function($scope) {
             $scope.ifError = false;
@@ -172,7 +175,9 @@
                     name: 'user',
                     files: [
                         'frontend/pages/user/user.js',
-                        'frontend/pages/user/user.css'
+                        'frontend/pages/user/user.css',
+                        'frontend/components/bind/bind.js',
+                        'frontend/components/bind/bind.css'
                     ]
                 },
                 {

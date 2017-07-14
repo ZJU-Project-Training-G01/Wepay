@@ -1,0 +1,37 @@
+<div class="well bs-components">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>绑定银行卡</legend>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">卡号</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="卡号" ng-model="bankCard">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">身份证</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="身份证" ng-model="idCard">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">姓名</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="姓名" ng-model="realName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">密码</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" placeholder="密码" ng-model="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button class="btn btn-default" ng-click="close()">取消</button>
+                    <button ng-click="bind()" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

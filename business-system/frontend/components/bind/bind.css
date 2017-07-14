@@ -1,0 +1,9 @@
+bind .well {
+  z-index: 1500;
+  position: fixed;
+  width: 50%;
+  top: 200px; }
+  bind .well button:first-child {
+    margin-right: 15px; }
+
+/*# sourceMappingURL=bind.css.map */
