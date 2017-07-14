@@ -5,9 +5,9 @@ user .panel {
   margin-right: 30px; }
   user .panel .panel-body {
     font-size: 18px; }
-user .bind {
-  color: #36c; }
-user .bind:hover {
-  cursor: pointer; }
+    user .panel .panel-body .operation {
+      color: #36c; }
+    user .panel .panel-body .operation:hover {
+      cursor: pointer; }
 
 /*# sourceMappingURL=user.css.map */

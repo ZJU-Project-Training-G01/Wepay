@@ -7,12 +7,12 @@ user {
         margin-right: 30px;
         .panel-body {
             font-size: 18px;
+            .operation {
+                color: #36c;
+            }
+            .operation:hover {
+                cursor: pointer;
+            }
         }
-    }
-    .bind {
-        color: #36c;
-    }
-    .bind:hover {
-        cursor: pointer;
     }
 }

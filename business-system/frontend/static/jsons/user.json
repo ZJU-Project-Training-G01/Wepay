@@ -4,6 +4,7 @@
         "sellerName": "闷声发大财者",
         "phoneNumber": "15077777777",
         "balance": 1000,
+        "bankCard": "",
         "realName": "江大哥",
         "sellerImgUrl": "frontend/static/imgs/sellerImgs/seller003.jpg"
     },
