@@ -30,7 +30,7 @@ class GetUserInfo extends Controller
             $buyerId = $request->session('buyer_id');
             //$buyerId = 1 ;
             try {
-                $data1 = Db::query('select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = :buyerId', ['buyerId' => $buyerId]);
+                $data1 = Db::query('select buyerName as userName, realName, phoneNumber as phone, address, balance from buyer where buyerId = :buyerId', ['buyerId' => $buyerId]);
                 //print_r($data);
                 $data = $data1[0];
                 $code = 0;
