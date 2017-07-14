@@ -17,7 +17,7 @@ public class Goods {
         uuid = UUID.randomUUID();
     }
 
-    public Goods(String goodsId, String goodsName, float unitPrice, String imgUrl, String goodsInfo) {
+    public Goods(String goodsId, String goodsName, double unitPrice, String imgUrl, String goodsInfo) {
         uuid = UUID.randomUUID();
         this.goodsId = goodsId;
         this.goodsName = goodsName;
