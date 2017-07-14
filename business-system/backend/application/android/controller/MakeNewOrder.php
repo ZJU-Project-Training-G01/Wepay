@@ -27,7 +27,7 @@ class MakeNewOrder extends  Controller
         $orderTime = date('Y-m-d');
 
         $res = array();
-        $result = Db::query('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)',['buyerId'=>$buyerId,
+        $result = Db::execute('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)',['buyerId'=>$buyerId,
             'goodId'=>$goodId, 'amount'=>$amount, 'unitPrice'=>$unitPrice, 'orderTime'=>$orderTime]);
         if($result == true)
         {
