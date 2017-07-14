@@ -18,6 +18,10 @@ class GetSellerInfo extends Controller
     public function GetSellerInfo()
     {
         $request = Request::instance();
+
+        //test
+        //Session::set('login', 'true');
+
         if($request->session('login')!='true')
         {
             $code = 2;
@@ -27,15 +31,25 @@ class GetSellerInfo extends Controller
         else
         {
             $sellerId = $request->session('sellerId');
+            //$sellerId = 1;
             try{
                 $data1 = Db::query('select sellerName, phoneNumber, balance, bankCard, realName, sellerImgUrl from seller where sellerId = :sellerId',
                     ['sellerId' => $sellerId]);
                 $data = $data1[0];
                 $code = 0;
-                $msg = '';
+                $msg = $sellerId;
+            }catch(Exception $e){
+                $code = 3;
+                $msg =$e->getMessage();
+                $data = NULL;
             }
         }
-
+        $res = [
+            'code' => $code,
+            'msg' => $msg,
+            'data' => $data,
+        ];
+        echo json_encode($res, JSON_UNESCAPED_UNICODE);
 
     }
 }
