@@ -17,9 +17,11 @@ class GetUserInfo extends Controller
     public function GetUserInfo()
     {
         $request = Request::instance();
+        //test
+        //Session::set('login','true');
         if($request->session('login')!='true')
         {
-            $code = 1;
+            $code = 2;
             $msg = '您还未登录。';
             $data = NULL;
         }
@@ -28,8 +30,9 @@ class GetUserInfo extends Controller
             $buyerId = $request->session('buyer_id');
             //$buyerId = 1 ;
             try {
-                $data = Db::query('select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = :buyerId', ['buyerId' => $buyerId]);
+                $data1 = Db::query('select buyerName as userName, realName, phoneNumber as phone, address from buyer where buyerId = :buyerId', ['buyerId' => $buyerId]);
                 //print_r($data);
+                $data = $data1[0];
                 $code = 0;
                 $msg = '';
             } catch (Exception $e) {
