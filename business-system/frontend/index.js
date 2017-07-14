@@ -12,18 +12,25 @@
                 $rootScope.$broadcast('receHideNavbar');
             });
         }])
-        .controller('error', ['$scope', function($scope) {
-            $scope.ifError = false;
-            $scope.ifSuccess = false;
-            $scope.$on('receiveErrorMsg', function(e, errorMsg, ifSuccess) {
-                $scope.errorMsg = errorMsg;
-                if (!ifSuccess) {
-                    $scope.ifError = true;
-                } else {
-                    $scope.ifSuccess = true;
-                }
-            })
-        }])
+        .controller('error', ['$scope', '$window',
+            function($scope, $window) {
+                $scope.ifError = false;
+                $scope.ifSuccess = false;
+                $scope.$on('receiveErrorMsg', function(e, errorMsg, ifSuccess) {
+                    $scope.errorMsg = errorMsg;
+                    if (!ifSuccess) {
+                        $scope.ifError = true;
+                    } else {
+                        $scope.ifSuccess = true;
+                        if (ifSuccess === 'modal') {
+                            $scope.close = function() {
+                                $window.location.reload();
+                            }
+                        }
+                    }
+                })
+            }
+        ])
         .controller('navbar', ['$scope', function($scope) {
             $scope.ifNavbar = true;
             $scope.$on('receHideNavbar', function(e) {
@@ -174,7 +181,11 @@
                         'frontend/pages/user/user.js',
                         'frontend/pages/user/user.css',
                         'frontend/components/bind/bind.js',
-                        'frontend/components/bind/bind.css'
+                        'frontend/components/bind/bind.css',
+                        'frontend/components/out/out.css',
+                        'frontend/components/out/out.js',
+                        'frontend/components/in/in.css',
+                        'frontend/components/in/in.js'
                     ]
                 },
                 {

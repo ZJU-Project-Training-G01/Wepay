@@ -1,12 +1,6 @@
-$modalWidth:500px;
 bind {
     .well {
-        z-index: 1500;
-        position: fixed;
-        width: $modalWidth;
         top: 200px;
-        left: 50%;
-        margin-left: -$modalWidth/2;
         button:first-child {
             margin-right: 15px;
         }

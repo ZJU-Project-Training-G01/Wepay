@@ -16,13 +16,10 @@
             <div>{{seller.sellerName}}</div>
             <div>{{seller.realName}}</div>
             <div>{{seller.phoneNumber}}</div>
-            <div>{{seller.balance}}</div>
-            <div>{{seller.bankCard}}</div>
-        </div>
-        <div class="col-md-2 col-sx-2 col-sm-2 col-lg-2 operation">
-            <br><br><br>
-            <div><span>充值</span>&nbsp;&nbsp;<span ng-click="toBank()">转出</span></div>
-            <div ng-show='toBind' ng-click="bind()">绑定银行卡</div>
+            <div>{{seller.balance}}
+                <span class="operation"><span ng-click="in()">充值</span>&nbsp;&nbsp;<span ng-click="toBank()">转出</span></span>
+            </div>
+            <div>{{seller.bankCard}}<span class="operation" ng-show='toBind' ng-click="bind()">绑定银行卡</span></div>
         </div>
     </div>
 </div>
