@@ -26,7 +26,7 @@ class ConfirmRecvGoods extends Controller
 
         if($request->session('login')!='true')
         {
-            $code = 1;
+            $code = 2;
             $msg = '您还未登录。';
             $data = NULL;
         }
