@@ -1,4 +1,4 @@
-<div class="well bs-components">
+<div ng-controller="bind" class="well bs-components">
     <form class="form-horizontal">
         <fieldset>
             <legend>绑定银行卡</legend>
@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                    <button class="btn btn-default" ng-click="close()">取消</button>
+                    <button class="btn btn-default" ng-click="cancel()">取消</button>
                     <button ng-click="bind()" class="btn btn-primary">确定</button>
                 </div>
             </div>

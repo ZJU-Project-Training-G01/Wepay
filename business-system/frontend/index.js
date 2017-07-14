@@ -1,6 +1,6 @@
 (function() {
     let app = angular
-        .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging', 'angularModalService'])
+        .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging', 'ngAnimate', 'angularModalService'])
         .run(['$rootScope', function($rootScope) {
             $rootScope.$on('transferErrorMsg', function(e, errorMsg, status) {
                 $rootScope.$broadcast('receiveErrorMsg', errorMsg, status);
@@ -11,9 +11,6 @@
             $rootScope.$on('hideNavbar', function(e) {
                 $rootScope.$broadcast('receHideNavbar');
             });
-            $rootScope.$on('close', function(e) {
-                $rootScope.$broadcast('receClose');
-            })
         }])
         .controller('error', ['$scope', function($scope) {
             $scope.ifError = false;

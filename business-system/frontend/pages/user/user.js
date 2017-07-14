@@ -15,13 +15,12 @@
                         controller: 'out'
                     }).then(function(modal) {
                         modal.element.modal();
-                        modal.close.then(function(result) {
-                            console.log(result);
-                        });
+                        modal.close.then(function(result) {});
                     })
                 }
-                $scope.dismissModal = function(result) {
-                    close(result, 200)
+
+                $scope.close = function(result) {
+                    close(result, 500); // close, but give 500ms for bootstrap to animate
                 }
                 $scope.$on('receClose', function() {
                     $scope.dismissModal();
@@ -30,19 +29,16 @@
                 $scope.bind = function() {
                     ModalService.showModal({
                         template: '<bind></bind>',
-                        controller: 'bind'
+                        controller: 'bind',
+                        preClose: (modal) => { modal.element.modal('hide'); }
                     }).then(function(modal) {
                         modal.element.modal();
-                        $scope.$on('close', function(e) {
-                            modal.close.then(function(result) {
-                                console.log(result);
-                            });
-                        })
                         modal.close.then(function(result) {
                             console.log(result);
                         });
-                    })
+                    });
                 }
+
                 $http({
                     url: 'frontend/static/jsons/user.json',
                     method: 'post',

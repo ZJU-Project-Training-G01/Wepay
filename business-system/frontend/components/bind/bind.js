@@ -1,7 +1,7 @@
 (function() {
     angular.module('bind', [])
-        .controller('bind', ['$scope', '$location', 'close',
-            function($scope, $location, close) {
+        .controller('bind', ['$scope', '$location', '$window',
+            function($scope, $location, $window) {
                 $scope.bind = function() {
                     if ($scope.bankCard === undefined) {
                         $scope.$emit('transferErrorMsg', '银行卡号不得为空');
@@ -19,11 +19,10 @@
                         $scope.$emit('transferErrorMsg', '密码不得为空');
                         return;
                     }
-                }
-                $scope.close = function(result) {
-                    close(result, 500); // close, but give 500ms for bootstrap to animate
                 };
-
+                $scope.cancel = function() {
+                    $window.location.reload();
+                };
             }
         ]);
 })();
