@@ -52,10 +52,11 @@ import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
  */
 
 public class GoodActivity extends Activity {
+    public static final String TAG = "GoodActivity";
 
     public static final String EXTRA_GOOD_ID =
             "cn.edu.zju.se_g01.nfc_pay.good_id";
-    private Goods g;
+    private Goods g = new Goods();
     int buyAmount;
     List<Integer> list;
 
@@ -79,50 +80,24 @@ public class GoodActivity extends Activity {
         String goodId = (String) getIntent().getSerializableExtra(EXTRA_GOOD_ID);
 
 //        g = GoodsLab.getInstance().getGood(goodId);
-        g = new Goods("0000", "商品名称",
-                0, "http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png", "none");
+//        g = new Goods("0000", "商品名称",
+//                0, "http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png", "none");
 
         Log.d("GoodActivity", "create good activity");
 
         img = (ImageView) findViewById(R.id.detail_good_img);
-        TextView goodName = (TextView) findViewById(R.id.detail_good_name);
+        final TextView goodName = (TextView) findViewById(R.id.detail_good_name);
         final TextView unitPrice = (TextView) findViewById(R.id.detail_unit_price);
         Spinner spinner = (Spinner) findViewById(R.id.buy_amount_spinner);
-        Button nfcButton = (Button) findViewById(R.id.set_nfc_button);
-        Button buyButton = (Button) findViewById(R.id.buy_button);
+        final Button nfcButton = (Button) findViewById(R.id.set_nfc_button);
+        final Button buyButton = (Button) findViewById(R.id.buy_button);
 
 
+        //显示默认值
         img.setImageResource(R.drawable.ic_default_img);
 //        imgDownloaderThread.queueImg(img, g.getImgUrl());
-
-        //TODO 请求商品用CookieRequest
-        g = GoodsLab.getInstance().getGood(goodId);
-        //TODO 下面的代码全部写在onResponse方法里
-        new Thread() {
-            @Override
-            public void run() {
-                try {
-                    URL url = new URL(g.getImgUrl());
-                    InputStream is = url.openStream();
-                    Bitmap bitmap = BitmapFactory.decodeStream(is);
-
-                    Message msg = new Message();
-                    msg.what = 0;
-                    msg.obj = bitmap;
-                    handler.sendMessage(msg);
-
-                    is.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
-
-
-        goodName.setText(g.getGoodsName());
-        unitPrice.setText(String.format("￥%.2f", g.getUnitPrice()));
-
-        list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        list = new ArrayList<>();
+        for (int i = 1; i < 20; i++) list.add(i);
         ArrayAdapter<Integer> arrayAdapter = new ArrayAdapter<Integer>
                 (this, android.R.layout.simple_spinner_item, list);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -144,64 +119,133 @@ public class GoodActivity extends Activity {
             }
         });
 
-        nfcButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+        //TODO 请求商品用CookieRequest
+        RequestQueue queue = MySingleton.getInstance(getApplicationContext()).getRequestQueue();
+        String url = "http://120.77.34.254/business-system/backend/public/GetGood?good_id=" + goodId;
+//        Map<String, String> goodMap = new HashMap<>();
+//        goodMap.put("good_id", goodId);
+        CookieRequest goodRequest = new CookieRequest(
+                getApplicationContext(),
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            g.setGoodsId(response.getString("good_id"));
+                            g.setGoodsName(response.getString("good_name"));
+                            g.setUnitPrice(Double.valueOf(response.getString("unit_price")));
+                            g.setImgUrl(response.getString("img_url"));
+
+                            //TODO 下面的代码全部写在onResponse方法里
+                            new Thread() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        URL url = new URL(g.getImgUrl());
+                                        InputStream is = url.openStream();
+                                        Bitmap bitmap = BitmapFactory.decodeStream(is);
+
+                                        Message msg = new Message();
+                                        msg.what = 0;
+                                        msg.obj = bitmap;
+                                        handler.sendMessage(msg);
+
+                                        is.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }.start();
+
+
+                            goodName.setText(g.getGoodsName());
+                            unitPrice.setText(String.format("￥ %.2f", g.getUnitPrice()));
+
+
+                            nfcButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
 //                if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
-                NfcOperator nfcOperator = NfcOperator.getInstance();
-                try {
+                                    NfcOperator nfcOperator = NfcOperator.getInstance();
+                                    try {
 //                    String content = nfcOperator.read();
 //                    Toast.makeText(getApplicationContext(), "nfc:" + content, Toast.LENGTH_SHORT).show();
 
-                    nfcOperator.write(g.getGoodsId());
-                    Toast.makeText(getApplicationContext(), g.getGoodsId() + "写入成功", Toast.LENGTH_SHORT).show();
+                                        nfcOperator.write(g.getGoodsId());
+                                        Toast.makeText(getApplicationContext(), g.getGoodsId() + "写入成功", Toast.LENGTH_SHORT).show();
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
 //                }
-            }
-        });
-
-        buyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "购买" + buyAmount + "件商品", Toast.LENGTH_SHORT).show();
-
-                RequestQueue queue = MySingleton.getInstance(getApplicationContext()).getRequestQueue();
-                String url = "make_new_order.php";
-                Map<String, String> map = new HashMap<String, String>();
-                map.put("good_id", g.getGoodsId());
-                map.put("amount", String.valueOf(buyAmount));
-                map.put("unit_price", String.valueOf(g.getUnitPrice()));
-
-                CookieRequest postRequest = new CookieRequest(getApplicationContext(),
-                        Request.Method.POST,
-                        url,
-                        map,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                try {
-                                    Toast.makeText(getApplicationContext(), response.getString("status"), Toast.LENGTH_SHORT).show();
-
-                                    Log.d("Response", response.getString("status"));
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
                                 }
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext(), "请求超时", Toast.LENGTH_SHORT).show();
+                            });
 
-                            }
+                            buyButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Toast.makeText(getApplicationContext(), "购买" + buyAmount + "件商品", Toast.LENGTH_SHORT).show();
+
+                                    RequestQueue queue = MySingleton.getInstance(getApplicationContext()).getRequestQueue();
+                                    String url = "make_new_order.php";
+                                    Map<String, String> map = new HashMap<String, String>();
+                                    map.put("good_id", g.getGoodsId());
+                                    map.put("amount", String.valueOf(buyAmount));
+                                    map.put("unit_price", String.valueOf(g.getUnitPrice()));
+
+                                    CookieRequest postRequest = new CookieRequest(getApplicationContext(),
+                                            Request.Method.POST,
+                                            url,
+                                            map,
+                                            new Response.Listener<JSONObject>() {
+                                                @Override
+                                                public void onResponse(JSONObject response) {
+                                                    try {
+                                                        Toast.makeText(getApplicationContext(), response.getString("status"), Toast.LENGTH_SHORT).show();
+
+                                                        Log.d("buy button response", response.getString("status"));
+                                                    } catch (JSONException e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                }
+                                            },
+                                            new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError error) {
+                                                    Toast.makeText(getApplicationContext(), "请求超时", Toast.LENGTH_SHORT).show();
+
+                                                }
+                                            }
+                                    );
+                                    queue.add(postRequest);
+                                }
+                            });
+
+                        } catch (JSONException e) {
+                            Log.d(TAG, "获取商品时JSON错误");
+                            e.printStackTrace();
                         }
-                );
-                queue.add(postRequest);
-            }
-        });
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), "请求商品超时", Toast.LENGTH_SHORT).show();
+                        byte[] htmlResponseBody = error.networkResponse.data;
+                        Log.e(TAG, "请求商品超时");
+                        Log.e(TAG, new String(htmlResponseBody));
+                    }
+                }
+        );
+        queue.add(goodRequest);
+
+
+
+//        g = GoodsLab.getInstance().getGood(goodId);
+
 
 
     }
