@@ -40,7 +40,7 @@
                 }
 
                 $http({
-                    url: 'frontend/static/jsons/user.json',
+                    url: 'backend/public/GetSellerInfo',
                     method: 'post',
                     data: {}
                 }).then(function(data) {
