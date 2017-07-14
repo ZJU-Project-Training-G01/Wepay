@@ -1,10 +1,5 @@
 bind .well {
-  z-index: 1500;
-  position: fixed;
-  width: 500px;
-  top: 200px;
-  left: 50%;
-  margin-left: -250px; }
+  top: 200px; }
   bind .well button:first-child {
     margin-right: 15px; }
 

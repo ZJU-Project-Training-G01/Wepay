@@ -1,7 +1,16 @@
 (function() {
     angular.module('user', [])
+        .component('bind', {
+            templateUrl: 'frontend/components/bind/bind.html',
+            controller: 'bind'
+        })
         .component('out', {
-
+            templateUrl: 'frontend/components/out/out.html',
+            controller: 'out'
+        })
+        .component('in', {
+            templateUrl: 'frontend/components/in/in.html',
+            controller: 'in'
         })
         .controller('user', ['$scope', '$http', 'setPricePrecision', '$location', "ModalService",
             function($scope, $http, setPricePrecision, location, ModalService) {
@@ -17,11 +26,11 @@
                         modal.element.modal();
                         modal.close.then(function(result) {});
                     })
-                }
+                };
 
                 $scope.close = function(result) {
                     close(result, 500); // close, but give 500ms for bootstrap to animate
-                }
+                };
                 $scope.$on('receClose', function() {
                     $scope.dismissModal();
                     console.log('zz');
@@ -33,14 +42,26 @@
                         preClose: (modal) => { modal.element.modal('hide'); }
                     }).then(function(modal) {
                         modal.element.modal();
-                        modal.close.then(function(result) {
-                            console.log(result);
-                        });
                     });
                 }
-
+                $scope.out = function() {
+                    ModalService.showModal({
+                        template: '<out></out>',
+                        controller: 'out',
+                    }).then(function(modal) {
+                        modal.element.modal();
+                    })
+                }
+                $scope.in = function() {
+                    ModalService.showModal({
+                        template: '<in></in>',
+                        controller: 'in'
+                    }).then(function(modal) {
+                        modal.element.modal();
+                    })
+                }
                 $http({
-                    url: 'backend/public/GetSellerInfo',
+                    url: 'frontend/static/jsons/user.json',
                     method: 'post',
                     data: {}
                 }).then(function(data) {
@@ -58,9 +79,5 @@
                     }
                 })
             }
-        ])
-        .component('bind', {
-            templateUrl: 'frontend/components/bind/bind.html',
-            controller: 'bind'
-        })
+        ]);
 })();

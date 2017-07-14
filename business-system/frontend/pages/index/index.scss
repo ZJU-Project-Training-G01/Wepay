@@ -1,7 +1,18 @@
-error {
+$fixWidth:550px;
+@mixin fixStyle() {
     position: fixed;
-    left: 400px;
+    left: 50%;
     z-index: 1050;
+    margin-left: -$fixWidth/2;
+    width: $fixWidth;
+}
+
+error {
+    @include fixStyle();
+}
+
+.fix-style {
+    @include fixStyle();
 }
 
 nav {
