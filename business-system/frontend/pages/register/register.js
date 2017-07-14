@@ -14,6 +14,10 @@
                     $scope.$emit('transferErrorMsg', '法人真名不得为空');
                     return;
                 }
+                if (!$scope.phoneNumber) {
+                    $scope.$emit('transferErrorMsg', '手机号码不得为空');
+                    return;
+                }
                 if (!$scope.sellerPassword) {
                     $scope.$emit('transferErrorMsg', '密码不得为空');
                     return;
@@ -29,7 +33,7 @@
                 $http({
                     url: 'frontend/static/jsons/register.json',
                     method: 'post',
-                    data: { realName: $scope.realName, sellerName: $scope.sellerName, sellerPassword: $scope.sellerPassword }
+                    data: { realName: $scope.realName, sellerName: $scope.sellerName, sellerPassword: $scope.sellerPassword, phoneNumber: $scope.phoneNumber }
                 }).then(function(data) {
                     let code = data.data.code;
                     if (code === 0) {

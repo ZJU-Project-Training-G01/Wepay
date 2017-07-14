@@ -6,7 +6,8 @@ good-item .good-item-chosen {
 good-item .panel .panel-body {
   padding: 0; }
   good-item .panel .panel-body img {
-    width: 100%; }
+    width: 100%;
+    height: 200px; }
   good-item .panel .panel-body .good-price {
     color: #ff0036; }
   good-item .panel .panel-body .sell-amount {
