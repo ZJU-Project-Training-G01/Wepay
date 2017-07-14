@@ -25,17 +25,20 @@ class MakeNewOrder extends  Controller
         $unitPrice = 3.5;
         $buyerId = 3;*/
         $orderTime = date('Y-m-d');
-
         $res = array();
-        $result = Db::execute('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)',['buyerId'=>$buyerId,
-            'goodId'=>$goodId, 'amount'=>$amount, 'unitPrice'=>$unitPrice, 'orderTime'=>$orderTime]);
-        if($result == true)
+        if($request->session('login')!='true')
         {
-            $res['status'] = 'true';
+            $res['status'] = 'false';
         }
         else
         {
-            $res['status'] = 'false';
+            $result = Db::execute('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)', ['buyerId' => $buyerId,
+                'goodId' => $goodId, 'amount' => $amount, 'unitPrice' => $unitPrice, 'orderTime' => $orderTime]);
+            if ($result == true) {
+                $res['status'] = 'true';
+            } else {
+                $res['status'] = 'false';
+            }
         }
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
     }
