@@ -10,7 +10,7 @@
 - php文件连接函数中，服务器ip把localhost改为120.77.34.254，账号改为root,密码改为exciting 端口名仍为3306，数据库名仍为teaching_db
 - 后端统一include ‘connect.php’连接远程数据库
 
-####B端的前后端接口约定(不知道C端能否借鉴)
+####B端的前后端接口约定(不知道C端能否借鉴)(不能)
 ```
 $res=array{
     'code'=>$code,
