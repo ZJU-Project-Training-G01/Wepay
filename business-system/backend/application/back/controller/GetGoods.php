@@ -44,7 +44,7 @@ class GetGoods extends Controller
             $sellerId = $request->session('sellerId');
             //$sellerId = 1;
             try {
-                $data = Db::query('select goodId, goodName, imgUrl, amount, unitPrice, soldAmount as sellAmount from good where sellerId = :sellerId and goodName like :keyword order by soldAmount DESC limit :recordP, :pageSize',
+                $data = Db::query('select goodId, goodName, imgUrl, amount, unitPrice, soldAmount as sellAmount from good where amount >= 0 and sellerId = :sellerId and goodName like :keyword order by soldAmount DESC limit :recordP, :pageSize',
                     [ 'sellerId' => $sellerId, 'keyword' => $keyword, 'recordP' => $recordP, 'pageSize' => $pageSize]);
                 $code = 0;
                 $msg = $sellerId;
