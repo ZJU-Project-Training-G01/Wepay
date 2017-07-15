@@ -1,5 +1,6 @@
 package cn.edu.zju.se_g01.nfc_pay.fragments;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.edu.zju.se_g01.nfc_pay.LoginActivity;
 import cn.edu.zju.se_g01.nfc_pay.R;
 import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.orders.Order;
@@ -125,56 +127,66 @@ public class OrderListFragment extends ListFragment {
             final Button confirmRecvGoodsBtn = (Button)convertView.findViewById(R.id.confirmRecvGoodsbutton);
             TextView orderDateTextView = (TextView)convertView.findViewById(R.id.orderDateTextView);
 
+
             //更新 UI 组件的内容为订单信息
             goodNameTextView.setText(o.getGood_name());
             double totalPrice = o.getUnit_price() * o.getAmount();
             totNumAndPriceTextView.setText("数量: x" + o.getAmount() + " 合计:" + "￥" + String.format("%.2f", totalPrice));
 
-            orderStatusTextView.setText(o.getOrder_status_str());
-            if(!o.isWaitingForBuyerToConfirm()) {
-                confirmRecvGoodsBtn.setEnabled(false);
-            } else {
-                confirmRecvGoodsBtn.setEnabled(true);
-            }
 
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
             orderDateTextView.setText("日期:" + formatter.format(o.getOrder_date()));
 
+            orderStatusTextView.setText(o.getOrder_status_str());
+            if(!o.isWaitingForBuyerToConfirm()) {
+                confirmRecvGoodsBtn.setEnabled(false);
+//                confirmRecvGoodsBtn.setBackgroundColor(getResources().getColor(R.color.tab_background));
+//                ((RelativeLayout)convertView).removeView(confirmRecvGoodsBtn);
+            } else {
+                confirmRecvGoodsBtn.setEnabled(true);
+            }
+
             final String mConfirmRecvUrl = Config.getFullUrl("ConfirmRecvGoods");
 
-            //用户点击确认收货按钮之后，按钮变灰，文字改变成"订单完成"
-            confirmRecvGoodsBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Map<String, String> paramsMap = new HashMap<>(1);
-                    paramsMap.put("orderID", Integer.toString(o.getOrder_id()));
-                    CookieRequest confirmRecvGoodsReq = new CookieRequest(getActivity(), Request.Method.POST,
-                            mConfirmRecvUrl, paramsMap, new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            Log.d(TAG, "confirmRecvGoodsResponse:" + response.toString());
-                            try {
-                                int code = response.getInt("code");
-                                if(code == 0) {
-                                    confirmRecvGoodsBtn.setEnabled(false);
-                                    confirmRecvGoodsBtn.setText("订单完成");
-                                } else if(code == 1) {
-                                    Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+            if(o.isWaitingForBuyerToConfirm()) {
+                //用户点击确认收货按钮之后，按钮变灰，文字改变成"订单完成"
+                confirmRecvGoodsBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Map<String, String> paramsMap = new HashMap<>(1);
+                        paramsMap.put("orderID", Integer.toString(o.getOrder_id()));
+                        CookieRequest confirmRecvGoodsReq = new CookieRequest(getActivity(), Request.Method.POST,
+                                mConfirmRecvUrl, paramsMap, new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Log.d(TAG, "confirmRecvGoodsResponse:" + response.toString());
+                                try {
+                                    int code = response.getInt("code");
+                                    if (code == 0) {
+                                        confirmRecvGoodsBtn.setEnabled(false);
+                                        confirmRecvGoodsBtn.setText("订单完成");
+                                    } else if (code == 1) {
+                                        Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+                                    } else if (code == 2) {
+                                        //用户未登录
+                                        Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getActivity(), LoginActivity.class));
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Log.e(TAG, error.getMessage());
-                        }
-                    });
-                    MySingleton.getInstance(getActivity()).getRequestQueue().add(confirmRecvGoodsReq);
-                }
-            });
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e(TAG, error.getMessage());
+                            }
+                        });
+                        MySingleton.getInstance(getActivity()).getRequestQueue().add(confirmRecvGoodsReq);
+                    }
+                });
+            }
 
             //下载图片
             ImageView imageView = (ImageView)convertView.findViewById(R.id.orderGoodsimageView);
@@ -195,5 +207,60 @@ public class OrderListFragment extends ListFragment {
 
         super.onDestroyView();
         mImageDownloadThread.clearQueue();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+//        Log.i(TAG, "onResume() called");
+//        mOrders.clear();
+//
+//        String url = Config.getFullUrl("GetOrders");
+//        CookieRequest orderLabReq = new CookieRequest(getActivity(), Request.Method.GET, url,
+//                null, new Response.Listener<JSONObject>() {
+//            @Override
+//            public void onResponse(JSONObject response) {
+//                try {
+//                    Log.d(TAG, "Get Orders Response:" +  response.toString());
+//                    int code = response.getInt("code");
+//
+//                    if(code == 1) {
+//                        Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+//                    } else if(code == 0) {
+//                        int nOrders = response.getJSONArray("data").length();
+//                        for (int i = 0; i < nOrders; i++) {
+//                            JSONObject each_order = response.getJSONArray("data").getJSONObject(i);
+//                            DateFormat dfmt = new SimpleDateFormat("yyyy-MM-dd");
+//                            Date order_date = dfmt.parse(each_order.getString("order_time"));
+//                            Order order = new Order(each_order.getInt("order_id"), each_order.getString("good_name"), each_order.getString("img_url"),
+//                                    each_order.getInt("amount"), each_order.getDouble("unit_price"), each_order.getInt("order_status"),
+//                                    order_date);
+//                            mOrders.add(order);
+//                        }
+//                    }
+//                    orderAdapter.clear();
+//                    orderAdapter.addAll(mOrders);
+//
+////                    setListAdapter(orderAdapter);
+//
+//                    mImageDownloadThread = new ImageDownloader<>(new Handler());
+//                    mImageDownloadThread.setListener(new ImageDownloader.Listener<ImageView>() {
+//                        @Override
+//                        public void onImageDownloaded(ImageView imageView, Bitmap thumbnail) {
+//                            if (isVisible()) {
+//                                imageView.setImageBitmap(thumbnail);
+//                            }
+//                        }
+//                    });
+//                    mImageDownloadThread.start();
+//                    mImageDownloadThread.getLooper();
+//                    Log.i(TAG, "image downloader background thread start");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//
+//                }
+//            }
+//        }, null);
+//        MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(orderLabReq);
     }
 }

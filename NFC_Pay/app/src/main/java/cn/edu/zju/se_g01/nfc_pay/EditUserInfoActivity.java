@@ -1,5 +1,6 @@
 package cn.edu.zju.se_g01.nfc_pay;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -44,14 +45,22 @@ public class EditUserInfoActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     Log.d(TAG, "get user info response:" + response.toString());
-                    JSONObject data = response.getJSONObject("data");
-                    userNameEditText.setText(data.getString("userName"));
-                    realNameEditText.setText(data.getString("realName"));
-                    phoneEditText.setText(data.getString("phone"));
-                    addressEditText.setText(data.getString("address"));
+                    int code = response.getInt("code");
+                    if(code == 0) {
+                        JSONObject data = response.getJSONObject("data");
+                        userNameEditText.setText(data.getString("userName"));
+                        realNameEditText.setText(data.getString("realName"));
+                        phoneEditText.setText(data.getString("phone"));
+                        addressEditText.setText(data.getString("address"));
+                    } else if(code == 1){
+                        Toast.makeText(EditUserInfoActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
+                    } else if(code == 2) {
+
+                        Toast.makeText(EditUserInfoActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(EditUserInfoActivity.this, LoginActivity.class));
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
-
                 }
             }
         }, new Response.ErrorListener() {

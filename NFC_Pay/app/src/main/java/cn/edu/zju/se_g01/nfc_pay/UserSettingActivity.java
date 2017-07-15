@@ -37,7 +37,8 @@ public class UserSettingActivity extends Activity {
         setContentView(R.layout.activity_user_setting);
 
         RelativeLayout deliveryAddressLayout = (RelativeLayout)findViewById(R.id.delivery_address_layout);
-
+        userNameTextView = (TextView)findViewById(R.id.userNameTextView);
+        balanceTextView = (TextView)findViewById(R.id.balanceTextView);
         Button logoutBtn = (Button)findViewById(R.id.logoutBtn);
         RelativeLayout bindBankCardLayout = (RelativeLayout)findViewById(R.id.bindBankCardLayout);
         RelativeLayout chargeBalanceLayout = (RelativeLayout)findViewById(R.id.chargeBalanceLayout);
@@ -117,9 +118,20 @@ public class UserSettingActivity extends Activity {
             public void onResponse(JSONObject response) {
                 try {
                     Log.d(TAG, "get user info response:" + response.toString());
-                    //修改界面上的用户昵称和余额
-                    userNameTextView.setText(response.getJSONObject("data").getString("userName"));
-                    balanceTextView.setText(response.getJSONObject("data").getString("balance"));
+
+                    int code = response.getInt("code");
+                    if(code == 0) {
+                        //修改界面上的用户昵称和余额
+                        String userName = response.getJSONObject("data").getString("userName");
+                        Double balance = response.getJSONObject("data").getDouble("balance");
+                        userNameTextView.setText(userName);
+                        balanceTextView.setText(String.valueOf(balance));
+                    } else if (code == 1) {
+                        Toast.makeText(UserSettingActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
+                    } else if (code == 2) { //未登录
+                        Toast.makeText(UserSettingActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(UserSettingActivity.this, LoginActivity.class));
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
 
@@ -132,6 +144,7 @@ public class UserSettingActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        Log.v(TAG, "onResume() called");
+        getUserInfo();
     }
 }
