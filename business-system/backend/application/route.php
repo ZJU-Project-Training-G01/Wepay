@@ -30,6 +30,7 @@ return [
     'Bind' =>'back/Bind/Bind',
     'InMoney' => 'back/InMoney/InMoney',
     'OutMoney' => 'back/OutMoney/OutMoney',
+    'SellerLoginOut' => 'back/SellerLoginOut/SellerLoginOut',
 
     'GetOrders' => 'android/GetOrders/GetOrders',
     'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',
