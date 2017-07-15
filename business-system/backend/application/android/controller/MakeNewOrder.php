@@ -34,8 +34,20 @@ class MakeNewOrder extends  Controller
         }
         else
         {
-            $price =
-            $data1 = Db::query('select ')
+            $price = $unitPrice * $amount;
+            $data1 = Db::query('select balance from buyer where balance >= :price and buyerId = :buyerId', ['balance' => $price,'buyerId' => $buyerId ]);
+            if(count($data1 == 0)) //账户余额不足
+            {
+                $res['status'] = 'false';
+            }
+            else
+            {
+                Db::startTrans();
+                try{
+
+                }
+            }
+
             $result = Db::execute('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)', ['buyerId' => $buyerId,
                 'goodId' => $goodId, 'amount' => $amount, 'unitPrice' => $unitPrice, 'orderTime' => $orderTime]);
             if ($result == true) {
