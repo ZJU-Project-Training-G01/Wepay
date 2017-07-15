@@ -23,6 +23,7 @@
     "bootswatch": "^3.3.7",
     "oclazyload": "^1.1.0",
     "angular-animate": "https://github.com/angular/bower-angular-animate.git#^1.6.5",
-    "angular-modal-service": "^0.12.1"
+    "angular-modal-service": "^0.12.1",
+    "ng-file-upload": "^12.2.13"
   }
 }
