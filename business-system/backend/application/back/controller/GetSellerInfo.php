@@ -33,7 +33,7 @@ class GetSellerInfo extends Controller
             $sellerId = $request->session('sellerId');
             //$sellerId = 1;
             try{
-                $data1 = Db::query('select sellerName, phoneNumber, balance, bankCard, realName, sellerImgUrl from seller where sellerId = :sellerId',
+                $data1 = Db::query('select sellerName, phoneNumber, balance, bankName, bankCard, realName, sellerImgUrl from seller where sellerId = :sellerId',
                     ['sellerId' => $sellerId]);
                 $data = $data1[0];
                 $code = 0;
