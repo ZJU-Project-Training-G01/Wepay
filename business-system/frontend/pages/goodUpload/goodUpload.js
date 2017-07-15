@@ -10,10 +10,11 @@
                          $scope.sure = '确定';
                          $scope.url = 'backend/public/UpdateGood';
                          $scope.goodDetail = $rootScope.goodDetail;
+                         $scope.goodDetail.unitPrice = $scope.goodDetail.unitPrice.substring(1);
                      } else {
                          $scope.title = '上架新商品';
                          $scope.sure = $scope.operation = '上架';
-                         $scope.url = 'frontend/static/jsons/upload.json';
+                         $scope.url = 'backend/public/UploadGood';
                      }
                      $scope.toDetail = function() {
                          $location.path('good/' + $scope.goodDetail.goodId);
