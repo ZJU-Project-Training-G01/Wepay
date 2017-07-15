@@ -18,15 +18,14 @@ class OutMoney
     {
         $request = Request::instance();
 
-        if($request->session('login')!='true')
-        {
+        if ($request->session('login') != 'true') {
             $code = 2;
             $msg = '您还未登录';
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            $inMoney = $request->request('inMoney');
-            Db::execute('update seller set balance = balance - ' . $inMoney . ' where sellerId = ' . $sellerId . ';');
+            $outMoney = $request->post('outMoney');
+            Db::execute('update seller set balance = balance - :outMoney where sellerId = :sellerId;', ['outMoney' => $outMoney, 'sellerId' => $sellerId]);
 
             $code = 0;
             $msg = NULL;

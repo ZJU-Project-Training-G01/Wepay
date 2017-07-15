@@ -27,7 +27,7 @@ class Bind
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            Db::execute('update seller set bankCard = ' . $bankCard . ' where sellerId = ' . $sellerId . ';');
+            Db::execute('update seller set bankCard = ":bankCard" where sellerId = :sellerId;', ['bankCard' => $bankCard, 'sellerId' => $sellerId]);
 
             $code = 0;
             $msg = NULL;
