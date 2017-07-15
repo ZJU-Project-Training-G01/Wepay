@@ -26,7 +26,7 @@ class GetOrders extends Controller
         if($status == -1)
         {
             try {
-                $data = Db::query('select * from orders limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize]);
+                $data = Db::query('select orderId, goodName, img from orders limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize]);
                 $code = 0;
                 $msg = NULL;
             } catch (Exception $e) {
