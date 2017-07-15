@@ -11,6 +11,7 @@ namespace app\back\controller;
 
 use think\Db;
 use think\Request;
+use Exception;
 
 class Bind
 {
@@ -27,11 +28,17 @@ class Bind
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            Db::execute('update seller set bankCard = ":bankCard" where sellerId = :sellerId;', ['bankCard' => $bankCard, 'sellerId' => $sellerId]);
-
-            $code = 0;
-            $msg = NULL;
-            $data = NULL;
+            try{
+                Db::execute('update seller set bankCard = :bankCard , bankName = :bankName where sellerId = :sellerId;',
+                    ['bankCard' => $bankCard, 'bankName' => $bankName, 'sellerId' => $sellerId]);
+                $code = 0;
+                $msg = NULL;
+                $data = NULL;
+            }catch (Exception $e){
+                $code = 3;
+                $msg = $e->getMessage();
+                $data = NULL;
+            }
         }
 
         $res = [
