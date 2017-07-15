@@ -21,11 +21,13 @@ class GetGoods extends Controller
         $pageNumber = $request->post('pageNumber');
         $keyword = $request->post('keyword');
         $recordP = ($pageNumber-1)*$pageSize;
+        $a = '%';
+        $keyword = $a.$keyword.$a;
 
         //test
         /*$pageSize = 3;
         $pageNumber = 1;
-        $keyword = '手机';
+        //$keyword = NULL;
         $a = '%';
         $keyword = $a.$keyword.$a;
         //echo $keyword;
@@ -42,10 +44,10 @@ class GetGoods extends Controller
             $sellerId = $request->session('sellerId');
             //$sellerId = 1;
             try {
-                $data = Db::query('select goodId, goodName, imgUrl, amount, unitPrice, soldAmount as sellAmount from good where sellerId = :sellerId and goodName like :keyword order by soldAmount DESC',
-                    [ 'sellerId' => $sellerId, 'keyword' => $keyword]);
+                $data = Db::query('select goodId, goodName, imgUrl, amount, unitPrice, soldAmount as sellAmount from good where amount >= 0 and sellerId = :sellerId and goodName like :keyword order by soldAmount DESC limit :recordP, :pageSize',
+                    [ 'sellerId' => $sellerId, 'keyword' => $keyword, 'recordP' => $recordP, 'pageSize' => $pageSize]);
                 $code = 0;
-                $msg = '';
+                $msg = $sellerId;
             }catch (Exception $e){
                 $code = 3;
                 $msg = $e->getMessage();

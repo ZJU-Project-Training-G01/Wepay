@@ -1,4 +1,4 @@
-<div ng-controller="bind" class="well bs-components">
+<div class="well bs-components fix-style">
     <form class="form-horizontal">
         <fieldset>
             <legend>绑定银行卡</legend>
@@ -6,6 +6,12 @@
                 <label class="col-lg-2 control-label">卡号</label>
                 <div class="col-lg-10">
                     <input type="text" class="form-control" placeholder="卡号" ng-model="bankCard">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">银行</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" placeholder="银行" ng-model="bankName">
                 </div>
             </div>
             <div class="form-group">

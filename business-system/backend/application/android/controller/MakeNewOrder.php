@@ -20,10 +20,12 @@ class MakeNewOrder extends  Controller
         $amount = $request->post('amount');
         $unitPrice = $request->post('unit_price');
         $buyerId = $request->session('buyer_id');
+
         /*$goodId = 1;
         $amount = 3;
         $unitPrice = 3.5;
         $buyerId = 3;*/
+
         $orderTime = date('Y-m-d');
         $res = array();
         if($request->session('login')!='true')
@@ -32,6 +34,8 @@ class MakeNewOrder extends  Controller
         }
         else
         {
+            $price =
+            $data1 = Db::query('select ')
             $result = Db::execute('insert into orders (buyerId, goodId, amount, unitPrice, orderStatus, orderTime) values (:buyerId, :goodId, :amount, :unitPrice, 0, :orderTime)', ['buyerId' => $buyerId,
                 'goodId' => $goodId, 'amount' => $amount, 'unitPrice' => $unitPrice, 'orderTime' => $orderTime]);
             if ($result == true) {

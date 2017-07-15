@@ -36,7 +36,7 @@ class SellerLogin extends  Controller
         else
         {
             $code = 2;
-            $msg = '登录失败，手机号码或密码输入错误';
+            $msg = '手机号码或密码输入错误';
             $data = NULL;
         }
         $res = [

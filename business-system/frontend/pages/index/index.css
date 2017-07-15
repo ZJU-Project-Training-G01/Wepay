@@ -1,7 +1,16 @@
 error {
   position: fixed;
-  left: 400px;
-  z-index: 1050; }
+  left: 50%;
+  z-index: 1050;
+  margin-left: -275px;
+  width: 550px; }
+
+.fix-style {
+  position: fixed;
+  left: 50%;
+  z-index: 1050;
+  margin-left: -275px;
+  width: 550px; }
 
 nav img {
   float: right;

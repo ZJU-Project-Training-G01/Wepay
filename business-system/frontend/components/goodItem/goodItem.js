@@ -12,13 +12,12 @@
                 });
                 $scope.goodHttp = function(pageNumber, keyword) {
                     $http({
-                        url: 'frontend/static/jsons/goods.json',
+                        url: 'backend/public/GetGoods',
                         method: 'post',
                         data: { pageSize: $scope.pageSize, pageNumber: pageNumber, keyword: keyword }
                     }).then(function(data) {
                         $scope.goods = data.data.data;
                         $scope.total = $scope.goods.length;
-                        $scope.total = 17;
                         $scope.goods.forEach(function(val) {
                             val.unitPrice = setPricePrecision(val.unitPrice);
                         });
