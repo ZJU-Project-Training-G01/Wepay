@@ -31,15 +31,30 @@
                 })
             }
         ])
-        .controller('navbar', ['$scope', function($scope) {
-            $scope.ifNavbar = true;
-            $scope.$on('receHideNavbar', function(e) {
-                $scope.ifNavbar = false;
-            });
-            $scope.$on('receShowNavbar', function(e) {
+        .controller('navbar', ['$scope', '$http', '$location',
+            function($scope, $http, $location) {
                 $scope.ifNavbar = true;
-            });
-        }])
+                $scope.$on('receHideNavbar', function(e) {
+                    $scope.ifNavbar = false;
+                });
+                $scope.$on('receShowNavbar', function(e) {
+                    $scope.ifNavbar = true;
+                });
+                $scope.loginOut = function() {
+                    $http({
+                        url: 'frontend/static/jsons/loginOut.json',
+                        method: 'post',
+                        data: {}
+                    }).then(function(data) {
+                        let code = data.data.code;
+                        if (code === 0) {
+                            $scope.$emit('transferErrorMsg', '登出成功', true);
+                            $location.path('/')
+                        }
+                    })
+                }
+            }
+        ])
         .component('register', {
             templateUrl: 'frontend/pages/register/register.html',
             controller: 'register'
