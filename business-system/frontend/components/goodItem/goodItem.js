@@ -17,7 +17,7 @@
                         data: { pageSize: $scope.pageSize, pageNumber: pageNumber, keyword: keyword }
                     }).then(function(data) {
                         $scope.goods = data.data.data;
-                        $scope.total = $scope.goods.length;
+                        $scope.total = data.data.msg;
                         $scope.goods.forEach(function(val) {
                             val.unitPrice = setPricePrecision(val.unitPrice);
                         });
