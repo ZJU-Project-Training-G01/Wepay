@@ -9,10 +9,11 @@
 namespace app\back\controller;
 
 
+use think\Controller;
 use think\Db;
 use think\Request;
 
-class Bind
+class Bind extends Controller
 {
     public function Bind()
     {
