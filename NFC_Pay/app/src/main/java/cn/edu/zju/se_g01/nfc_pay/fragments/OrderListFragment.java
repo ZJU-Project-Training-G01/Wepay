@@ -35,8 +35,11 @@ import cn.edu.zju.se_g01.nfc_pay.R;
 import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.orders.Order;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
+import cn.edu.zju.se_g01.nfc_pay.tools.EasyMethod;
 import cn.edu.zju.se_g01.nfc_pay.tools.ImageDownloader;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
+
+import static cn.edu.zju.se_g01.nfc_pay.tools.EasyMethod.*;
 
 /**
  * Created by dddong on 2017/7/7.
@@ -76,6 +79,10 @@ public class OrderListFragment extends ListFragment {
                                     order_date);
                             mOrders.add(order);
                         }
+                    } else if(code == 2) {
+                        Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+                        EasyMethod.clearSharedPreferences(getActivity().getApplicationContext());
+                        startActivity(new Intent(getActivity(), LoginActivity.class));
                     }
                     orderAdapter = new OrderAdapter(mOrders);
 
@@ -171,6 +178,7 @@ public class OrderListFragment extends ListFragment {
                                     } else if (code == 2) {
                                         //用户未登录
                                         Toast.makeText(getActivity(), response.getString("msg"), Toast.LENGTH_LONG).show();
+                                        clearSharedPreferences(getActivity().getApplicationContext());
                                         startActivity(new Intent(getActivity(), LoginActivity.class));
                                     }
                                 } catch (JSONException e) {
@@ -212,7 +220,7 @@ public class OrderListFragment extends ListFragment {
     @Override
     public void onResume() {
         super.onResume();
-//        Log.i(TAG, "onResume() called");
+        Log.i(TAG, "onResume() called");
 //        mOrders.clear();
 //
 //        String url = Config.getFullUrl("GetOrders");

@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
+import cn.edu.zju.se_g01.nfc_pay.tools.EasyMethod;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 public class UserSettingActivity extends Activity {
@@ -130,6 +131,7 @@ public class UserSettingActivity extends Activity {
                         Toast.makeText(UserSettingActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
                     } else if (code == 2) { //未登录
                         Toast.makeText(UserSettingActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
+                        EasyMethod.clearSharedPreferences(getApplicationContext());
                         startActivity(new Intent(UserSettingActivity.this, LoginActivity.class));
                     }
                 } catch (JSONException e) {
