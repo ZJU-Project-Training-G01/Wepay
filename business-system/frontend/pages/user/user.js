@@ -44,15 +44,11 @@
                         modal.element.modal();
                     });
                 }
-                $scope.out = function() {
-                    ModalService.showModal({
-                        template: '<out></out>',
-                        controller: 'out',
-                    }).then(function(modal) {
-                        modal.element.modal();
-                    })
-                }
                 $scope.in = function() {
+                    if ($scope.seller.bankCard === '未绑定') {
+                        $scope.$emit('transferErrorMsg', '不能充值，原因:银行卡未绑定');
+                        return;
+                    }
                     ModalService.showModal({
                         template: '<in></in>',
                         controller: 'in'
@@ -73,6 +69,8 @@
                         $scope.toBind = !$scope.seller.bankCard;
                         if ($scope.toBind === true) {
                             $scope.seller.bankCard = '未绑定';
+                        } else {
+                            $scope.seller.bankCard = $scope.seller.bankCard.substring($scope.seller.bankCard.length - 3);
                         }
                     } else {
                         $scope.$emit('transferErrorMsg', '获取用户基础信息失败，原因:' + data.data.msg);

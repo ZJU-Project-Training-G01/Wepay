@@ -7,6 +7,10 @@
                         $scope.$emit('transferErrorMsg', '银行卡号不得为空');
                         return;
                     }
+                    if ($scope.bankName === undefined) {
+                        $scope.$emit('transferErrorMsg', '银行名称不得为空');
+                        return;
+                    }
                     if ($scope.idCard === undefined) {
                         $scope.$emit('transferErrorMsg', '身份证号不得为空');
                         return;
@@ -22,12 +26,11 @@
                     $http({
                         url: 'frontend/static/jsons/bind.json',
                         method: 'post',
-                        data: { bankCard: $scope.bankCard }
+                        data: { bankName: $scope.bankName, bankCard: $scope.bankCard }
                     }).then(function(data) {
                         let code = data.data.code;
                         if (code === 0) {
-                            $window.location.reload();
-                            $scope.$emit('transferErrorMsg', '绑定成功', true);
+                            $scope.$emit('transferErrorMsg', '绑定成功', 'modal');
                         }
                     })
                 };

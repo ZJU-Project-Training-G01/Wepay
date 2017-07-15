@@ -19,7 +19,8 @@
             <div>{{seller.balance}}
                 <span class="operation"><span ng-click="in()">充值</span>&nbsp;&nbsp;<span ng-click="toBank()">转出</span></span>
             </div>
-            <div>{{seller.bankCard}}<span class="operation" ng-show='toBind' ng-click="bind()">绑定银行卡</span></div>
+            <div><span class='bank' ng-show="!toBind">{{seller.bankName}}&nbsp;&nbsp;尾号：{{seller.bankCard}}</span><span class="operation" ng-show='toBind' ng-click="bind()">绑定银行卡</span>
+            </div>
         </div>
     </div>
 </div>

@@ -7,9 +7,11 @@ user {
         margin-right: 30px;
         .panel-body {
             font-size: 18px;
+            .bank {
+                margin-right: 30px;
+            }
             .operation {
                 color: #36c;
-                margin-left: 30px;
             }
             .operation:hover {
                 cursor: pointer;
