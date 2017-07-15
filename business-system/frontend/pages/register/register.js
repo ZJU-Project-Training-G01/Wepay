@@ -31,13 +31,13 @@
                     return;
                 }
                 $http({
-                    url: 'frontend/static/jsons/register.json',
+                    url: 'backend/public/SellerRegister',
                     method: 'post',
                     data: { realName: $scope.realName, sellerName: $scope.sellerName, sellerPassword: $scope.sellerPassword, phoneNumber: $scope.phoneNumber }
                 }).then(function(data) {
                     let code = data.data.code;
                     if (code === 0) {
-                        $scope.$emit('transferErrorMsg', '注册成功', 'register');
+                        $scope.$emit('transferErrorMsg', '注册成功,已经跳转到登录界面', 'register');
                         $location.path('/');
                     } else {
                         $scope.$emit('transferErrorMsg', '注册失败，原因：' + data.data.msg);

@@ -26,6 +26,7 @@ return [
     'UpdateGood' => 'back/UpdateGood/UpdateGood',
     'DeleteGood' => 'back/DeleteGood/DeleteGood',
     'DeliveryGoods' => 'back/DeliveryGoods/DeliveryGoods',
+    'GetGoodDetail' => 'back/GetGoodDetail/GetGoodDetail',
     'GetOrders' => 'android/GetOrders/GetOrders',
     'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',
     'EditUserInfo' => 'android/EditUserInfo/EditUserInfo',

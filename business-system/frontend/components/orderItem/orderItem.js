@@ -31,7 +31,7 @@
                 $scope.orderHttp = function(pageNumber) {
                     $http({
                         method: 'post',
-                        url: 'frontend/static/jsons/orders.json',
+                        url: 'backend/public/SellersGetOrders',
                         data: { pageNumber: pageNumber, pageSize: $scope.pageSize, status: $scope.status }
                     }).then(function(data) {
                         $scope.orders = data.data.data;

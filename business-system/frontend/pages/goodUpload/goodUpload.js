@@ -8,7 +8,7 @@
                          $scope.title = '编辑商品信息';
                          $scope.operation = '编辑';
                          $scope.sure = '确定';
-                         $scope.url = 'frontend/static/jsons/update.json';
+                         $scope.url = 'backend/public/UpdateGood';
                          $scope.goodDetail = $rootScope.goodDetail;
                      } else {
                          $scope.title = '上架新商品';
@@ -33,7 +33,9 @@
                              $scope.ifFeedback = true;
                              let code = data.data.code;
                              if (code === 0) {
-                                 $scope.goodDetail.goodId = data.data.data.goodId;
+                                 if ($stateParams.ifUpdate !== 'update') {
+                                     $scope.goodDetail.goodId = data.data.data.goodId;
+                                 }
                              }
                          })
                      }
