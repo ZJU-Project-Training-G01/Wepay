@@ -9,6 +9,7 @@ namespace  app\back\controller;
 use think\Controller;
 use think\Db;
 use think\Request;
+use think\Session;
 use Exception;
 
 class GetOrders extends Controller
@@ -16,35 +17,54 @@ class GetOrders extends Controller
     public function GetOrders()
     {
         $request = Request::instance();
-        $pageNumber = 2;
-        $pageSize = 2;
-        $status = 0;
-        //$pageSize = $request->post('pageSize');
-        //$pageNumber = $request->post('pageNumber');
-        //$status = $request->post('status');
+        $pageSize = $request->post('pageSize');
+        $pageNumber = $request->post('pageNumber');
+        $status = $request->post('status');
+
+        //test
+        /*$pageNumber = 1;
+        $pageSize = 10;
+        $status = -1;
+        Session::set('login', 'true');*/
+
         $recordP = ($pageNumber-1)*$pageSize;
-        if($status == -1)
+
+        if($request->session('login')!='true')
         {
-            try {
-                $data = Db::query('select orderId, goodName, img from orders limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize]);
-                $code = 0;
-                $msg = NULL;
-            } catch (Exception $e) {
-                $code = 2;
-                $msg = $e->getMessage();
-                $data = NULL;
-            }
+            $code = 2;
+            $msg = '您还未登录';
+            $data = NULL;
         }
         else
         {
-            try {
-                $data = Db::query('select * from orders where orderStatus = :status limit :recordP,:pageSize', ['recordP' => $recordP, 'pageSize' => $pageSize, 'status' => $status]);
-                $code = 0;
-                $msg = NULL;
-            } catch(Exception $e) {
-                $code = 2;
-                $msg = $e->getMessage();
-                $data = NULL;
+            $sellerId = $request->session('sellerId');
+            //$sellerId = 2;
+            if ($status == -1) {
+                try {
+                    $data = Db::query('select orderId,sellerId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where good.sellerId = :sellerId and good.goodId = orders.goodId order by orderId  limit :recordP,:pageSize',
+                        ['sellerId' => $sellerId, 'recordP' => $recordP, 'pageSize' => $pageSize]);
+                    $data1 = Db::query('select orderId,sellerId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where good.sellerId = :sellerId and good.goodId = orders.goodId order by orderId',
+                        ['sellerId' => $sellerId]);
+                    $code = 0;
+                    $msg = count($data1);
+                } catch (Exception $e) {
+                    $code = 3;
+                    $msg = $e->getMessage();
+                    $data = NULL;
+                }
+            } else {
+                try {
+                    $data = Db::query('select orderId, sellerId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where good.sellerId = :sellerId and good.goodId = orders.goodId and  orderStatus = :status order by orderId limit :recordP,:pageSize',
+                        ['sellerId' => $sellerId, 'recordP' => $recordP, 'pageSize' => $pageSize, 'status' => $status]);
+                    $data1 = Db::query('select orderId, sellerId, goodName, imgUrl, orders.amount, orders.unitPrice, orderStatus, orderTime from orders, good where good.sellerId = :sellerId and good.goodId = orders.goodId and  orderStatus = :status order by orderId',
+                        ['sellerId' => $sellerId, 'status' => $status]);
+                    $code = 0;
+                    $msg = count($data1);
+                } catch (Exception $e) {
+                    $code = 3;
+                    $msg = $e->getMessage();
+                    $data = NULL;
+                }
             }
         }
         $res = [
