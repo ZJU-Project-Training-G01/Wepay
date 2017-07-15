@@ -5,9 +5,10 @@ user .panel {
   margin-right: 30px; }
   user .panel .panel-body {
     font-size: 18px; }
+    user .panel .panel-body .bank {
+      margin-right: 30px; }
     user .panel .panel-body .operation {
-      color: #36c;
-      margin-left: 30px; }
+      color: #36c; }
     user .panel .panel-body .operation:hover {
       cursor: pointer; }
 
