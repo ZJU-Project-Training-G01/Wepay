@@ -41,11 +41,11 @@ class SellerRegister extends Controller
                 Db::execute('insert into seller (sellerName, realName, sellerPassword, phoneNumber) values (:sellerName, :realName, :sellerPassword, :phoneNumber)',
                     ['sellerName' => $sellerName, 'realName' => $realName, 'sellerPassword' => $sellerPassword, 'phoneNumber' => $phoneNumber]);
                 $code = 0;
-                $msg = '登录成功';
+                $msg = '注册成功';
                 $data = NULL;
             }catch(Exception $e){
                 $code = 3;
-                $msg = '';
+                $msg = $e->getMessage();
                 $data = NULL;
             }
         }
