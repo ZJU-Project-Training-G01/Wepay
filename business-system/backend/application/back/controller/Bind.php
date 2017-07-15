@@ -28,7 +28,10 @@ class Bind extends Controller
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            Db::execute('update seller set bankCard = ' . $bankCard . ' where sellerId = ' . $sellerId . ';');
+            //$q ='update seller set bankCard = "' . $bankCard . '" where sellerId = ' . $sellerId . ';';
+            //echo $q;
+            Db::execute('update seller set bankCard = :bankCard,bankName = :bankName where sellerId = :sellerId',
+                ['bankCard' => $bankCard, 'bankName' => $bankName, 'sellerId' => $sellerId]);
 
             $code = 0;
             $msg = NULL;
