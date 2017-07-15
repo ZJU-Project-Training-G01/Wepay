@@ -3,8 +3,11 @@
          margin-left: 30px;
          margin-right: 30px;
      }
-     .good-item-chosen {
-         border: #ff0036 solid 2px;
+     //  .good-item-chosen {
+     //      border: #ff0036 solid 2px;
+     //  }
+     .panel:hover {
+         cursor: pointer;
      }
      .panel {
          .panel-body {
