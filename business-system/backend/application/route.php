@@ -37,4 +37,6 @@ return [
     'LogOut' => 'android/LogOut/LogOut',
     'ConfirmRecvGoods' => 'android/ConfirmRecvGoods/ConfirmRecvGoods',
     'UserRegist' => 'android/UserRegist/UserRegist',
+    'BindBankCard' => 'android/BindBankCard/BindBankCard',
+    'ChargeBalance' => 'android/ChargeBalance/ChargeBalance',
 ];
