@@ -52,7 +52,7 @@ import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
  */
 
 public class GoodActivity extends Activity {
-    public static final String TAG = "GoodActivity";
+    public static final String TAG = "GGGoodActivity";
 
     public static final String EXTRA_GOOD_ID =
             "cn.edu.zju.se_g01.nfc_pay.good_id";
@@ -97,7 +97,7 @@ public class GoodActivity extends Activity {
         img.setImageResource(R.drawable.ic_default_img);
 //        imgDownloaderThread.queueImg(img, g.getImgUrl());
         list = new ArrayList<>();
-        for (int i = 1; i < 20; i++) list.add(i);
+        for (int i = 1; i <= 20; i++) list.add(i);
         ArrayAdapter<Integer> arrayAdapter = new ArrayAdapter<Integer>
                 (this, android.R.layout.simple_spinner_item, list);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -190,7 +190,7 @@ public class GoodActivity extends Activity {
                                     Toast.makeText(getApplicationContext(), "购买" + buyAmount + "件商品", Toast.LENGTH_SHORT).show();
 
                                     RequestQueue queue = MySingleton.getInstance(getApplicationContext()).getRequestQueue();
-                                    String url = "make_new_order.php";
+                                    String url = "http://120.77.34.254/business-system/backend/public/MakeNewOrder";
                                     Map<String, String> map = new HashMap<String, String>();
                                     map.put("good_id", g.getGoodsId());
                                     map.put("amount", String.valueOf(buyAmount));
@@ -204,7 +204,7 @@ public class GoodActivity extends Activity {
                                                 @Override
                                                 public void onResponse(JSONObject response) {
                                                     try {
-                                                        Toast.makeText(getApplicationContext(), response.getString("status"), Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "状态返回结果：" + response.getString("status"), Toast.LENGTH_SHORT).show();
 
                                                         Log.d("buy button response", response.getString("status"));
                                                     } catch (JSONException e) {
@@ -215,8 +215,8 @@ public class GoodActivity extends Activity {
                                             new Response.ErrorListener() {
                                                 @Override
                                                 public void onErrorResponse(VolleyError error) {
-                                                    Toast.makeText(getApplicationContext(), "请求超时", Toast.LENGTH_SHORT).show();
-
+                                                    Toast.makeText(getApplicationContext(), "提交订单超时", Toast.LENGTH_SHORT).show();
+                                                    Log.d(TAG, "提交订单超时");
                                                 }
                                             }
                                     );
