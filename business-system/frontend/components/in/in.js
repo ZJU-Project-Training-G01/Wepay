@@ -12,7 +12,7 @@
                         return;
                     }
                     $http({
-                        url: 'bankend/public/InMoney',
+                        url: 'backend/public/InMoney',
                         method: 'post',
                         data: { payPassword: $scope.payPassword, inMoney: $scope.inMoney }
                     }).then(function(data) {

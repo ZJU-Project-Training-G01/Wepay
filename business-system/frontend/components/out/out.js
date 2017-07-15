@@ -12,7 +12,7 @@
                         return;
                     }
                     $http({
-                        url: 'frontend/static/jsons/out.json',
+                        url: 'backend/public/OutMoney',
                         method: 'post',
                         data: { payPassword: $scope.payPassword, outMoney: $scope.outMoney }
                     }).then(function(data) {
