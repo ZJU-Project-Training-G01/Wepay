@@ -17,6 +17,8 @@ class OutMoney
     public function OutMoney()
     {
         $request = Request::instance();
+        $payPassword = $request->post('payPassword');
+        $outMoney = $request->post('outMoney');
 
         if($request->session('login')!='true')
         {
@@ -25,8 +27,8 @@ class OutMoney
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            $inMoney = $request->request('inMoney');
-            Db::execute('update seller set balance = balance - ' . $inMoney . ' where sellerId = ' . $sellerId . ';');
+            Db::execute('update seller set balance = balance - :inMoney where sellerId = :sellerId;',
+            ['inMoney' => $outMoney, 'sellerId' => $sellerId]);
 
             $code = 0;
             $msg = NULL;
