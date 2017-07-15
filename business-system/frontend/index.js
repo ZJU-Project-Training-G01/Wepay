@@ -8,6 +8,9 @@
                     $rootScope.$broadcast('receShowNavbar');
                 }
             });
+            $rootScope.$on('transferStatus', function(e, status) {
+                $rootScope.$broadcast('receiveStatus', status);
+            });
             $rootScope.$on('hideNavbar', function(e) {
                 $rootScope.$broadcast('receHideNavbar');
             });
