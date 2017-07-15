@@ -27,7 +27,7 @@ class GetGoods extends Controller
         //test
         /*$pageSize = 3;
         $pageNumber = 1;
-        //$keyword = NULL;
+        $keyword = '手机';
         $a = '%';
         $keyword = $a.$keyword.$a;
         //echo $keyword;
@@ -46,8 +46,10 @@ class GetGoods extends Controller
             try {
                 $data = Db::query('select goodId, goodName, imgUrl, amount, unitPrice, soldAmount as sellAmount from good where amount >= 0 and sellerId = :sellerId and goodName like :keyword order by soldAmount DESC limit :recordP, :pageSize',
                     [ 'sellerId' => $sellerId, 'keyword' => $keyword, 'recordP' => $recordP, 'pageSize' => $pageSize]);
+                $data1 = Db::query('select goodId, goodName, imgUrl, amount, unitPrice, soldAmount as sellAmount from good where amount >= 0 and sellerId = :sellerId and goodName like :keyword order by soldAmount DESC',
+                    [ 'sellerId' => $sellerId, 'keyword' => $keyword]);
                 $code = 0;
-                $msg = $sellerId;
+                $msg = count($data1);
             }catch (Exception $e){
                 $code = 3;
                 $msg = $e->getMessage();

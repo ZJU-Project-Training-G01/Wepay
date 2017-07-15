@@ -27,6 +27,11 @@ return [
     'DeleteGood' => 'back/DeleteGood/DeleteGood',
     'DeliveryGoods' => 'back/DeliveryGoods/DeliveryGoods',
     'GetGoodDetail' => 'back/GetGoodDetail/GetGoodDetail',
+    'Bind' =>'back/Bind/Bind',
+    'InMoney' => 'back/InMoney/InMoney',
+    'OutMoney' => 'back/OutMoney/OutMoney',
+    'SellerLoginOut' => 'back/SellerLoginOut/SellerLoginOut',
+
     'GetOrders' => 'android/GetOrders/GetOrders',
     'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',
     'EditUserInfo' => 'android/EditUserInfo/EditUserInfo',

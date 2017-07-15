@@ -11,7 +11,7 @@
                 });
                 $scope.sendGood = function(item) {
                     $http({
-                        url: 'frontend/static/jsons/sendGood.json',
+                        url: 'backend/public/DeliveryGoods',
                         method: 'post',
                         data: { orderId: item.orderId }
                     }).then(function(data) {
@@ -35,8 +35,7 @@
                         data: { pageNumber: pageNumber, pageSize: $scope.pageSize, status: $scope.status }
                     }).then(function(data) {
                         $scope.orders = data.data.data;
-                        $scope.total = $scope.orders.length;
-                        $scope.total = 22; //this line needs to be deleted when app is built
+                        $scope.total = data.data.msg;
                         $scope.orders.forEach(function(val) {
                             val.total = val.amount * val.unitPrice;
                             val.unitPrice = setPricePrecision(val.unitPrice);

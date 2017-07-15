@@ -24,7 +24,7 @@
                         return;
                     }
                     $http({
-                        url: 'frontend/static/jsons/bind.json',
+                        url: 'backend/public/Bind',
                         method: 'post',
                         data: { bankName: $scope.bankName, bankCard: $scope.bankCard }
                     }).then(function(data) {
