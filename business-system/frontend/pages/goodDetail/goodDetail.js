@@ -12,7 +12,7 @@
                 }
                 $scope.delete = function() {
                     $http({
-                        url: 'frontend/static/jsons/delete.json',
+                        url: 'backend/public/DeleteGood',
                         method: 'post',
                         data: { goodId: $scope.goodDetail.goodId }
                     }).then(function(data) {
@@ -26,7 +26,7 @@
                 }
                 $scope.goodDetailHttp = function(goodId) {
                     $http({
-                        url: 'frontend/static/jsons/goodDetail.json',
+                        url: 'backend/public/GetGoodDetail',
                         method: 'post',
                         data: { goodId: goodId }
                     }).then(function(data) {
