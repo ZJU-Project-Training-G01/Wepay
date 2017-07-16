@@ -11,5 +11,18 @@ good-upload .feedback span {
   margin: 0 5px; }
 good-upload .feedback span:hover {
   cursor: pointer; }
+good-upload upload img {
+  position: relative;
+  left: 15px;
+  top: 15px;
+  margin-bottom: 15px; }
+good-upload upload .progress {
+  position: relative;
+  left: 15px;
+  top: 15px; }
+good-upload upload .res {
+  position: relative;
+  top: -13px;
+  left: 15px; }
 
 /*# sourceMappingURL=goodUpload.css.map */
