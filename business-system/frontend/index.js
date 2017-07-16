@@ -1,6 +1,6 @@
 (function() {
     let app = angular
-        .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging', 'ngAnimate', 'angularModalService'])
+        .module('myApp', ['oc.lazyLoad', 'ui.router', 'bw.paging', 'ngAnimate', 'angularModalService', 'ngFileUpload', 'ngImgCrop'])
         .run(['$rootScope', function($rootScope) {
             $rootScope.$on('transferErrorMsg', function(e, errorMsg, status) {
                 $rootScope.$broadcast('receiveErrorMsg', errorMsg, status);
@@ -14,6 +14,9 @@
             $rootScope.$on('hideNavbar', function(e) {
                 $rootScope.$broadcast('receHideNavbar');
             });
+            $rootScope.$on('upload', function(e) {
+                $rootScope.$broadcast('receUpload');
+            })
         }])
         .controller('error', ['$scope', '$window',
             function($scope, $window) {
@@ -203,7 +206,9 @@
                         'frontend/components/out/out.css',
                         'frontend/components/out/out.js',
                         'frontend/components/in/in.css',
-                        'frontend/components/in/in.js'
+                        'frontend/components/in/in.js',
+                        'frontend/pages/upload/upload.css',
+                        'frontend/pages/upload/upload.js'
                     ]
                 },
                 {

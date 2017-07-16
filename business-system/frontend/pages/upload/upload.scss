@@ -1,0 +1,39 @@
+form .progress {
+    line-height: 15px;
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: greenyellow;
+    width: 0;
+}
+
+upload {
+    form {
+        button:first-child {
+            margin-left: 30px;
+        }
+        button:nth-child(2) {
+            margin-left: 15px;
+        }
+        img {
+            margin-left: 30px;
+            margin-top: 10px;
+            width: 20%;
+        }
+        .res {
+            position: relative;
+            top: -27px;
+        }
+        .progress {
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+    }
+}
