@@ -12,8 +12,12 @@
             templateUrl: 'frontend/components/in/in.html',
             controller: 'in'
         })
-        .controller('user', ['$scope', '$http', 'setPricePrecision', '$location', "ModalService",
-            function($scope, $http, setPricePrecision, location, ModalService) {
+        .component('upload', {
+            templateUrl: 'frontend/pages/upload/upload.html',
+            controller: 'upload'
+        })
+        .controller('user', ['$scope', '$http', 'setPricePrecision', '$location', "ModalService", '$location',
+            function($scope, $http, setPricePrecision, location, ModalService, $location) {
                 $scope.toBank = function() {
                     if ($scope.seller.bankCard === '未绑定') {
                         $scope.$emit('transferErrorMsg', '不能转出，原因:银行卡未绑定');
@@ -27,19 +31,13 @@
                         modal.close.then(function(result) {});
                     })
                 };
-
-                $scope.close = function(result) {
-                    close(result, 500); // close, but give 500ms for bootstrap to animate
+                $scope.upload = function() {
+                    $scope.$emit('upload');
                 };
-                $scope.$on('receClose', function() {
-                    $scope.dismissModal();
-                    console.log('zz');
-                });
                 $scope.bind = function() {
                     ModalService.showModal({
                         template: '<bind></bind>',
                         controller: 'bind',
-                        preClose: (modal) => { modal.element.modal('hide'); }
                     }).then(function(modal) {
                         modal.element.modal();
                     });
@@ -67,6 +65,9 @@
                         $scope.seller = data;
                         $scope.seller.balance = setPricePrecision($scope.seller.balance);
                         $scope.toBind = !$scope.seller.bankCard;
+                        if (!$scope.seller.sellerImgUrl) {
+                            $scope.seller.sellerImgUrl = 'frontend/static/imgs/sellerImgs/universal.png'
+                        }
                         if ($scope.toBind === true) {
                             $scope.seller.bankCard = '未绑定';
                         } else {

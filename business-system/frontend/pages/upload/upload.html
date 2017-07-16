@@ -1,0 +1,23 @@
+<div class="panel panel-default" ng-show="ifUpload">
+    <div class="panel-heading">上传头像</div>
+    <div class="panel-body row">
+        <form name="myForm">
+            <button class="btn btn-primary" ngf-select ng-model="picFile" accept="image/*">
+            选择要上传的图片</button>
+            <button class="btn btn-primary" ng-click="upload(croppedDataUrl, picFile.name)">上传</button>
+
+            <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea" ng-show="false">
+                <img-crop image="picFile  | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+                </img-crop>
+            </div>
+            <div>
+                <img ng-src="{{croppedDataUrl}}" />
+            </div>
+            <span class="progress" ng-show="progress >= 0">
+          <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+        </span>
+            <span class='res' ng-show="result">上传成功</span>
+            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+        </form>
+    </div>
+</div>
