@@ -242,7 +242,9 @@
                     name: 'goodUpload',
                     files: [
                         'frontend/pages/goodUpload/goodUpload.css',
-                        'frontend/pages/goodUpload/goodUpload.js'
+                        'frontend/pages/goodUpload/goodUpload.js',
+                        'frontend/pages/upload/upload.css',
+                        'frontend/pages/upload/upload.js'
                     ]
                 }
             ]

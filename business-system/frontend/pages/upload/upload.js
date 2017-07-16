@@ -1,17 +1,26 @@
 (function() {
     angular.module('upload', [])
-        .controller('upload', ['$scope', '$http', 'Upload', '$timeout',
-            function($scope, $http, Upload, $timeout) {
+        .controller('upload', ['$scope', '$http', 'Upload', '$timeout', '$location',
+            function($scope, $http, Upload, $timeout, $location) {
                 $scope.$on('receUpload', function(e) {
                     $scope.ifUpload = true;
                 })
+                let targetPath;
+                let ifGoods = $location.path().indexOf('goodUpload') >= 0;
+                if (ifGoods) {
+                    $scope.ifUpload = true;
+                    targetPath = 'frontend/static/imgs/goodsImgs/';
+                } else {
+                    targetPath = 'frontend/static/imgs/sellerImgs/';
+                }
                 $scope.upload = function(dataUrl, name) {
                     Upload.upload({
                         method: 'post',
                         url: 'backend/public/UploadImg',
                         file: Upload.dataUrltoBlob(dataUrl, name),
                         data: {
-                            targetPath: 'frontend/static/imgs/sellerImgs/'
+                            isGoods: ifGoods,
+                            targetPath: targetPath
                         },
                     }).then(function(response) {
                         $timeout(function() {
@@ -19,7 +28,11 @@
                         });
                         let filePath = response.data.data.file;
                         filePath = filePath.substring(filePath.indexOf('frontend'));
-                        $scope.$emit('file', filePath);
+                        if (ifGoods) {
+                            $scope.$emit('fileGoods', filePath);
+                        } else {
+                            $scope.$emit('file', filePath);
+                        }
                     }, function(response) {
                         if (response.status > 0) $scope.errorMsg = response.status +
                             ': ' + response.data;

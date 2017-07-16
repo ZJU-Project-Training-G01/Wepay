@@ -1,9 +1,16 @@
      (function() {
          angular
              .module('goodUpload', [])
+             .component('upload', {
+                 templateUrl: 'frontend/pages/upload/upload.html',
+                 controller: 'upload'
+             })
              .controller('goodUpload', ['$scope', '$http', '$location', '$stateParams', '$rootScope',
                  function($scope, $http, $location, $stateParams, $rootScope) {
                      $scope.goodDetail = {};
+                     $scope.$on('fileGoods', function(e, filePath) {
+                         $scope.goodDetail.imgUrl = filePath;
+                     })
                      if ($stateParams.ifUpdate === 'update') {
                          $scope.title = '编辑商品信息';
                          $scope.operation = '编辑';
@@ -26,6 +33,10 @@
                          $scope.ifFeedback = false;
                      }
                      $scope.upload = function() {
+                         if (!$scope.goodDetail.imgUrl) {
+                             $scope.$emit('transferErrorMsg', '请上传图片');
+                             return;
+                         }
                          $http({
                              url: $scope.url,
                              method: 'post',
