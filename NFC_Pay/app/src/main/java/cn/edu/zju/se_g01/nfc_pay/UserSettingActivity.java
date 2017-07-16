@@ -71,6 +71,7 @@ public class UserSettingActivity extends Activity {
                             } else if(code == 0) {
                                 //跳转回登录界面
                                 Toast.makeText(UserSettingActivity.this, "登出成功", Toast.LENGTH_LONG).show();
+//                                EasyMethod.clearSharedPreferences(getApplicationContext());
                                 Intent i = new Intent(UserSettingActivity.this, LoginActivity.class);
                                 startActivity(i);
                             } else {

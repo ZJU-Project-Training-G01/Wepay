@@ -57,7 +57,7 @@ import static cn.edu.zju.se_g01.nfc_pay.config.Config.getFullUrl;
  */
 public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
-    private final static String TAG = "LoginActivity";
+    private final static String TAG = LoginActivity.class.getSimpleName();
     private final String mLoginUrl = getFullUrl("UserLogin");
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -143,6 +143,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 postParams, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
+                Log.i(TAG, response.toString());
                 int code = 0;
                 try {
                     code = response.getInt("code");
