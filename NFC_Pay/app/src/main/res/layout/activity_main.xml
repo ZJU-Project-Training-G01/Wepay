@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="#0176da">
+        toolbar:titleTextColor="@android:color/white"
+        android:background="@color/theme_color_primary">
 
         <!--自定义控件-->
     </android.support.v7.widget.Toolbar>
