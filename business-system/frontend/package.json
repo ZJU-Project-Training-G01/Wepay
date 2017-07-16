@@ -1,25 +1,26 @@
 {
-    "name": "wepay-business-front-end",
-    "version": "1.0.0",
-    "description": "this is a project for mobile payment based on the NFC",
-    "main": "index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://git.coding.net/dddong/WePay.git"
-    },
-    "keywords": [
-        "NFC",
-        "wepay"
-    ],
-    "author": "achao_zju <zhangshichao628@sina.com>",
-    "license": "ISC",
-    "devDependencies": {
-        "grunt": "^1.0.1",
-        "grunt-contrib-connect": "^1.0.2",
-        "grunt-contrib-sass": "^1.0.0",
-        "grunt-contrib-watch": "^1.0.0"
-    }
+  "name": "wepay-business-front-end",
+  "version": "1.0.0",
+  "description": "this is a project for mobile payment based on the NFC",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.coding.net/dddong/WePay.git"
+  },
+  "keywords": [
+    "NFC",
+    "wepay"
+  ],
+  "author": "achao_zju <zhangshichao628@sina.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
 }

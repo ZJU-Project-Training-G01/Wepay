@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
-    var orderItemPath = 'components';
-    var orderPath = 'pages'
+    let orderItemPath = 'components';
+    let orderPath = 'pages';
+    let bootswatchPath = 'bower_components/bootswatch/journal/'
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
@@ -22,10 +23,21 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: bootswatchPath,
+                    src: ['bootstrap.min.css'],
+                    dest: bootswatchPath,
+                    ext: '.min.css'
+                }]
+            }
+        },
         watch: {
             scripts: {
-                files: [orderItemPath + '/**/*.scss', orderPath + '/**/*.scss'],
-                tasks: ['sass']
+                files: [orderItemPath + '/**/*.scss', orderPath + '/**/*.scss', bootswatchPath + '*.css'],
+                tasks: ['sass', 'cssmin']
             },
             livereload: {
                 options: {
@@ -33,8 +45,8 @@ module.exports = function(grunt) {
                 },
                 files: [
                     orderItemPath + '/**/*.css',
-                    orderPath + '/**/*.css'
-
+                    orderPath + '/**/*.css',
+                    bootswatchPath + '*.min.css'
                 ]
             }
         },
@@ -56,11 +68,13 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect')
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 
     grunt.registerTask('outputcss', ['sass']);
-    grunt.registerTask('watchit', ['outputcss', 'connect', 'watch']);
+    grunt.registerTask('mincss', ['cssmin']);
+    grunt.registerTask('watchit', ['outputcss', 'cssmin', 'connect', 'watch']);
 
     grunt.registerTask('default');
 };
