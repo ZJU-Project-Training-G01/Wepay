@@ -17,18 +17,15 @@ class OutMoney
     public function OutMoney()
     {
         $request = Request::instance();
-        $payPassword = $request->post('payPassword');
-        $outMoney = $request->post('outMoney');
 
-        if($request->session('login')!='true')
-        {
+        if ($request->session('login') != 'true') {
             $code = 2;
             $msg = '您还未登录';
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            Db::execute('update seller set balance = balance - :inMoney where sellerId = :sellerId;',
-            ['inMoney' => $outMoney, 'sellerId' => $sellerId]);
+            $outMoney = $request->post('outMoney');
+            Db::execute('update seller set balance = balance - :outMoney where sellerId = :sellerId;', ['outMoney' => $outMoney, 'sellerId' => $sellerId]);
 
             $code = 0;
             $msg = NULL;

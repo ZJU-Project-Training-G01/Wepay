@@ -31,6 +31,7 @@ return [
     'InMoney' => 'back/InMoney/InMoney',
     'OutMoney' => 'back/OutMoney/OutMoney',
     'SellerLoginOut' => 'back/SellerLoginOut/SellerLoginOut',
+    'UploadImg' => 'back/UploadImg/UploadImg',
 
     'GetOrders' => 'android/GetOrders/GetOrders',
     'GetUserInfo' => 'android/GetUserInfo/GetUserInfo',

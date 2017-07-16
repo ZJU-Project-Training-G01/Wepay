@@ -29,7 +29,7 @@ class ChargeBalance extends Controller
             $data = NULL;
         } else {
             $buyerId = $request->session('buyer_id');
-            $data = Db::execute('update buyer set balance = balance + ' . $chargeNum . ' where buyerId = ' . $buyerId . ';');
+            $data = Db::execute('update buyer set balance = balance + :chargeNum where buyerId = :buyerId;', ['chargeNum' => $chargeNum, 'buyerId' => $buyerId]);
             $code = 0;
             $msg = NULL;
             $data = NULL;

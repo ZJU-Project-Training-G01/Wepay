@@ -18,17 +18,16 @@ class InMoney
     {
         $request = Request::instance();
 
-        $payPassword=$request->post('payPassword');
+        $payPassword = $request->post('payPassword');
         $inMoney = $request->post('inMoney');
 
-        if($request->session('login')!='true')
-        {
+        if ($request->session('login') != 'true') {
             $code = 2;
             $msg = '您还未登录';
             $data = NULL;
         } else {
             $sellerId = $request->session('sellerId');
-            Db::execute('update seller set balance = balance + ' . $inMoney . ' where sellerId = ' . $sellerId . ';');
+            Db::execute('update seller set balance = balance + :inMoney where sellerId = :sellerId;', ['inMoney' => $inMoney, 'sellerId' => $sellerId]);
 
             $code = 0;
             $msg = NULL;

@@ -1,46 +1,47 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Rexxar
- * Date: 2017/7/15
- * Time: 11:13
+ * User: 12964
+ * Date: 2017/7/16
+ * Time: 9:22
  */
 
 namespace app\back\controller;
-
-
+use think\Controller;
 use think\Db;
 use think\Request;
+use think\Session;
 use Exception;
 
-class Bind
+class UploadImg extends Controller
 {
-    public function Bind()
+    public function UploadImg()
     {
         $request = Request::instance();
-
-        $bankName = $request->post('bankName');
-        $bankCard = $request->post('bankCard');
-
         if ($request->session('login') != 'true') {
             $code = 2;
             $msg = '您还未登录';
             $data = NULL;
-        } else {
+        }
+        else
+        {
             $sellerId = $request->session('sellerId');
+            $filename = $_FILES['file']['name'];
+            $meta = $_POST;
+            $destination = $meta['targetPath'].$filename;
+            move_uploaded_file($_FILES['file']['tmp_name'], $destination);
             try{
-                Db::execute('update seller set bankCard = :bankCard , bankName = :bankName where sellerId = :sellerId;',
-                    ['bankCard' => $bankCard, 'bankName' => $bankName, 'sellerId' => $sellerId]);
+                Db::execute('update seller set sellerImgUrl = :destination where sellerId = :sellerId',
+                    ['destination' => $destination, 'sellerId' => $sellerId]);
                 $code = 0;
-                $msg = NULL;
+                $msg = $sellerId;
                 $data = NULL;
-            }catch (Exception $e){
+            }catch(Exception $e){
                 $code = 3;
                 $msg = $e->getMessage();
                 $data = NULL;
             }
         }
-
         $res = [
             'code' => $code,
             'msg' => $msg,
@@ -48,5 +49,6 @@ class Bind
         ];
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
     }
-
 }
+
+?>

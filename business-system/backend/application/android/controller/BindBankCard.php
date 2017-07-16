@@ -30,7 +30,7 @@ class BindBankCard extends Controller
             $data = NULL;
         } else {
             $buyerId = $request->session('buyer_id');
-            $data = Db::execute('update buyer set bankCard = ' . $cardNum . ' where buyerId = ' . $buyerId . ';');
+            $data = Db::execute('update buyer set bankCard = ":cardNum" where buyerId = :buyerId;', ['cardNum' => $cardNum, 'buyerId' => $buyerId]);
             $code = 0;
             $msg = NULL;
             $data = NULL;
