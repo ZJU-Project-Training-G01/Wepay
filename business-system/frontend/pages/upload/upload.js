@@ -10,7 +10,6 @@
                         method: 'post',
                         url: 'backend/public/UploadImg',
                         file: Upload.dataUrltoBlob(dataUrl, name),
-                        // url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
                         data: {
                             targetPath: 'frontend/static/imgs/sellerImgs/'
                         },
@@ -18,10 +17,9 @@
                         $timeout(function() {
                             $scope.result = response.data;
                         });
-                        console.log(dataUrl);
-                        console.log(name);
-                        console.log(response);
-                        console.log(Upload.dataUrltoBlob(dataUrl, name));
+                        let filePath = response.data.data.file;
+                        filePath = filePath.substring(filePath.indexOf('frontend'));
+                        $scope.$emit('file', filePath);
                     }, function(response) {
                         if (response.status > 0) $scope.errorMsg = response.status +
                             ': ' + response.data;
