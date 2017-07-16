@@ -36,6 +36,8 @@
                          if (!$scope.goodDetail.imgUrl) {
                              $scope.$emit('transferErrorMsg', '请上传图片');
                              return;
+                         } else {
+                             $scope.goodDetail.imgUrl = 'http://120.77.34.254/business-system/' + $scope.goodDetail.imgUrl;
                          }
                          $http({
                              url: $scope.url,
