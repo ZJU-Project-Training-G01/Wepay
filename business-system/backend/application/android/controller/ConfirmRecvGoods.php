@@ -21,8 +21,8 @@ class ConfirmRecvGoods extends Controller
         $orderId = $request->post('orderID');
 
         //test
-        Session::set('login','true');
-        $orderId = 1;
+        /*Session::set('login','true');
+        $orderId = 1;*/
 
         if($request->session('login')!='true')
         {
