@@ -18,6 +18,9 @@
         })
         .controller('user', ['$scope', '$http', 'setPricePrecision', '$location', "ModalService", '$location',
             function($scope, $http, setPricePrecision, location, ModalService, $location) {
+                $scope.$on('file', function(e, filePath) {
+                    $scope.seller.sellerImgUrl = filePath;
+                });
                 $scope.toBank = function() {
                     if ($scope.seller.bankCard === '未绑定') {
                         $scope.$emit('transferErrorMsg', '不能转出，原因:银行卡未绑定');
