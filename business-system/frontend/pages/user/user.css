@@ -11,5 +11,7 @@ user .panel {
       color: #36c; }
     user .panel .panel-body .operation:hover {
       cursor: pointer; }
+    user .panel .panel-body img:hover {
+      cursor: pointer; }
 
 /*# sourceMappingURL=user.css.map */
