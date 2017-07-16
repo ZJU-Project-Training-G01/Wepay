@@ -22,6 +22,7 @@ class UploadGood extends Controller
         $amount = $request->post('amount');
         $unitPrice = $request->post('unitPrice');
         $goodInfo = $request->post('goodInfo');
+        $imgUrl = $request->post('imgUrl');
 
         //test
         /*Session::set('login', 'true');
@@ -41,8 +42,8 @@ class UploadGood extends Controller
             $sellerId = $request->session('sellerId');
             //$sellerId = 1;
             try{
-                Db::execute('insert into good (goodName, amount, unitPrice, goodInfo, soldAmount, sellerId) values (:goodName, :amount, :unitPrice, :goodInfo, 0, :sellerId)',
-                    ['goodName' => $goodName, 'amount' => $amount, 'unitPrice' => $unitPrice, 'goodInfo' => $goodInfo, 'sellerId' => $sellerId]);
+                Db::execute('insert into good (goodName, amount, unitPrice, imgUrl, goodInfo, soldAmount, sellerId) values (:goodName, :amount, :unitPrice, :imgUrl, :goodInfo, 0, :sellerId)',
+                    ['goodName' => $goodName, 'amount' => $amount, 'unitPrice' => $unitPrice, 'imgUrl' => $imgUrl, 'goodInfo' => $goodInfo, 'sellerId' => $sellerId]);
                 $data1 = Db::query('select goodId from good where goodName = :goodName',['goodName' => $goodName]);
                 $data = $data1[0];
                 $code = 0;

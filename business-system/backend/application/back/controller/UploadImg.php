@@ -18,6 +18,7 @@ class UploadImg extends Controller
     public function UploadImg()
     {
         $request = Request::instance();
+        $isGoods = $request->post('isGoods');
         if ($request->session('login') != 'true')
         {
             $code = 2;
@@ -35,8 +36,11 @@ class UploadImg extends Controller
             move_uploaded_file($_FILES['file']['tmp_name'], $path);
             //move_uploaded_file($_FILES['file']['tmp_name'], "D:\wampServer\wamp64\www\WePay\business-system\\".$destination);
            try{
-                Db::execute('update seller set sellerImgUrl = :destination where sellerId = :sellerId',
-                    ['destination' => $destination, 'sellerId' => $sellerId]);
+               if($isGoods == 'false')
+               {
+                   Db::execute('update seller set sellerImgUrl = :destination where sellerId = :sellerId',
+                       ['destination' => $destination, 'sellerId' => $sellerId]);
+               }
                 $code = 0;
                 $msg = $sellerId;
                 $data1['file'] = $path;
