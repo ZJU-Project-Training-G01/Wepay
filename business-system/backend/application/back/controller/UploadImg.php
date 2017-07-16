@@ -18,7 +18,8 @@ class UploadImg extends Controller
     public function UploadImg()
     {
         $request = Request::instance();
-        if ($request->session('login') != 'true') {
+        if ($request->session('login') != 'true')
+        {
             $code = 2;
             $msg = '您还未登录';
             $data = NULL;
@@ -29,8 +30,8 @@ class UploadImg extends Controller
             $filename = $_FILES['file']['name'];
             $meta = $_POST;
             $destination = $meta['targetPath'].$filename;
-            move_uploaded_file($_FILES['file']['tmp_name'], $destination);
-            try{
+            move_uploaded_file($_FILES['file']['tmp_name'], "D:\wampServer\wamp64\www\WePay\business-system\\".$destination);
+           try{
                 Db::execute('update seller set sellerImgUrl = :destination where sellerId = :sellerId',
                     ['destination' => $destination, 'sellerId' => $sellerId]);
                 $code = 0;
@@ -40,7 +41,7 @@ class UploadImg extends Controller
                 $code = 3;
                 $msg = $e->getMessage();
                 $data = NULL;
-            }
+           }
         }
         $res = [
             'code' => $code,
@@ -51,4 +52,5 @@ class UploadImg extends Controller
     }
 }
 
+                
 ?>

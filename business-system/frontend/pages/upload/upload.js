@@ -8,7 +8,7 @@
                 $scope.upload = function(dataUrl, name) {
                     Upload.upload({
                         method: 'post',
-                        url: 'frontend/static/jsons/img.json',
+                        url: 'backend/public/UploadImg',
                         file: Upload.dataUrltoBlob(dataUrl, name),
                         // url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
                         data: {
