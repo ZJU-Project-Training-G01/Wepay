@@ -29,14 +29,18 @@ class UploadImg extends Controller
             $sellerId = $request->session('sellerId');
             $filename = $_FILES['file']['name'];
             $meta = $_POST;
+            $data1 = array();
             $destination = $meta['targetPath'].$filename;
-            move_uploaded_file($_FILES['file']['tmp_name'], "D:\wampServer\wamp64\www\WePay\business-system\\".$destination);
+            $path = "/Users/achao_zju/htdocs/WePay/business-system/".$destination;
+            move_uploaded_file($_FILES['file']['tmp_name'], $path);
+            //move_uploaded_file($_FILES['file']['tmp_name'], "D:\wampServer\wamp64\www\WePay\business-system\\".$destination);
            try{
                 Db::execute('update seller set sellerImgUrl = :destination where sellerId = :sellerId',
                     ['destination' => $destination, 'sellerId' => $sellerId]);
                 $code = 0;
                 $msg = $sellerId;
-                $data = "D:\wampServer\wamp64\www\WePay\business-system\\".$destination;
+                $data1['file'] = $path;
+                $data = $data1;
             }catch(Exception $e){
                 $code = 3;
                 $msg = $e->getMessage();
