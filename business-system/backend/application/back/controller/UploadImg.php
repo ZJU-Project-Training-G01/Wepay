@@ -36,7 +36,7 @@ class UploadImg extends Controller
                     ['destination' => $destination, 'sellerId' => $sellerId]);
                 $code = 0;
                 $msg = $sellerId;
-                $data = NULL;
+                $data = "D:\wampServer\wamp64\www\WePay\business-system\\".$destination;
             }catch(Exception $e){
                 $code = 3;
                 $msg = $e->getMessage();
