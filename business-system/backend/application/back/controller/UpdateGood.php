@@ -23,6 +23,7 @@ class UpdateGood extends Controller
         $amount = $request->post('amount');
         $unitPrice = $request->post('unitPrice');
         $goodInfo = $request->post('goodInfo');
+        $imgUrl = $request->post('imgUrl');
 
         //test
         /*Session::set('login', 'true');
@@ -42,8 +43,8 @@ class UpdateGood extends Controller
         {
             $sellerId = $request->session('sellerId');
             try{
-                Db::execute('update good set goodName = :goodName, amount = :amount, unitPrice = :unitPrice, goodInfo = :goodInfo where goodId = :goodId',
-                    ['goodId' => $goodId, 'goodName' => $goodName, 'amount' => $amount, 'unitPrice' => $unitPrice, 'goodInfo' => $goodInfo]);
+                Db::execute('update good set goodName = :goodName, amount = :amount, unitPrice = :unitPrice, imgUrl = :imgUrl, goodInfo = :goodInfo where goodId = :goodId',
+                    ['goodId' => $goodId, 'goodName' => $goodName, 'amount' => $amount, 'unitPrice' => $unitPrice,'imgUrl' => $imgUrl, 'goodInfo' => $goodInfo]);
                 $data = NULL;
                 $code = 0;
                 $msg = $goodId;
