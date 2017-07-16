@@ -35,6 +35,10 @@ class UserRegist extends  Controller
         {
             try{
                 Db::execute('insert into buyer (email, buyerPassword) values (:email, :password)',['email' => $email, 'password' => $password]);
+                $data1 = Db::query('select buyerId from buyer where email = :email and buyerPassword = :password',
+                    ['email' => $email, 'password' => $password]);
+                Session::set('buyer_id', $data1[0]['buyerId']);
+                Session::set('login','true');
                 $code = 0;
                 $data = NULL;
                 $msg = '';
