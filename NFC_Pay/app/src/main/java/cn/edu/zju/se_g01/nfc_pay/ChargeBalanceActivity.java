@@ -2,6 +2,7 @@ package cn.edu.zju.se_g01.nfc_pay;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +11,6 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -22,6 +22,7 @@ import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 public class ChargeBalanceActivity extends AppCompatActivity {
 
+    private static final String TAG = "ChargeBalanceActivity";
     private EditText chargeNumEditText;
     private EditText paymentPasswordEditText;
     private Button confirmChargeBtn;
@@ -45,13 +46,16 @@ public class ChargeBalanceActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            Log.d(TAG, response.toString());
                             int code = response.getInt("code");
                             if(code == 0) {
-                                Toast.makeText(ChargeBalanceActivity.this, "充值成功", Toast.LENGTH_LONG);
-                            } else if(code == 1) {
-                                Toast.makeText(ChargeBalanceActivity.this, "充值失败", Toast.LENGTH_LONG);
+                                Toast.makeText(ChargeBalanceActivity.this, "充值成功", Toast.LENGTH_LONG).show();
+                                Thread.sleep(1000);
+                                finish();
+                            } else {
+                                Toast.makeText(ChargeBalanceActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
                             }
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
 
                         }

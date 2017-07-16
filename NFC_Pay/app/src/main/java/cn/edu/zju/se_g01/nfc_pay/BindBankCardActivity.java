@@ -1,5 +1,6 @@
 package cn.edu.zju.se_g01.nfc_pay;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +11,6 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -18,6 +18,7 @@ import java.util.Map;
 
 import cn.edu.zju.se_g01.nfc_pay.config.Config;
 import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
+import cn.edu.zju.se_g01.nfc_pay.tools.EasyMethod;
 import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 
 public class BindBankCardActivity extends AppCompatActivity {
@@ -55,11 +56,17 @@ public class BindBankCardActivity extends AppCompatActivity {
                             int code = response.getInt("code");
                             if(code == 0) {
                                 Toast.makeText(BindBankCardActivity.this, "绑定成功", Toast.LENGTH_LONG).show();
+                                Thread.sleep(1000);
+                                finish();
                             } else if(code == 1) {
 
                                 Toast.makeText(BindBankCardActivity.this, "绑定失败", Toast.LENGTH_LONG).show();
+                            } else if(code == 2) {
+                                Toast.makeText(BindBankCardActivity.this, response.getString("msg"), Toast.LENGTH_LONG).show();
+                                EasyMethod.clearSharedPreferences(getApplicationContext());
+                                startActivity(new Intent(BindBankCardActivity.this, LoginActivity.class));
                             }
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
 
                         }

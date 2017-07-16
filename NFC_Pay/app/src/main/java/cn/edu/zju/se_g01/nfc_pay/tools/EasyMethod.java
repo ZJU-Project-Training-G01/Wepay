@@ -11,6 +11,7 @@ import cn.edu.zju.se_g01.nfc_pay.R;
 
 public class EasyMethod {
 
+    //用于清除sharedPreferences里面存储的 cookie
     public static void clearSharedPreferences(Context c) {
         SharedPreferences sp = c.getSharedPreferences(c.getString(R.string.cookie_preference_file), Context.MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = sp.edit();
