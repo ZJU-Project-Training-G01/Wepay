@@ -22,7 +22,7 @@
                 let day = Math.floor(deadline / dayLevel);
                 let hour = ((deadline - day * dayLevel) / hourLevel).toFixed(0);
                 return '剩余' + day.toString() + '天' + hour.toString() + '时';
-            }
+            };
         })
         .factory('orderServe', function(getDeadline) {
             return {
@@ -54,8 +54,8 @@
                     return {
                         orderName: orderName,
                         operation: operation
-                    }
+                    };
                 }
-            }
-        })
+            };
+        });
 })();

@@ -4,7 +4,7 @@
             function($scope) {
                 $scope.toStatus = function(status) {
                     $scope.$emit('transferStatus', status);
-                }
+                };
             }
         ]);
 })();

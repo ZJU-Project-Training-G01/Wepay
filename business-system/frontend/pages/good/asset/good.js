@@ -1,4 +1,24 @@
 (function() {
+    angular.module('good', [])
+        .controller('good', ['$scope',
+            function($scope) {
+                $scope.$on('transferKeyword', function(e, keyword) {
+                    $scope.$broadcast('receiveKeyword', keyword);
+                });
+            }
+        ])
+        .component('goodItem', {
+            templateUrl: 'frontend/components/goodItem/goodItem.html',
+            controller: 'goodItemCtrl'
+        })
+        .component('goodSearch', {
+            templateUrl: 'frontend/components/goodSearch/goodSearch.html',
+            controller: 'goodSearchCtrl'
+        });
+
+
+})();;
+(function() {
     angular.module('goodItem', [])
         .controller('goodItemCtrl', ['$scope', '$http', '$location', 'setPricePrecision',
             function($scope, $http, $location, setPricePrecision) {
@@ -24,6 +44,21 @@
                     }).then(function(data) {});
                 };
                 $scope.goodHttp($scope.pageNumber);
+            }
+        ]);
+})();;
+(function() {
+    angular
+        .module('goodSearch', [])
+        .controller('goodSearchCtrl', ['$scope', '$http', '$location',
+            function($scope, $http, $location) {
+                $scope.search = function() {
+                    let keyword = $scope.keyword;
+                    $scope.$emit('transferKeyword', keyword);
+                };
+                $scope.upload = function() {
+                    $location.path('goodUpload');
+                };
             }
         ]);
 })();

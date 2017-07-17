@@ -24,8 +24,8 @@
                             let errorMsg = data.data.msg;
                             $scope.$emit('transferErrorMsg', errorMsg);
                         }
-                    })
-                }
+                    });
+                };
                 $scope.orderHttp = function(pageNumber) {
                     $http({
                         method: 'post',

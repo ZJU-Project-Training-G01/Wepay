@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
     let component = orderItemPath = 'components';
     let page = orderPath = 'pages';
-
+    let bower = 'bower_components/';
+    let lib = 'static/lib/';
     let bootswatchPath = 'bower_components/bootswatch/journal/'
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -27,6 +28,46 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        jshint: {
+            options: {
+                esversion: 6
+            },
+            all: ['Gruntfule.js', 'index.js', 'components/**/*.js', 'pages/**/*.js']
+        },
+        concat: {
+            options: {
+                separator: ';',
+            },
+            basic_and_extras: {
+                files: {
+                    'pages/user/asset/user.js': [
+                        page + '/user/user.js',
+                        component + '/bind/bind.js',
+                        component + '/out/out.js',
+                        component + '/in/in.js'
+                    ],
+                    'pages/good/asset/good.js': [
+                        page + '/good/good.js',
+                        component + '/goodItem/goodItem.js',
+                        component + '/goodSearch/goodSearch.js'
+                    ],
+                    'pages/order/asset/order.js': [
+                        page + '/order/order.js',
+                        component + '/orderItem/orderItem.js',
+                        component + '/navs/navs.js'
+                    ]
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'pages/user/asset/user.min.js': ['pages/user/asset/user.js'],
+                    'pages/good/asset/good.min.js': ['pages/good/asset/good.js'],
+                    'pages/order/asset/order.min.js': ['pages/order/asset/order.js']
+                }
+            }
+        },
         cssmin: {
             target: {
                 files: [{
@@ -49,6 +90,9 @@ module.exports = function(grunt) {
                     ext: '.min.css'
                 }]
             }
+        },
+        concat_css: {
+            files: { 'pages/goodUpload/goodUpload.all.css': ['pages/goodUpload/goodUpload.min.css', 'pages/upload/upload.min.css'] }
         },
         watch: {
             scripts: {
@@ -94,11 +138,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-concat-css');
-
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('outputcss', ['sass']);
-    grunt.registerTask('mincss', ['cssmin']);
-    grunt.registerTask('watchit', ['outputcss', 'mincss', 'connect', 'watch']);
+    grunt.registerTask('compresscss', ['cssmin']);
+    grunt.registerTask('concatcss', ['concat_css']);
+    grunt.registerTask('checkjs', ['jshint']);
+    grunt.registerTask('concatjs', ['concat']);
+    grunt.registerTask('compress', ['uglify'])
+    grunt.registerTask('watchit', ['outputcss', 'compresscss', 'connect', 'watch', 'concatcss']);
 
     grunt.registerTask('default');
 };

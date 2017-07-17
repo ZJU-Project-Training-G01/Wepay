@@ -6,13 +6,13 @@
         .controller('login', ['$scope', '$http', '$location', function($scope, $http, $location) {
             $scope.$emit('hideNavbar'); //隐藏navbar
             $scope.register = function() {
-                $location.path('/register')
-            }
+                $location.path('/register');
+            };
             $scope.login = function() {
                 if (!$scope.phoneNumber) {
                     $scope.$emit('transferErrorMsg', '手机号不能为空'); //隐藏navbar
                     return;
-                };
+                }
                 if (!$scope.sellerPassword) {
                     $scope.$emit('transferErrorMsg', '密码不能为空');
                     return;
@@ -29,7 +29,7 @@
                     } else {
                         $scope.$emit('transferErrorMsg', '登录失败，原因：' + data.data.msg);
                     }
-                })
-            }
+                });
+            };
         }]);
 })();

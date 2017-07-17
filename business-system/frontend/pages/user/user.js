@@ -32,7 +32,7 @@
                     }).then(function(modal) {
                         modal.element.modal();
                         modal.close.then(function(result) {});
-                    })
+                    });
                 };
                 $scope.upload = function() {
                     $scope.$emit('upload');
@@ -44,7 +44,7 @@
                     }).then(function(modal) {
                         modal.element.modal();
                     });
-                }
+                };
                 $scope.in = function() {
                     if ($scope.seller.bankCard === '未绑定') {
                         $scope.$emit('transferErrorMsg', '不能充值，原因:银行卡未绑定');
@@ -55,8 +55,8 @@
                         controller: 'in'
                     }).then(function(modal) {
                         modal.element.modal();
-                    })
-                }
+                    });
+                };
                 $http({
                     url: 'backend/public/GetSellerInfo',
                     method: 'post',
@@ -69,7 +69,7 @@
                         $scope.seller.balance = setPricePrecision($scope.seller.balance);
                         $scope.toBind = !$scope.seller.bankCard;
                         if (!$scope.seller.sellerImgUrl) {
-                            $scope.seller.sellerImgUrl = 'frontend/static/imgs/sellerImgs/universal.png'
+                            $scope.seller.sellerImgUrl = 'frontend/static/imgs/sellerImgs/universal.png';
                         }
                         if ($scope.toBind === true) {
                             $scope.seller.bankCard = '未绑定';
@@ -79,7 +79,7 @@
                     } else {
                         $scope.$emit('transferErrorMsg', '获取用户基础信息失败，原因:' + data.data.msg);
                     }
-                })
+                });
             }
         ]);
 })();

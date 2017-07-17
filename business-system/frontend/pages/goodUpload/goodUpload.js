@@ -10,7 +10,7 @@
                      $scope.goodDetail = {};
                      $scope.$on('fileGoods', function(e, filePath) {
                          $scope.goodDetail.imgUrl = filePath;
-                     })
+                     });
                      if ($stateParams.ifUpdate === 'update') {
                          $scope.title = '编辑商品信息';
                          $scope.operation = '编辑';
@@ -25,13 +25,13 @@
                      }
                      $scope.toDetail = function() {
                          $location.path('good/' + $scope.goodDetail.goodId);
-                     }
+                     };
                      $scope.continue = function() {
                          if ($stateParams.ifUpdate !== 'update') {
                              $scope.goodDetail = undefined;
                          }
                          $scope.ifFeedback = false;
-                     }
+                     };
                      $scope.upload = function() {
                          if (!$scope.goodDetail.imgUrl) {
                              $scope.$emit('transferErrorMsg', '请上传图片');
@@ -51,8 +51,8 @@
                                      $scope.goodDetail.goodId = data.data.data.goodId;
                                  }
                              }
-                         })
-                     }
+                         });
+                     };
                  }
-             ])
+             ]);
      })();
