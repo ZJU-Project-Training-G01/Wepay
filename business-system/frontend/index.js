@@ -199,14 +199,11 @@
                 {
                     name: 'user',
                     files: [
-                        'frontend/pages/user/user.js',
                         'frontend/pages/user/user.css',
-                        'frontend/components/bind/bind.js',
                         'frontend/components/bind/bind.css',
                         'frontend/components/out/out.css',
-                        'frontend/components/out/out.js',
                         'frontend/components/in/in.css',
-                        'frontend/components/in/in.js',
+                        'frontend/pages/user/asset/user.js',
                         'frontend/pages/upload/upload.css',
                         'frontend/pages/upload/upload.js'
                     ]
@@ -224,11 +221,12 @@
                     name: 'good',
                     files: [
                         'frontend/pages/good/good.css',
-                        'frontend/pages/good/good.js',
+                        // 'frontend/pages/good/good.js',
                         'frontend/components/goodItem/goodItem.css',
-                        'frontend/components/goodItem/goodItem.js',
+                        // 'frontend/components/goodItem/goodItem.js',
                         'frontend/components/goodSearch/goodSearch.css',
-                        'frontend/components/goodSearch/goodSearch.js'
+                        // 'frontend/components/goodSearch/goodSearch.js',
+                        'frontend/pages/good/asset/good.js'
                     ]
                 },
                 {
