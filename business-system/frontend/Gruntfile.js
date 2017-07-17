@@ -1,10 +1,14 @@
 module.exports = function(grunt) {
-    let orderItemPath = 'components';
-    let orderPath = 'pages';
+    let component = orderItemPath = 'components';
+    let page = orderPath = 'pages';
+
     let bootswatchPath = 'bower_components/bootswatch/journal/'
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
+            options: {
+                sourcemap: 'none'
+            },
             output: {
                 files: [{
                         expand: true,
@@ -28,15 +32,32 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: bootswatchPath,
-                    src: ['bootstrap.min.css'],
+                    src: ['bootstrap.css'],
                     dest: bootswatchPath,
+                    ext: '.min.css'
+                }, {
+                    expand: true,
+                    cwd: page,
+                    src: ['**/*.css'],
+                    dest: page,
+                    ext: '.min.css'
+                }, {
+                    expand: true,
+                    cwd: component,
+                    src: ['**/*.css'],
+                    dest: component,
                     ext: '.min.css'
                 }]
             }
         },
         watch: {
             scripts: {
-                files: [orderItemPath + '/**/*.scss', orderPath + '/**/*.scss', bootswatchPath + '*.css'],
+                files: [orderItemPath + '/**/*.scss',
+                    orderPath + '/**/*.scss',
+                    bootswatchPath + '*.css',
+                    component + '/**/*.css',
+                    page + '/**/*.css'
+                ],
                 tasks: ['sass', 'cssmin']
             },
             livereload: {
@@ -46,7 +67,9 @@ module.exports = function(grunt) {
                 files: [
                     orderItemPath + '/**/*.css',
                     orderPath + '/**/*.css',
-                    bootswatchPath + '*.min.css'
+                    bootswatchPath + '*.min.css',
+                    component + '/**/*.min.css',
+                    page + "/**/*.min.css"
                 ]
             }
         },
@@ -70,11 +93,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-concat-css');
 
 
     grunt.registerTask('outputcss', ['sass']);
     grunt.registerTask('mincss', ['cssmin']);
-    grunt.registerTask('watchit', ['outputcss', 'cssmin', 'connect', 'watch']);
+    grunt.registerTask('watchit', ['outputcss', 'mincss', 'connect', 'watch']);
 
     grunt.registerTask('default');
 };

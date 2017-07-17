@@ -234,7 +234,7 @@
                 {
                     name: 'goodDetail',
                     files: [
-                        'frontend/pages/goodDetail/goodDetail.css',
+                        'frontend/pages/goodDetail/goodDetail.min.css',
                         'frontend/pages/goodDetail/goodDetail.js',
                     ]
                 },
