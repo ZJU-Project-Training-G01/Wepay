@@ -20,11 +20,9 @@
                             item.orderStatus = 1;
                             item.orderName = '买家未收货';
                             item.operation = '等待买家收货';
-                        } else if (code > 1) {
+                        } else if (code > 0) {
                             let errorMsg = data.data.msg;
                             $scope.$emit('transferErrorMsg', errorMsg);
-                        } else {
-                            $scope.$emit('transferErrorMsg', '未知原因');
                         }
                     })
                 }
@@ -38,8 +36,8 @@
                         $scope.total = data.data.msg;
                         $scope.orders.forEach(function(val) {
                             val.total = val.amount * val.unitPrice;
-                            val.unitPrice = setPricePrecision(parseFloat(val.unitPrice));
-                            val.total = setPricePrecision(parseFloat(val.total));
+                            val.unitPrice = setPricePrecision(val.unitPrice);
+                            val.total = setPricePrecision(val.total);
                             let { orderName, operation } = orderServe.orderStatusToName(val.orderStatus, val.orderTime);
                             val.operation = operation;
                             val.orderName = orderName;

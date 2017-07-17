@@ -98,7 +98,7 @@
         })
         .factory('setPricePrecision', function() {
             return function(originalPrice) {
-                return '￥' + (originalPrice.toFixed(2)).toString();
+                return '￥' + (parseFloat(originalPrice).toFixed(2)).toString();
             }
         });
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
