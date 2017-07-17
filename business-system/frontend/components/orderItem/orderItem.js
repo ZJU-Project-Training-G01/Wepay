@@ -36,6 +36,7 @@
                         $scope.total = data.data.msg;
                         $scope.orders.forEach(function(val) {
                             val.total = val.amount * val.unitPrice;
+                            val.orderStatus = parseInt(val.orderStatus);
                             val.unitPrice = setPricePrecision(val.unitPrice);
                             val.total = setPricePrecision(val.total);
                             let { orderName, operation } = orderServe.orderStatusToName(val.orderStatus, val.orderTime);
