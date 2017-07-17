@@ -16,7 +16,7 @@
             });
             $rootScope.$on('upload', function(e) {
                 $rootScope.$broadcast('receUpload');
-            })
+            });
         }])
         .controller('error', ['$scope', '$window',
             function($scope, $window) {
@@ -31,10 +31,10 @@
                         if (ifSuccess === 'modal') {
                             $scope.close = function() {
                                 $window.location.reload();
-                            }
+                            };
                         }
                     }
-                })
+                });
             }
         ])
         .controller('navbar', ['$scope', '$http', '$location',
@@ -55,10 +55,10 @@
                         let code = data.data.code;
                         if (code === 0) {
                             $scope.$emit('transferErrorMsg', '登出成功', true);
-                            $location.path('/')
+                            $location.path('/');
                         }
-                    })
-                }
+                    });
+                };
             }
         ])
         .component('register', {
@@ -99,7 +99,7 @@
         .factory('setPricePrecision', function() {
             return function(originalPrice) {
                 return '￥' + (parseFloat(originalPrice).toFixed(2)).toString();
-            }
+            };
         });
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('', '/');
@@ -118,7 +118,7 @@
                 template: '<login></login>',
                 resolve: {
                     login: function($ocLazyLoad) {
-                        return $ocLazyLoad.load(['login'])
+                        return $ocLazyLoad.load(['login']);
                     }
                 }
             })
@@ -145,7 +145,7 @@
                 template: '<good></good>',
                 resolve: {
                     good: function($ocLazyLoad) {
-                        return $ocLazyLoad.load(['good'])
+                        return $ocLazyLoad.load(['good']);
                     }
                 }
             })
@@ -163,7 +163,7 @@
                 template: '<good-upload></good-upload>',
                 resolve: {
                     goodUpload: function($ocLazyLoad) {
-                        return $ocLazyLoad.load(['goodUpload'])
+                        return $ocLazyLoad.load(['goodUpload']);
                     }
                 }
             })
@@ -172,11 +172,11 @@
                 template: '<good-upload></good-upload>',
                 resolve: {
                     goodUpload: function($ocLazyLoad) {
-                        return $ocLazyLoad.load(['goodUpload'])
+                        return $ocLazyLoad.load(['goodUpload']);
                     }
                 }
-            })
-    }])
+            });
+    }]);
     app.config(function($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
             debug: true,

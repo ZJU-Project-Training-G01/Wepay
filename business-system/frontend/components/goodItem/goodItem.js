@@ -25,5 +25,5 @@
                 };
                 $scope.goodHttp($scope.pageNumber);
             }
-        ])
+        ]);
 })();

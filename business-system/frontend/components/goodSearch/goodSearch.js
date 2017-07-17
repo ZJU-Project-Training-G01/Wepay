@@ -6,10 +6,10 @@
                  $scope.search = function() {
                      let keyword = $scope.keyword;
                      $scope.$emit('transferKeyword', keyword);
-                 }
+                 };
                  $scope.upload = function() {
-                     $location.path('goodUpload')
-                 }
+                     $location.path('goodUpload');
+                 };
              }
-         ])
+         ]);
  })();

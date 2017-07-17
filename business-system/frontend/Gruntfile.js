@@ -27,6 +27,12 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        jshint: {
+            options: {
+                esversion: 6
+            },
+            all: ['Gruntfule.js', 'index.js', 'components/**/*.js', 'pages/**/*.js']
+        },
         cssmin: {
             target: {
                 files: [{
@@ -49,6 +55,9 @@ module.exports = function(grunt) {
                     ext: '.min.css'
                 }]
             }
+        },
+        concat_css: {
+            files: { 'pages/goodUpload/goodUpload.all.css': ['pages/goodUpload/goodUpload.min.css', 'pages/upload/upload.min.css'] }
         },
         watch: {
             scripts: {
@@ -94,11 +103,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-concat-css');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat')
 
 
     grunt.registerTask('outputcss', ['sass']);
-    grunt.registerTask('mincss', ['cssmin']);
-    grunt.registerTask('watchit', ['outputcss', 'mincss', 'connect', 'watch']);
+    grunt.registerTask('compresscss', ['cssmin']);
+    grunt.registerTask('concatcss', ['concat_css']);
+    grunt.registerTask('checkjs', ['jshint']);
+    grunt.registerTask('watchit', ['outputcss', 'compresscss', 'connect', 'watch', 'concatcss']);
 
     grunt.registerTask('default');
 };

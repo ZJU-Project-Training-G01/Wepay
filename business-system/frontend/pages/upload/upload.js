@@ -4,7 +4,7 @@
             function($scope, $http, Upload, $timeout, $location) {
                 $scope.$on('receUpload', function(e) {
                     $scope.ifUpload = true;
-                })
+                });
                 let targetPath;
                 let ifGoods = $location.path().indexOf('goodUpload') >= 0;
                 if (ifGoods) {
@@ -39,7 +39,7 @@
                     }, function(evt) {
                         $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
                     });
-                }
+                };
             }
-        ])
+        ]);
 })();

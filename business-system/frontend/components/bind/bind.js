@@ -32,7 +32,7 @@
                         if (code === 0) {
                             $scope.$emit('transferErrorMsg', '绑定成功', 'modal');
                         }
-                    })
+                    });
                 };
                 $scope.cancel = function() {
                     $window.location.reload();

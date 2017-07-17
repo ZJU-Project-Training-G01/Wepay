@@ -22,11 +22,11 @@
                         } else {
                             $scope.$emit('transferErrorMsg', data.data.msg);
                         }
-                    })
-                }
+                    });
+                };
                 $scope.cancel = function() {
                     $window.location.reload();
-                }
+                };
             }
-        ])
+        ]);
 })();

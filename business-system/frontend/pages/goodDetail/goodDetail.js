@@ -5,11 +5,11 @@
                 $scope.ifFeedback = false;
                 $scope.update = function() {
                     $rootScope.goodDetail = $scope.goodDetail;
-                    $location.path('goodUpload/update')
-                }
+                    $location.path('goodUpload/update');
+                };
                 $scope.toGoods = function() {
-                    $location.path('good')
-                }
+                    $location.path('good');
+                };
                 $scope.delete = function() {
                     $http({
                         url: 'backend/public/DeleteGood',
@@ -23,7 +23,7 @@
                             $scope.$emit('transferErrorMsg', data.data.msg);
                         }
                     });
-                }
+                };
                 $scope.goodDetailHttp = function(goodId) {
                     $http({
                         url: 'backend/public/GetGoodDetail',
@@ -33,8 +33,8 @@
                         $scope.goodDetail = data.data.data;
                         $scope.goodDetail.unitPrice = setPricePrecision($scope.goodDetail.unitPrice);
                     }).then(function(data) {});
-                }
+                };
                 $scope.goodDetailHttp($stateParams.goodId);
             }
-        ])
+        ]);
 })();
