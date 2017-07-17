@@ -64,7 +64,8 @@ module.exports = function(grunt) {
                 files: {
                     'pages/user/asset/user.min.js': ['pages/user/asset/user.js'],
                     'pages/good/asset/good.min.js': ['pages/good/asset/good.js'],
-                    'pages/order/asset/order.min.js': ['pages/order/asset/order.js']
+                    'pages/order/asset/order.min.js': ['pages/order/asset/order.js'],
+                    'pages/register/asset/register.min.js': ['pages/register/register.js'],
                 }
             }
         },

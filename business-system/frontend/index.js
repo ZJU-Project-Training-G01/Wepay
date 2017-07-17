@@ -183,7 +183,7 @@
             modules: [{
                     name: 'register',
                     files: [
-                        'frontend/pages/register/register.js',
+                        'frontend/pages/register/register.min.js',
                         'frontend/pages/register/register.css',
                         'frontend/components/loginNavbar/loginNavbar.css'
                     ]
@@ -203,7 +203,7 @@
                         'frontend/components/bind/bind.css',
                         'frontend/components/out/out.css',
                         'frontend/components/in/in.css',
-                        'frontend/pages/user/asset/user.js',
+                        'frontend/pages/user/asset/user.min.js',
                         'frontend/pages/upload/upload.css',
                         'frontend/pages/upload/upload.js'
                     ]
@@ -221,7 +221,7 @@
                         'frontend/pages/good/good.css',
                         'frontend/components/goodItem/goodItem.css',
                         'frontend/components/goodSearch/goodSearch.css',
-                        'frontend/pages/good/asset/good.js'
+                        'frontend/pages/good/asset/good.min.js'
                     ]
                 },
                 {
