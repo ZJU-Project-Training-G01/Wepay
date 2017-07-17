@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
-    let orderItemPath = 'components';
-    let orderPath = 'pages';
+    let component = orderItemPath = 'components';
+    let page = orderPath = 'pages';
+
     let bootswatchPath = 'bower_components/bootswatch/journal/'
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -31,8 +32,20 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: bootswatchPath,
-                    src: ['bootstrap.min.css'],
+                    src: ['bootstrap.css'],
                     dest: bootswatchPath,
+                    ext: '.min.css'
+                }, {
+                    expand: true,
+                    cwd: page,
+                    src: ['**/*.css'],
+                    dest: page,
+                    ext: '.min.css'
+                }, {
+                    expand: true,
+                    cwd: component,
+                    src: ['**/*.css'],
+                    dest: component,
                     ext: '.min.css'
                 }]
             }
