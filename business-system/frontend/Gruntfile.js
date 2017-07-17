@@ -51,8 +51,20 @@ module.exports = function(grunt) {
                         component + '/goodItem/goodItem.js',
                         component + '/goodSearch/goodSearch.js'
                     ],
-
-
+                    'pages/order/asset/order.js': [
+                        page + '/order/order.js',
+                        component + '/orderItem/orderItem.js',
+                        component + '/navs/navs.js'
+                    ]
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'pages/user/asset/user.min.js': ['pages/user/asset/user.js'],
+                    'pages/good/asset/good.min.js': ['pages/good/asset/good.js'],
+                    'pages/order/asset/order.min.js': ['pages/order/asset/order.js']
                 }
             }
         },
@@ -130,13 +142,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-
-
     grunt.registerTask('outputcss', ['sass']);
     grunt.registerTask('compresscss', ['cssmin']);
     grunt.registerTask('concatcss', ['concat_css']);
     grunt.registerTask('checkjs', ['jshint']);
     grunt.registerTask('concatjs', ['concat']);
+    grunt.registerTask('compress', ['uglify'])
     grunt.registerTask('watchit', ['outputcss', 'compresscss', 'connect', 'watch', 'concatcss']);
 
     grunt.registerTask('default');

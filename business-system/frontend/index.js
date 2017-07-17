@@ -211,21 +211,16 @@
                 {
                     name: 'order',
                     files: [
-                        'frontend/pages/order/order.js',
-                        'frontend/components/orderItem/orderItem.js',
+                        'frontend/pages/order/asset/order.js',
                         'frontend/components/orderItem/orderItem.css',
-                        'frontend/components/navs/navs.js'
                     ]
                 },
                 {
                     name: 'good',
                     files: [
                         'frontend/pages/good/good.css',
-                        // 'frontend/pages/good/good.js',
                         'frontend/components/goodItem/goodItem.css',
-                        // 'frontend/components/goodItem/goodItem.js',
                         'frontend/components/goodSearch/goodSearch.css',
-                        // 'frontend/components/goodSearch/goodSearch.js',
                         'frontend/pages/good/asset/good.js'
                     ]
                 },
