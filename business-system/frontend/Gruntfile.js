@@ -52,7 +52,12 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: [orderItemPath + '/**/*.scss', orderPath + '/**/*.scss', bootswatchPath + '*.css'],
+                files: [orderItemPath + '/**/*.scss',
+                    orderPath + '/**/*.scss',
+                    bootswatchPath + '*.css',
+                    component + '/**/*.css',
+                    page + '/**/*.css'
+                ],
                 tasks: ['sass', 'cssmin']
             },
             livereload: {
@@ -62,7 +67,9 @@ module.exports = function(grunt) {
                 files: [
                     orderItemPath + '/**/*.css',
                     orderPath + '/**/*.css',
-                    bootswatchPath + '*.min.css'
+                    bootswatchPath + '*.min.css',
+                    component + '/**/*.min.css',
+                    page + "/**/*.min.css"
                 ]
             }
         },
@@ -86,11 +93,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-concat-css');
 
 
     grunt.registerTask('outputcss', ['sass']);
     grunt.registerTask('mincss', ['cssmin']);
-    grunt.registerTask('watchit', ['outputcss', 'cssmin', 'connect', 'watch']);
+    grunt.registerTask('watchit', ['outputcss', 'mincss', 'connect', 'watch']);
 
     grunt.registerTask('default');
 };
