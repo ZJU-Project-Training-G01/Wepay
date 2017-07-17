@@ -28,7 +28,7 @@
             return {
                 orderStatusToName: function(status, orderTime) {
                     let orderName, operation;
-                    switch (status) {
+                    switch (parseInt(status)) {
                         case 0:
                             operation = getDeadline(orderTime);
                             if (operation === false) {
