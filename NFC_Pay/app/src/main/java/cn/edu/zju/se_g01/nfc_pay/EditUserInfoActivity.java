@@ -66,7 +66,9 @@ public class EditUserInfoActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, error.getMessage());
+//                Log.e(TAG, error.getMessage());
+                Toast.makeText(EditUserInfoActivity.this, "网络出现问题", Toast.LENGTH_LONG).show();
+
             }
         });
         MySingleton.getInstance(getApplicationContext()).getRequestQueue().add(userInfoReq);

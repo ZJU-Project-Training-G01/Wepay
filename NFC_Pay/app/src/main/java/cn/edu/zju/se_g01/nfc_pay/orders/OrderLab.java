@@ -81,7 +81,7 @@ public class OrderLab {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e(error.getMessage());
+//                VolleyLog.e(error.getMessage());
             }
         });
         MySingleton.getInstance(mAppContext.getApplicationContext()).addToRequestQueue(orderLabReq);

@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -54,7 +55,7 @@ public class SearchFragment extends ListFragment {
         RequestQueue queue = MySingleton.getInstance(getActivity().getApplicationContext()).getRequestQueue();
         String url = "http://120.77.34.254/business-system/backend/public/GetGoodList";
 
-        CookieRequest listRequest=new CookieRequest(
+        CookieRequest listRequest = new CookieRequest(
                 getActivity().getApplicationContext(),
                 Request.Method.GET,
                 url,
@@ -68,7 +69,7 @@ public class SearchFragment extends ListFragment {
                         try {
                             JSONArray jsonArray = response.getJSONArray("data");
                             goodsList = new ArrayList<>();
-                            for(int i=0;i<jsonArray.length();i++) {
+                            for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jo = jsonArray.getJSONObject(i);
                                 Goods good = new Goods(
                                         jo.getString("good_id"),
@@ -105,7 +106,9 @@ public class SearchFragment extends ListFragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "listRequestError");
+//                        Log.e(TAG, "listRequestError");
+                        Toast.makeText(getActivity(), "网络出现问题", Toast.LENGTH_LONG).show();
+
                     }
                 }
         );
@@ -128,14 +131,16 @@ public class SearchFragment extends ListFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        imgDownloaderThread.quit();
+        if (imgDownloaderThread != null)
+            imgDownloaderThread.quit();
         Log.i(TAG, "Background thread destroyed");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        imgDownloaderThread.clearQueue();
+        if (imgDownloaderThread != null)
+            imgDownloaderThread.clearQueue();
     }
 
     private class GoodAdapter extends ArrayAdapter<Goods> {

@@ -187,7 +187,7 @@ public class GoodActivity extends Activity {
                             buyButton.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    Toast.makeText(getApplicationContext(), "购买" + buyAmount + "件商品", Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(getApplicationContext(), "购买" + buyAmount + "件商品", Toast.LENGTH_SHORT).show();
 
                                     RequestQueue queue = MySingleton.getInstance(getApplicationContext()).getRequestQueue();
                                     String url = "http://120.77.34.254/business-system/backend/public/MakeNewOrder";
@@ -204,7 +204,10 @@ public class GoodActivity extends Activity {
                                                 @Override
                                                 public void onResponse(JSONObject response) {
                                                     try {
-                                                        Toast.makeText(getApplicationContext(), "状态返回结果：" + response.getString("status"), Toast.LENGTH_SHORT).show();
+                                                        if ("true".equals(response.getString("status")))
+                                                            Toast.makeText(getApplicationContext(), "购买成功", Toast.LENGTH_SHORT).show();
+                                                        else
+                                                            Toast.makeText(getApplicationContext(), "状态返回结果：" + response.getString("status"), Toast.LENGTH_SHORT).show();
 
                                                         Log.d("buy button response", response.getString("status"));
                                                     } catch (JSONException e) {
@@ -216,7 +219,7 @@ public class GoodActivity extends Activity {
                                                 @Override
                                                 public void onErrorResponse(VolleyError error) {
                                                     Toast.makeText(getApplicationContext(), "提交订单超时", Toast.LENGTH_SHORT).show();
-                                                    Log.d(TAG, "提交订单超时");
+//                                                    Log.d(TAG, "提交订单超时");
                                                 }
                                             }
                                     );
@@ -234,18 +237,16 @@ public class GoodActivity extends Activity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getApplicationContext(), "请求商品超时", Toast.LENGTH_SHORT).show();
-                        byte[] htmlResponseBody = error.networkResponse.data;
-                        Log.e(TAG, "请求商品超时");
-                        Log.e(TAG, new String(htmlResponseBody));
+//                        byte[] htmlResponseBody = error.networkResponse.data;
+//                        Log.e(TAG, "请求商品超时");
+//                        Log.e(TAG, new String(htmlResponseBody));
                     }
                 }
         );
         queue.add(goodRequest);
 
 
-
 //        g = GoodsLab.getInstance().getGood(goodId);
-
 
 
     }

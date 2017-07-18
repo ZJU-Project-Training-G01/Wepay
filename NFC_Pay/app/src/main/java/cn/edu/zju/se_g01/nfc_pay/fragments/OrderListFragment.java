@@ -220,7 +220,9 @@ public class OrderListFragment extends SwipeRefreshListFragment{
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Log.e(TAG, error.getMessage());
+//                                Log.e(TAG, error.getMessage());
+                                Toast.makeText(getActivity(), "网络出现问题", Toast.LENGTH_LONG).show();
+
                             }
                         });
                         MySingleton.getInstance(getActivity()).getRequestQueue().add(confirmRecvGoodsReq);

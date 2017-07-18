@@ -36,6 +36,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -162,7 +163,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, error.getMessage());
+//                VolleyLog.e(error.getMessage());
                 showProgress(false);
                 Toast.makeText(LoginActivity.this, "网络出现问题", Toast.LENGTH_LONG).show();
             }
@@ -298,7 +299,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    VolleyLog.e("LoginError: ", error.networkResponse.data);
+//                    VolleyLog.e("LoginError: ", error.networkResponse.data);
                     showProgress(false);
                     Toast.makeText(LoginActivity.this, "网络出现问题", Toast.LENGTH_LONG).show();
                 }
