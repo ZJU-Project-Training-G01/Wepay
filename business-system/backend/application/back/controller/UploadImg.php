@@ -32,7 +32,7 @@ class UploadImg extends Controller
             $meta = $_POST;
             $data1 = array();
             $destination = $meta['targetPath'].$filename;
-            $path = "/Users/achao_zju/htdocs/WePay/business-system/".$destination;
+            $path = "/var/www/html/business-system/".$destination;
             move_uploaded_file($_FILES['file']['tmp_name'], $path);
             //move_uploaded_file($_FILES['file']['tmp_name'], "D:\wampServer\wamp64\www\WePay\business-system\\".$destination);
            try{
