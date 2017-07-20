@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
@@ -59,14 +58,15 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(ToolBarActivity.this , R.string.menu_notifications , Toast.LENGTH_SHORT).show();
 
                 if (menuItemId == R.id.user_info_item) {
-                    Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity.this, "个人信息", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(MainActivity.this, UserSettingActivity.class);
                     startActivity(i);
-
-                } else if (menuItemId == R.id.logout_item) {
-                    Toast.makeText(MainActivity.this, "item_02", Toast.LENGTH_SHORT).show();
-
                 }
+
+//                } else if (menuItemId == R.id.logout_item) {
+//                    Toast.makeText(MainActivity.this, "item_02", Toast.LENGTH_SHORT).show();
+//
+//                }
                 return true;
             }
         });
@@ -89,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
         }
         tabLayout.getTabAt(0).select();
 
-        //启动NfcOperator
-        nfcOperator.initNFCData(this);
 
         //两种情况：1. app没在运行时，onCreate方法手动调用onNewIntent
         onNewIntent(getIntent());
@@ -100,12 +98,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Toast.makeText(getApplicationContext(), "on new intent", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), "on new intent", Toast.LENGTH_SHORT).show();
 
 
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+            //启动NfcOperator
+            nfcOperator.initNFCData(this);
             String msg = nfcOperator.processIntent(intent);
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             Goods g = GoodsLab.getInstance().getGood(msg);
             if (g != null) {
 //                searchFragment.startGoodActivity(this, msg);

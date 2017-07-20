@@ -21,11 +21,12 @@ import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
 
 public class HomeFragment extends Fragment {
     public NfcOperator nfcOperator;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.home_layout, container, false);
+        View view = inflater.inflate(R.layout.home_layout, container, false);
         ImageButton imageButton = (ImageButton) view.findViewById(R.id.nfc_scan_btn);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,8 +36,10 @@ public class HomeFragment extends Fragment {
                 nfcOperator = ((MainActivity) getActivity()).nfcOperator;
                 try {
                     String content = nfcOperator.read();
-                    Toast.makeText(getActivity().getApplicationContext(), "content:" + content, Toast.LENGTH_SHORT).show();
-
+                    if (content != null)
+                        Toast.makeText(getActivity().getApplicationContext(), "NFC中包含的内容:" + content, Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(getActivity().getApplicationContext(), "未检测到NFC芯片", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (FormatException e) {

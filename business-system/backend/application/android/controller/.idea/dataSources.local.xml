@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="wepay@120.77.34.254" uuid="4b6a6268-0342-404c-a154-35248a46efe8">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:wepay</introspection-schemas>
+    </data-source>
+  </component>
+</project>

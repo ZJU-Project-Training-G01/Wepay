@@ -19,8 +19,8 @@
         android:title="个人信息"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/logout_item"
-        android:title="注销"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/logout_item"-->
+        <!--android:title="注销"-->
+        <!--app:showAsAction="never" />-->
 </menu>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="wepay@120.77.34.254">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="wepay">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="news"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="teaching_db"/>
+    <table id="8" parent="2" name="buyer"/>
+    <table id="9" parent="2" name="good"/>
+    <table id="10" parent="2" name="orders"/>
+    <table id="11" parent="2" name="seller"/>
+    <column id="12" parent="8" name="buyerId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="13" parent="8" name="buyerName">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="14" parent="8" name="buyerPassword">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="8" name="email">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="16" parent="8" name="phoneNumber">
+      <Position>5</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="17" parent="8" name="bankCard">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="18" parent="8" name="address">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="8" name="balance">
+      <Position>8</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="20" parent="8" name="realName">
+      <Position>9</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="21" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>buyerId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="9" name="goodId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="9" name="goodName">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="9" name="unitPrice">
+      <Position>3</Position>
+      <Comment>当前商品单价</Comment>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="9" name="imgUrl">
+      <Position>4</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="26" parent="9" name="goodInfo">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="27" parent="9" name="amount">
+      <Position>6</Position>
+      <Comment>商品余量</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="9" name="goodAddress">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="29" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>goodId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="10" name="orderId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="10" name="buyerId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="32" parent="10" name="goodId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="10" name="amount">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="10" name="unitPrice">
+      <Position>5</Position>
+      <Comment>购物时的价格</Comment>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="35" parent="10" name="orderStatus">
+      <Position>6</Position>
+      <Comment>0：未发货；
+1： 已发货但未确认收货；
+2： 确认收获（这个时候要转账）</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="36" parent="10" name="orderTime">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="10" name="order_buyer_buyer_id_fk">
+      <ColNames>buyerId</ColNames>
+    </index>
+    <index id="38" parent="10" name="order_good_good_id_fk">
+      <ColNames>goodId</ColNames>
+    </index>
+    <key id="39" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>orderId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="40" parent="10" name="order_buyer_buyer_id_fk">
+      <ColNames>buyerId</ColNames>
+      <RefSchemaName>wepay</RefSchemaName>
+      <RefTableName>buyer</RefTableName>
+      <RefColNames>buyerId</RefColNames>
+    </foreign-key>
+    <foreign-key id="41" parent="10" name="order_good_good_id_fk">
+      <ColNames>goodId</ColNames>
+      <RefSchemaName>wepay</RefSchemaName>
+      <RefTableName>good</RefTableName>
+      <RefColNames>goodId</RefColNames>
+    </foreign-key>
+    <column id="42" parent="11" name="seller_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="11" name="seller_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="11" name="seller_password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="11" name="balance">
+      <Position>4</Position>
+      <Comment>余额</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="46" parent="11" name="bank_card">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="47" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>seller_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

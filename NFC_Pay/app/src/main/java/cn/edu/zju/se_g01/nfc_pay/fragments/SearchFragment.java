@@ -15,6 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -24,6 +34,8 @@ import cn.edu.zju.se_g01.nfc_pay.Good.ImgDownloader;
 import cn.edu.zju.se_g01.nfc_pay.GoodActivity;
 import cn.edu.zju.se_g01.nfc_pay.MainActivity;
 import cn.edu.zju.se_g01.nfc_pay.R;
+import cn.edu.zju.se_g01.nfc_pay.tools.CookieRequest;
+import cn.edu.zju.se_g01.nfc_pay.tools.MySingleton;
 import cn.edu.zju.se_g01.nfc_pay.tools.NfcOperator;
 
 /**
@@ -38,69 +50,77 @@ public class SearchFragment extends ListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        goodsList = GoodsLab.getInstance().getGoodsList();
+        //CookieRequest
+//        goodsList = GoodsLab.getInstance().getGoodsList();
+        RequestQueue queue = MySingleton.getInstance(getActivity().getApplicationContext()).getRequestQueue();
+        String url = "http://120.77.34.254/business-system/backend/public/GetGoodList";
 
-        GoodAdapter adapter = new GoodAdapter(goodsList);
-        setListAdapter(adapter);
+        CookieRequest listRequest = new CookieRequest(
+                getActivity().getApplicationContext(),
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, "in list response");
+                        //onResponse
+                        //TODO 解析JSONObject获得goodList
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("data");
+                            goodsList = new ArrayList<>();
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jo = jsonArray.getJSONObject(i);
+                                Goods good = new Goods(
+                                        jo.getString("good_id"),
+                                        jo.getString("good_name"),
+                                        Double.valueOf(jo.getString("unit_price")),
+                                        jo.getString("img_url"),
+                                        jo.getString("good_info")
+                                );
+                                goodsList.add(good);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
-        imgDownloaderThread = new ImgDownloader<>(new Handler());
-        imgDownloaderThread.setListener(new ImgDownloader.Listener<ImageView>() {
+                        GoodAdapter adapter = new GoodAdapter(goodsList);
+                        setListAdapter(adapter);
 
-            @Override
-            public void onImgDownload(ImageView imageView, Bitmap img) {
-                if (isVisible()) {
-                    imageView.setImageBitmap(img);
+                        imgDownloaderThread = new ImgDownloader<>(new Handler());
+                        imgDownloaderThread.setListener(new ImgDownloader.Listener<ImageView>() {
+
+                            @Override
+                            public void onImgDownload(ImageView imageView, Bitmap img) {
+                                if (isVisible()) {
+                                    imageView.setImageBitmap(img);
+                                }
+                            }
+                        });
+
+                        imgDownloaderThread.start();
+                        imgDownloaderThread.getLooper();
+                        Log.i(TAG, "Background thread started");
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+//                        Log.e(TAG, "listRequestError");
+                        Toast.makeText(getActivity(), "网络出现问题", Toast.LENGTH_LONG).show();
+
+                    }
                 }
-            }
-        });
-
-        imgDownloaderThread.start();
-        imgDownloaderThread.getLooper();
-        Log.i(TAG, "Background thread started");
-//        bitmaps = new ArrayList<>(goodsList.size());
-//        Thread t = new Thread() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Bitmap bitmap;
-//                    Log.d("debug", "*******connect**************************");
-//                    Log.d("debug", "*******connect**************************");
-//                    Log.d("debug", "*******connect**************************");
-//
-//                    for (int i = 0; i < goodsList.size(); i++) {
-//                        URL url = new URL("http://www.lagou.com/image1/M00/31/84/Cgo8PFWLydyAKywFAACk6BPmTzc228.png");
-//                        InputStream is = url.openStream();
-//                        bitmap = BitmapFactory.decodeStream(is);
-//                        bitmaps.set(i, bitmap);
-//                        is.close();
-//                        Thread.sleep(1000);
-//                    }
-//
-//                    Log.d("debug", "*******aaaconnect**************************");
-//                    Log.d("debug", "*******aaaconnect**************************");
-//                    Log.d("debug", "*******aaaconnect**************************");
-//                } catch (Exception e) {
-//                    Log.d("debug", "!!!!!!!!!!!cannot connect!!!!!!!!!!!!!!!!!!!");
-//                    Log.d("debug", "!!!!!!!!!!!cannot connect!!!!!!!!!!!!!!!!!!!");
-//                    Log.d("debug", "!!!!!!!!!!!cannot connect!!!!!!!!!!!!!!!!!!!");
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        };
-//        t.start();
-//        try {
-//            t.join();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
+        );
+        queue.add(listRequest);
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Goods g = ((GoodAdapter) getListAdapter()).getItem(position);
         Log.d(TAG, g.getGoodsName() + " was clicked");
+        Log.d(TAG, g.getGoodsId());
+
 
         //Start GoodActivity
         Intent i = new Intent(getActivity(), GoodActivity.class);
@@ -111,14 +131,16 @@ public class SearchFragment extends ListFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        imgDownloaderThread.quit();
+        if (imgDownloaderThread != null)
+            imgDownloaderThread.quit();
         Log.i(TAG, "Background thread destroyed");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        imgDownloaderThread.clearQueue();
+        if (imgDownloaderThread != null)
+            imgDownloaderThread.clearQueue();
     }
 
     private class GoodAdapter extends ArrayAdapter<Goods> {
@@ -133,6 +155,7 @@ public class SearchFragment extends ListFragment {
                 convertView = getActivity().getLayoutInflater()
                         .inflate(R.layout.search_layout, null);
             }
+
             Goods g = getItem(position);
 
             ImageView img = (ImageView) convertView.findViewById(R.id.good_img);
@@ -141,15 +164,6 @@ public class SearchFragment extends ListFragment {
 
             TextView goodName = (TextView) convertView.findViewById(R.id.good_name);
             TextView unitPrice = (TextView) convertView.findViewById(R.id.unit_price);
-//            Drawable cachedImage = asyncImageLoader.loadDrawable(g.getImgUrl(), new AsyncImageLoader.ImageCallback() {
-//                public void imageLoaded(Drawable imageDrawable, String imageUrl) {
-//
-//                    ImageView img = (ImageView) convertView.findViewById(R.id.good_img);
-//                    if (imageViewByTag != null) {
-//                        imageViewByTag.setImageDrawable(imageDrawable);
-//                    }
-//                }
-//            });
 
             goodName.setText(g.getGoodsName());
             unitPrice.setText("￥ " + String.format("%.2f", g.getUnitPrice()));
@@ -157,14 +171,5 @@ public class SearchFragment extends ListFragment {
             return convertView;
         }
     }
-
-//    private class FetchItemsTask extends AsyncTask<Void, Void, Void> {
-//
-//        @Override
-//        protected Void doInBackground(Void... params) {
-//            new FlickrFetchr().fe
-//            return null;
-//        }
-//    }
 
 }

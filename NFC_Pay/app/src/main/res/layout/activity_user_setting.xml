@@ -19,6 +19,7 @@
             android:background="@mipmap/goods_flower" />
 
         <TextView
+            android:id="@+id/userNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -39,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="我的收获地址"
+            android:text="修改个人信息"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
@@ -49,10 +50,11 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:background="@drawable/ic_chevron_right_white" />
+            android:background="@drawable/ic_chevron_right" />
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/bindBankCardLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal">
@@ -62,18 +64,57 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="关于 WePay"
+            android:text="绑定银行卡"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/bindBankCardButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:background="@drawable/ic_chevron_right_white" />
+            android:background="@drawable/ic_chevron_right" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chargeBalanceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="充值"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:id="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/balanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="250.00"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_alignBaseline="@+id/textView4"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_toLeftOf="@+id/chargeBalanceButton"
+            android:layout_toStartOf="@+id/chargeBalanceButton"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="12dp" />
+
+        <Button
+            android:id="@+id/chargeBalanceButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_chevron_right" />
     </RelativeLayout>
 
     <LinearLayout
